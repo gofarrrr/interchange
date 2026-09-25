@@ -1,0 +1,16 @@
+{
+  "id": "block-accountability",
+  "source_id": "S08",
+  "type": "solution",
+  "title": "Cross-functional work still needs a directly responsible person",
+  "text": "Block’s proposed architecture includes individuals accountable for particular customer outcomes who can draw resources from several capabilities, alongside specialists and player-coaches. The useful design question is how outcome responsibility and resource authority are joined after information-routing work changes.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Corporate proposal, not evidence that removing management layers has already improved performance.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

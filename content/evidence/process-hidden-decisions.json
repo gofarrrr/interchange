@@ -1,0 +1,16 @@
+{
+  "id": "process-hidden-decisions",
+  "source_id": "S24",
+  "type": "diagnosis",
+  "title": "Missing process knowledge can actually be missing business decisions",
+  "text": "Ajzenstadt’s forecast-variance example requires agreement about forecasts, actuals, thresholds and who receives the result. Some of the apparent implementation work is therefore deciding how the business should operate. An agent cannot reliably recover a policy that the organisation has never agreed.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Illustrative practitioner account. Its reported implementation timeline is not a benchmark for other companies.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

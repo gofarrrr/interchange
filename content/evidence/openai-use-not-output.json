@@ -1,0 +1,16 @@
+{
+  "id": "openai-use-not-output",
+  "source_id": "S40",
+  "type": "counterpoint",
+  "title": "A task-use trace is not an accepted business result",
+  "text": "The supplied Work at the Frontier note describes people using AI for tasks beyond the conventional boundaries of their occupations. Its evidence concerns patterns in messages and occupational classification, not whether the resulting work was correct, adopted or economically valuable.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Only research notes reviewed. Individual-account observations should not be presented as enterprise production results or proof of acquired professional competence.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

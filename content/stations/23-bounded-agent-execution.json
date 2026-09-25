@@ -1,0 +1,58 @@
+{
+  "id": "AI-23",
+  "number": 23,
+  "slug": "bounded-agent-execution",
+  "title": "Letting agents run or spend without hard limits",
+  "summary": "Bound the amount of work, money and external effect an agent can authorise before the system stops or seeks approval.",
+  "diagnosis": "A per-request price can hide an unbounded loop, repeated retries or many concurrent jobs. Spending exposure also includes payments, subscriptions and external commitments, not only model usage. Define aggregate limits and the behaviour at the boundary before deployment. The stopping mechanism must be enforceable by the host service, not dependent on the agent remembering its budget.",
+  "diagnostic_questions": [
+    "What is the maximum aggregate exposure across jobs, retries, teams and connected paid services?",
+    "Who can change a limit, and is that change recorded and separately authorised?",
+    "What does the system return or do when time, requests, money or action limits are reached?"
+  ],
+  "proposed_actions": [
+    "Set hard limits for the relevant dimensions: runtime, requests, retries, concurrency, paid tools and transactions; include aggregate budgets.",
+    "Choose a safe boundary behaviour such as pause, partial result or approval request, and ensure it does not create uncontrolled follow-on work.",
+    "Test exhaustion and runaway scenarios, alert accountable owners and retain enough evidence to understand where resources went."
+  ],
+  "working_artifact": "Execution budget contract: task; owner; per-run limits; aggregate period limits; concurrency; paid-tool scope; transaction authority; warning thresholds; hard stop; approval route; partial-result behaviour.",
+  "measures": [
+    "Cost and resource consumption per accepted task plus total exposure by workflow and owner.",
+    "Frequency and cause of boundary hits, distinguishing healthy containment from a poorly designed task.",
+    "Maximum observed work or spend after a stop condition, measured through a controlled drill."
+  ],
+  "tradeoff": "A very low limit can make a feasible task appear unreliable; a very high one can make a mistake expensive. Limits should reflect business value, task duration and harm, and should be revised from evidence rather than removed to improve a completion metric.",
+  "illustrative_case": "Illustrative application: a research job reaches its approved paid-search budget, returns the supported partial findings and requests a human decision. It does not restart itself under another worker to complete the task.",
+  "line_id": "D",
+  "short_title": "Set hard limits",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-06",
+    "AI-20",
+    "AI-33",
+    "AI-34"
+  ],
+  "evidence_ids": [
+    "harness-control-plane",
+    "rao-feedback"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S38"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      19,
+      23,
+      35
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 2
+}

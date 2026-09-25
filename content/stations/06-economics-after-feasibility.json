@@ -1,0 +1,58 @@
+{
+  "id": "AI-06",
+  "number": 6,
+  "slug": "economics-after-feasibility",
+  "title": "Optimising model cost before proving the task works—or ignoring economics once it does",
+  "summary": "Establish capability inside a budget, then optimise the complete cost of successful delivery.",
+  "diagnosis": "A cheap model that fails does not prove a use case is infeasible, and an expensive configuration that works does not prove it is economical. Separate the feasibility question from the operating-cost question without postponing all financial discipline. Test a sufficiently capable baseline, identify why it succeeds or fails, and then compare cheaper or simpler configurations against the same quality boundary.",
+  "diagnostic_questions": [
+    "Is the initial configuration capable enough to test the idea, or is cost minimisation masking feasibility?",
+    "Which costs sit outside model tokens: retrieval, integrations, retries, human review and support?",
+    "Can spending grow through loops, concurrent jobs or unexpected demand even if each request looks cheap?"
+  ],
+  "proposed_actions": [
+    "Allocate a bounded feasibility budget and define acceptable completion before comparing model configurations.",
+    "Benchmark complete alternatives on representative work; include routing, deterministic components and escalation rather than only model substitution.",
+    "Install per-task and aggregate spending limits, then revisit economics when volume, quality, prices or review requirements change."
+  ],
+  "working_artifact": "Unit-economics worksheet specification: eligible task; acceptance rule; model/tool costs; retries; human review minutes; support allocation; fixed implementation cost; volume assumptions; sensitivity ranges; stopping limits.",
+  "measures": [
+    "Quality-adjusted cost per accepted task, with the success rate and review burden visible alongside the average.",
+    "Budget consumption by experiment, workflow and team, including failed and abandoned attempts.",
+    "Sensitivity of the business case to volume, difficult-case frequency, review time and provider changes."
+  ],
+  "tradeoff": "The largest model is not a mandatory starting point, and the cheapest is not a mandatory destination. Some exploration has learning value before a full return estimate is possible, but the organisation should still know the maximum exposure it has authorised.",
+  "illustrative_case": "Illustrative application: a cheaper model lowers request cost but doubles correction time. A more capable model or a hybrid may be less expensive per accepted result. The reverse may be true once the workflow is better specified.",
+  "line_id": "A",
+  "short_title": "Prove the economics",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-04",
+    "AI-05",
+    "AI-23",
+    "AI-32"
+  ],
+  "evidence_ids": [
+    "daily-cost-evals",
+    "acharya-model-fit",
+    "pearson-new-capability"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S19",
+    "S31"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      25
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

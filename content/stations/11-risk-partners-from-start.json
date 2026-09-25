@@ -1,0 +1,60 @@
+{
+  "id": "AI-11",
+  "number": 11,
+  "slug": "risk-partners-from-start",
+  "title": "Bringing Legal, Security, IT and Finance in only to approve or block the finished product",
+  "summary": "Design a workable route for responsible experimentation with the people who own its constraints.",
+  "diagnosis": "Late review turns foreseeable requirements into apparent scope creep and encourages a false choice between speed and control. Early participation is useful when it identifies the real boundary: which data, actions, costs and commitments the experiment may involve. It is not useful when every exploratory question becomes an open-ended approval queue.",
+  "diagnostic_questions": [
+    "Which functions will need to accept the operating result, and what information do they need now?",
+    "Is there an approved low-risk experimentation path with clear data and spending boundaries?",
+    "Which unresolved requirements could force a redesign after users have already adopted the prototype?"
+  ],
+  "proposed_actions": [
+    "Hold an early use-case review with a concrete workflow and action/data map rather than a generic AI presentation.",
+    "Publish supported tools, allowed data categories, spending boundaries, escalation routes and review criteria for common experiment types.",
+    "Invite risk and support owners to help design acceptance and incident tests; resolve disagreements through a named business decision-maker."
+  ],
+  "working_artifact": "Experiment operating agreement: permitted tools; input data; allowed actions; budget; users; review gates; evidence needed for scale; exception route; responsible owners; stop procedure.",
+  "measures": [
+    "Lead time to an informed review decision and frequency of repeated requests caused by unclear requirements.",
+    "Late redesign caused by previously undiscovered data, procurement or operational constraints.",
+    "Participation in the approved path, including anonymous or non-punitive reporting of why teams bypass it."
+  ],
+  "tradeoff": "Early involvement does not guarantee every proposed experiment should proceed. A legitimate safety or confidentiality concern is not merely resistance to innovation. The aim is an explicit, timely decision with feasible alternatives where possible.",
+  "illustrative_case": "Illustrative application: a team may test extraction on synthetic invoices immediately, while access to live supplier banking details requires a narrower service identity and a separate review. The experiment can progress without ignoring the boundary.",
+  "line_id": "B",
+  "short_title": "Bring risk partners in",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-07",
+    "AI-20",
+    "AI-21",
+    "AI-24"
+  ],
+  "evidence_ids": [
+    "daily-early-risk",
+    "harness-control-plane",
+    "foss-governance"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S06",
+    "S14"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      11,
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

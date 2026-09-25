@@ -1,0 +1,16 @@
+{
+  "id": "daily-release-ownership",
+  "source_id": "S05",
+  "type": "solution",
+  "title": "Promotion to production needs evidence and a release owner",
+  "text": "The addendum expands citizen development into a release decision supported by quality checks, difficult cases, security review and recovery provisions. It also separates the person who created a prototype from the person accountable for accepting it into production.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Explicit compiler analysis of attributed replies; reply URLs and exact original statements were not verified.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

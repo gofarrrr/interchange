@@ -1,0 +1,57 @@
+{
+  "id": "AI-10",
+  "number": 10,
+  "slug": "prototype-to-production",
+  "title": "Letting prototypes become production systems without a governed path",
+  "summary": "Give non-technical builders a supported route from useful experiment to owned, tested service.",
+  "diagnosis": "The danger is not that a subject-matter expert creates a useful prototype. It is that a prototype gains users, permissions and business importance without a deliberate promotion decision. A production service needs someone who can explain its dependencies, evaluate changes, handle incidents and support users—even when AI generated much of the implementation.",
+  "diagnostic_questions": [
+    "Where is the boundary between a private experiment, a shared pilot and a production dependency?",
+    "Who can approve promotion, and what evidence must they inspect?",
+    "Can the system be rebuilt, supported and stopped without the original creator’s personal account?"
+  ],
+  "proposed_actions": [
+    "Offer a sandbox and an approved promotion path with increasing controls as users, sensitivity and action authority grow.",
+    "Require representative tests, named owners, service identities, versioned artifacts, support arrangements and recovery evidence before production use.",
+    "Let business experts own intent and acceptance examples while involving engineering and risk specialists where the responsibility requires their skills."
+  ],
+  "working_artifact": "Promotion dossier: intended users; purpose; version; data and permissions; tests and results; limitations; reviewer; operating owner; dependencies; monitoring; recovery procedure; support route; release decision.",
+  "measures": [
+    "Share of shared applications with an explicit lifecycle stage and production owner.",
+    "Time from a useful prototype to a properly supported release, including the reasons for delay.",
+    "Incidents, unsupported usage and abandoned applications after rollout—not simply the count of citizen-built apps."
+  ],
+  "tradeoff": "A heavy process for every experiment will encourage bypasses. Scale the requirements to the application’s reach and consequences, but keep the transition visible. Clear Markdown specifications help; they do not replace production engineering or access enforcement.",
+  "illustrative_case": "Illustrative application: a planner’s private spreadsheet assistant becomes a team application only after its data scope, output checks, support owner and deployment account are approved. The useful prototype is preserved, not silently treated as a finished service.",
+  "line_id": "B",
+  "short_title": "Govern the prototype",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-08",
+    "AI-20",
+    "AI-29",
+    "AI-35"
+  ],
+  "evidence_ids": [
+    "daily-citizen-lifecycle",
+    "daily-release-ownership",
+    "ondrej-context-versioning"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S13"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      11
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

@@ -1,0 +1,60 @@
+{
+  "id": "AI-25",
+  "number": 25,
+  "slug": "define-good-results",
+  "title": "Building before agreeing what a good result looks like",
+  "summary": "Turn business expectations into representative cases, acceptance criteria and boundaries for abstention.",
+  "diagnosis": "Without an agreed standard, a team can improve fluent output while disagreeing about whether it is useful or safe. Start with real work and the people who can judge it. Define unacceptable failures and when the correct response is to ask for help. Preserve verified corrections as tests, while avoiding a test set that becomes only a record of past successes.",
+  "diagnostic_questions": [
+    "Can domain experts agree on why a result is acceptable, unacceptable or requires clarification?",
+    "Do the examples reflect the actual range of tasks and important exceptions?",
+    "What happens to a verified correction after the immediate incident is resolved?"
+  ],
+  "proposed_actions": [
+    "Collect representative cases with source evidence, expected behaviour and a rationale; involve business experts in resolving disagreement.",
+    "Define acceptance at the workflow level, including actions, abstention, authority and downstream use—not only answer style.",
+    "Version the evaluation set and turn verified failures into regression cases; keep separate cases for development and for independent checks where practical."
+  ],
+  "working_artifact": "Evaluation case: task; user/role; source evidence; expected outcome; unacceptable errors; permitted actions; clarification/abstention condition; expert rationale; case category; version; verified correction.",
+  "measures": [
+    "Acceptance rate by meaningful case type, with consequential failures inspected separately.",
+    "Agreement and disagreement between qualified reviewers, including changes to ambiguous criteria.",
+    "Recurrence of previously corrected errors after changes to the model, instructions, context or tools."
+  ],
+  "tradeoff": "A private evaluation set is not complete ground truth for all future work. It needs coverage, renewal and checks against overfitting or stale policy. Model-reported confidence should not substitute for demonstrated correctness or an expert-agreed criterion.",
+  "illustrative_case": "Illustrative application: a price recommendation must use the current contract, respect the permitted exception and explain when evidence is missing. A beautifully worded answer using an obsolete discount fails the case.",
+  "line_id": "E",
+  "short_title": "Define good results",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-15",
+    "AI-17",
+    "AI-26",
+    "AI-27"
+  ],
+  "evidence_ids": [
+    "every-eval-before-runtime",
+    "twelve-rubrics-traces",
+    "tacit-curators"
+  ],
+  "source_ids": [
+    "S01",
+    "S03",
+    "S10",
+    "S36"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

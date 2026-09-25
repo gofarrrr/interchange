@@ -1,0 +1,10 @@
+import {spawn,spawnSync} from 'node:child_process';
+import {watch} from 'node:fs';
+import {root} from '../src/load.mjs';
+const build=()=>{const result=spawnSync(process.execPath,['scripts/build.mjs','--no-offline'],{cwd:root,stdio:'inherit'});return result.status===0;};
+if(!build())process.exit(1);
+const server=spawn(process.execPath,['scripts/serve.mjs'],{cwd:root,stdio:'inherit'});
+let timer;
+for(const folder of ['src','content'])watch(root+'/'+folder,{recursive:true},(_event,file)=>{clearTimeout(timer);timer=setTimeout(()=>{console.log('Rebuilding after:',file);if(build())console.log('Rebuilt. Refresh your browser.');},250);});
+process.on('SIGINT',()=>{server.kill('SIGINT');process.exit(0);});
+process.on('SIGTERM',()=>{server.kill('SIGTERM');process.exit(0);});

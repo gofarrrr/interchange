@@ -1,0 +1,16 @@
+{
+  "id": "moonshots-parallel-run",
+  "source_id": "S25",
+  "type": "solution",
+  "title": "A bounded parallel workflow can expose migration risks",
+  "text": "Ismail proposes an isolated AI-enabled counterpart of a predictable workflow, compared with the existing process before broader migration. The useful element is the protected comparison and staged decision; it does not require accepting the wider forecast about the future shape of companies.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual proposal. A parallel run must avoid duplicate real-world actions and still plan for later integration and retirement of the old process.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

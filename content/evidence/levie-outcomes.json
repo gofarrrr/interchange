@@ -1,0 +1,16 @@
+{
+  "id": "levie-outcomes",
+  "source_id": "S02",
+  "type": "observation",
+  "title": "Usage does not settle the value question",
+  "text": "Levie’s supplied post distinguishes compute consumption from useful results and says the answer depends on individual workflows. It is a useful challenge to an adoption dashboard: a rising activity line still needs an explanation of which business work improved.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner observations from selected enterprise conversations, not a representative survey or measured return-on-investment study.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

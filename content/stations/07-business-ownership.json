@@ -1,0 +1,62 @@
+{
+  "id": "AI-07",
+  "number": 7,
+  "slug": "business-ownership",
+  "title": "Treating AI transformation as an IT project or one person’s responsibility",
+  "summary": "Join executive sponsorship, process ownership and technical delivery without pretending one role can do all three.",
+  "diagnosis": "A technical team can build a service without having authority to resolve business priorities, change incentives or assign responsibility across departments. An executive sponsor can create urgency without owning day-to-day decisions. State which decisions sit with the sponsor, the process owner and the operational owner; give each the resources needed to carry that responsibility.",
+  "diagnostic_questions": [
+    "Who can make cross-functional tradeoffs about the outcome, risk and workflow design?",
+    "Does the named owner have authority and time, or only accountability after a failure?",
+    "Which responsibilities would be uncovered if the AI specialist or sponsor left tomorrow?"
+  ],
+  "proposed_actions": [
+    "Name a business outcome owner, an executive escalation route and a delivery/operating owner for each initiative.",
+    "Write decision rights for prioritisation, data access, acceptance, release, budget and exceptions; include affected functions rather than a ceremonial steering group.",
+    "Review whether management work has genuinely disappeared or has moved into informal coordination, coaching and conflict resolution."
+  ],
+  "working_artifact": "Responsibility and decision-rights map: outcome sponsor; process owner; technical owner; data owner; risk approver; operational responder; decision scope; available resources; escalation route; deputy.",
+  "measures": [
+    "Time taken to resolve cross-functional decisions blocking delivery.",
+    "Share of live workflows with an empowered outcome owner and an operational owner, measured separately.",
+    "Unresolved decisions and recurring escalations caused by ambiguous authority, not simply meeting attendance."
+  ],
+  "tradeoff": "There is no universally correct flat or centralised structure. Removing a management layer does not remove the need for judgement, coaching or accountability. A small company may combine roles, but should not leave their duties implicit.",
+  "illustrative_case": "Illustrative application: an engineer can build a sales assistant, but only the business can decide whose pipeline definition applies, what advice a manager must review and how saved time changes account coverage.",
+  "line_id": "B",
+  "short_title": "Business ownership",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-08",
+    "AI-11",
+    "AI-12",
+    "AI-35"
+  ],
+  "evidence_ids": [
+    "block-accountability",
+    "octopus-guardrails",
+    "foss-governance",
+    "levie-operating-model"
+  ],
+  "source_ids": [
+    "S01",
+    "S02",
+    "S04",
+    "S06",
+    "S08"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      5,
+      11,
+      12
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

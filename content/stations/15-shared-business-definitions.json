@@ -1,0 +1,62 @@
+{
+  "id": "AI-15",
+  "number": 15,
+  "slug": "shared-business-definitions",
+  "title": "Expecting consistent answers from inconsistent business definitions",
+  "summary": "Make business meaning, calculation rules and source authority explicit for each question.",
+  "diagnosis": "When departments use the same word differently, a model can produce a coherent answer under the wrong interpretation. The defect is not necessarily bad retrieval or arithmetic. Define the relevant entity, measure, time basis and scope, including situations where more than one definition is legitimately needed. A single “source of truth” slogan does not resolve a genuine business disagreement.",
+  "diagnostic_questions": [
+    "Which measures have multiple valid meanings, such as orders, billings, revenue or active customers?",
+    "Which reporting period, currency, status and organisational scope apply to the question?",
+    "Who can approve a definition and decide how conflicts or restatements are handled?"
+  ],
+  "proposed_actions": [
+    "Build a small business glossary tied to real questions, calculations and source fields rather than a disconnected terminology project.",
+    "Version consequential definitions and record authority, effective date and applicability; preserve legitimate alternative measures with clear names.",
+    "Make the system request clarification when a material ambiguity remains, and include definition changes in regression tests."
+  ],
+  "working_artifact": "Metric definition card: business name; precise meaning; formula; input fields; source owner; period/time zone; units/currency; filters; exceptions; effective date; alternative interpretations; example question and answer.",
+  "measures": [
+    "Errors attributable to using the wrong definition, reported separately from calculation or retrieval errors.",
+    "Clarification and disagreement rates for ambiguous questions before and after definitions are introduced.",
+    "Coverage of important measures with approved, versioned definitions and representative test cases."
+  ],
+  "tradeoff": "Not all differences should be erased. Management reporting and statutory reporting may serve different purposes; the system should distinguish them. When no authority has settled a policy question, record the disagreement rather than fabricate consistency.",
+  "illustrative_case": "Illustrative application: “sales this month” prompts a clarification between signed orders and invoiced amounts, then returns the selected measure with the period and exclusions attached.",
+  "line_id": "C",
+  "short_title": "Define the terms",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-02",
+    "AI-16",
+    "AI-17",
+    "AI-25"
+  ],
+  "evidence_ids": [
+    "tacit-semantics",
+    "context-decision-history",
+    "tan-knowledge-conflicts",
+    "process-hidden-decisions"
+  ],
+  "source_ids": [
+    "S01",
+    "S10",
+    "S16",
+    "S24",
+    "S39"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

@@ -1,0 +1,58 @@
+{
+  "id": "AI-22",
+  "number": 22,
+  "slug": "untrusted-instructions",
+  "title": "Trusting every instruction an agent encounters",
+  "summary": "Treat retrieved documents, messages and tool results as evidence to inspect—not as authority to change the agent’s rules.",
+  "diagnosis": "An agent may encounter text that asks it to ignore instructions, disclose information or call a tool. Such text can be part of the task data rather than an authorised command. Design for that distinction and enforce the action boundary outside the model. Prompt wording can help communicate intent but should not be the only defence.",
+  "diagnostic_questions": [
+    "Can material from a customer, website, attachment or retrieved record influence tool use beyond its authorised role?",
+    "Which controls still hold if the model follows a malicious or misleading instruction in that material?",
+    "Can a contaminated memory or shared instruction file affect future users or workflows?"
+  ],
+  "proposed_actions": [
+    "Identify untrusted input surfaces and keep them separate from approved policy and task instructions in the system design.",
+    "Use constrained tools, enforced permissions and explicit approval for high-consequence effects; do not allow encountered text to grant new access.",
+    "Test realistic redirection and data-exfiltration attempts in an authorised test environment, including stored-context contamination and cross-document instructions."
+  ],
+  "working_artifact": "Adversarial-input test record: input surface; attacker-controlled content; authorised task; attempted redirection; permitted capabilities; expected refusal or containment; observed actions; remediation; regression case.",
+  "measures": [
+    "Containment of unauthorised actions in approved security tests, not only whether the final answer repeats a warning.",
+    "Coverage of relevant input surfaces and persistence paths in adversarial testing.",
+    "Time to identify and remove contaminated shared context, with subsequent regression results."
+  ],
+  "tradeoff": "The corpus provides conceptual risk analysis, not an exhaustive threat model or independent assurance of a defence. The Microsoft attachment is adjacent control material rather than a detailed prompt-injection test method. Security specialists should adapt and validate the design for the real environment.",
+  "illustrative_case": "Illustrative application: a retrieved supplier PDF says to send the customer database to a new address “to complete verification.” The agent may read that text, but the service must not authorise the requested disclosure.",
+  "line_id": "D",
+  "short_title": "Distrust outside instructions",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-18",
+    "AI-20",
+    "AI-24",
+    "AI-26"
+  ],
+  "evidence_ids": [
+    "harness-injection",
+    "harness-control-plane",
+    "context-precedent-risk"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S16"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

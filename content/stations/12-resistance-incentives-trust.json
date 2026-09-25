@@ -1,0 +1,61 @@
+{
+  "id": "AI-12",
+  "number": 12,
+  "slug": "resistance-incentives-trust",
+  "title": "Treating resistance as a training problem",
+  "summary": "Address trust, incentives, workload and role uncertainty rather than assume another course will solve adoption.",
+  "diagnosis": "People may avoid a system because it previously failed, increases checking work, threatens their status or conflicts with how performance is rewarded. They may also have legitimate concerns about confidentiality or customer impact. Find the specific obstacle before designing the intervention. Honest uncertainty about role changes is more useful than an unsupported promise that nothing will change.",
+  "diagnostic_questions": [
+    "What happened during previous pilots, and can employees see how the current design differs?",
+    "Who gains from the change and who absorbs extra work, scrutiny or uncertainty?",
+    "Do incentives reward better outcomes and shared learning, or merely visible tool use and individual output?"
+  ],
+  "proposed_actions": [
+    "Interview users and non-users about real tasks, prior failures and perceived costs; separate training, access, design and trust problems.",
+    "Explain what is known and unknown about roles, decision authority and workforce implications; involve employees in redesigning the work.",
+    "Protect practice time, recognise useful corrections and make it safe to report defects or workload increases without being labelled anti-AI."
+  ],
+  "working_artifact": "Adoption diagnosis log: affected role; practical friction; prior experience; workload change; incentive conflict; concern; proposed response; owner; follow-up evidence. Keep personal feedback appropriately restricted.",
+  "measures": [
+    "Voluntary repeat use for suitable tasks and abandonment reasons, interpreted together with quality.",
+    "Change in review effort, concentration time and workload distribution across roles.",
+    "Evidence that reported issues are fixed and communicated back, rather than only counting training completion."
+  ],
+  "tradeoff": "Neither task-automation scores nor optimistic essays justify certainty about jobs. Avoid psychological labels for employees. Successful adoption may require changing the system or the target workflow, not changing the user’s attitude.",
+  "illustrative_case": "Illustrative application: a team stops using a drafting assistant because every output needs line-by-line correction and managers still expect higher volume. Better incentives and a narrower reliable use case matter more than a second prompting workshop.",
+  "line_id": "B",
+  "short_title": "Rebuild trust",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-07",
+    "AI-09",
+    "AI-13",
+    "AI-28"
+  ],
+  "evidence_ids": [
+    "evans-jobs",
+    "octopus-context-culture",
+    "brooks-workload"
+  ],
+  "source_ids": [
+    "S01",
+    "S04",
+    "S07",
+    "S34"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      17,
+      29,
+      30,
+      31
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

@@ -1,0 +1,61 @@
+{
+  "id": "AI-28",
+  "number": 28,
+  "slug": "review-capacity-and-throughput",
+  "title": "Generating work faster than people can check and use it",
+  "summary": "Plan the capacity to review, accept and use output—not just the capacity to generate it.",
+  "diagnosis": "Faster generation can move the constraint into testing, expert review, publication or customer adoption. Teams may then accumulate unfinished work or approve too quickly to keep up. Measure the queue from proposal to accepted use and decide which checking can be automated, which needs expertise and how demand should be limited while that capacity is developed.",
+  "diagnostic_questions": [
+    "Where does generated work wait, and how much is discarded or rewritten before use?",
+    "Do reviewers have time and evidence to detect the failures they are responsible for catching?",
+    "Has automation removed the practice through which future reviewers would learn?"
+  ],
+  "proposed_actions": [
+    "Map the acceptance path and review capacity before increasing generation volume; include downstream use and release gates.",
+    "Automate suitable objective checks, reduce unnecessary output and prioritise work by value rather than pushing every artifact into a human queue.",
+    "Staff and protect expert review, maintain supervised learning opportunities and throttle generation when meaningful inspection cannot keep pace."
+  ],
+  "working_artifact": "Accepted-work flow board: proposed output; automated checks; expert review; corrections; final acceptance; deployment/use; queue age; owner; rejection reason; review minutes; downstream result.",
+  "measures": [
+    "Accepted and used output per period, with rejected or abandoned volume visible.",
+    "Queue age, work in progress, review effort and consequential defects escaping review.",
+    "Reviewer workload and demonstrated detection quality, not just number of approvals per hour."
+  ],
+  "tradeoff": "Human review is not a universal solution, and code generation is not the same as software delivery. A second AI reviewer may help but can share the original system’s blind spots. Calibrate checks to the failure mechanism rather than use review theatre to preserve output speed.",
+  "illustrative_case": "Illustrative application: an engineering team generates more changes but every change still needs a scarce manual acceptance test. Improving testability or narrowing the change stream may create more completed value than further generation speed.",
+  "line_id": "E",
+  "short_title": "Plan review capacity",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-05",
+    "AI-09",
+    "AI-13",
+    "AI-29"
+  ],
+  "evidence_ids": [
+    "every-review-work",
+    "blomfield-review-apprenticeship",
+    "choudary-judgement",
+    "brooks-workload"
+  ],
+  "source_ids": [
+    "S01",
+    "S03",
+    "S18",
+    "S34",
+    "S35"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      25,
+      30
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

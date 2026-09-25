@@ -1,0 +1,16 @@
+{
+  "id": "twelve-rubrics-traces",
+  "source_id": "S36",
+  "type": "solution",
+  "title": "Connect stored traces with rubrics and expertise",
+  "text": "The twelve-factor note includes evaluation rubrics, retained operational traces and encoded expertise as parts of a learning system. Together they suggest that trace collection is useful only when the organisation can interpret outcomes and revise a tested process.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Design doctrine, not evidence that additional data automatically compounds business advantage. Sensitive traces need purpose and retention limits.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

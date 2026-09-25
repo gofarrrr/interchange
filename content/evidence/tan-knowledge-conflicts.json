@@ -1,0 +1,16 @@
+{
+  "id": "tan-knowledge-conflicts",
+  "source_id": "S39",
+  "type": "diagnosis",
+  "title": "Knowledge retrieval needs an arbitration process",
+  "text": "Tan’s talk explicitly asks what should be recorded, how it should be linked, what stays in active memory and who resolves contradictions. These questions are useful even without adopting his particular personal system: retrieval cannot choose the organisation’s authority hierarchy for it.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Personal-system account. The talk’s suggestion that custody itself is a sufficient security model is not adopted.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

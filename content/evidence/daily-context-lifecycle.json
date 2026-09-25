@@ -1,0 +1,16 @@
+{
+  "id": "daily-context-lifecycle",
+  "source_id": "S05",
+  "type": "solution",
+  "title": "Govern edits to context as well as access to it",
+  "text": "The addendum discusses information lifecycle and authority to edit, approve or retire shared context. A company can have accurate retrieval and still produce bad answers when an unreviewed definition or obsolete instruction is promoted into its common knowledge layer.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Compiler synthesis, not a proven vendor capability or a fully specified information-governance standard.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

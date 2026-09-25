@@ -1,0 +1,16 @@
+{
+  "id": "foss-make-buy",
+  "source_id": "S06",
+  "type": "diagnosis",
+  "title": "Provider dependence can increase as a system becomes specialised",
+  "text": "Foss applies the make-or-buy question to AI itself: company-specific knowledge and integrations can create dependence on a provider even as technical access becomes easier. Procurement should examine adaptation, control and switching costs rather than compare the initial service fee alone.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Theoretical mechanism. It does not establish that internal development is inherently preferable.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

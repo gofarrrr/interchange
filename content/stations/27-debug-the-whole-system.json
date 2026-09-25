@@ -1,0 +1,63 @@
+{
+  "id": "AI-27",
+  "number": 27,
+  "slug": "debug-the-whole-system",
+  "title": "Blaming or changing the model without checking the whole system",
+  "summary": "Diagnose model, context, retrieval, tool and orchestration failures separately, then evaluate the complete configuration.",
+  "diagnosis": "The visible symptom appears in the agent’s answer or action, but the cause may be an obsolete rule, wrong source, malformed tool response or orchestration error. A model change can hide the immediate symptom while leaving the underlying defect. Capture enough traceable evidence to reproduce the failure and test the component hypothesis before choosing a remedy.",
+  "diagnostic_questions": [
+    "Did the system receive the right task, authorised evidence and current business rules?",
+    "Were tool calls, responses and state transitions correct, and did the model use them appropriately?",
+    "Can the failing case be reproduced against the exact prior configuration?"
+  ],
+  "proposed_actions": [
+    "Record the model, instructions, context and tool versions together with permitted task traces and outcomes.",
+    "Classify failures by mechanism, form a testable diagnosis and change one relevant element at a time where feasible.",
+    "Rerun the failed cases and broader acceptance suite after any important change, including apparently minor connector or source updates."
+  ],
+  "working_artifact": "Failure investigation record: symptom; affected task; configuration versions; source evidence; tool actions; expected result; causal hypothesis; reproduction; change; regression results; residual uncertainty.",
+  "measures": [
+    "Time from detected failure to a supported diagnosis and verified correction.",
+    "Repeated incidents attributed to the same mechanism after a purported fix.",
+    "End-to-end quality, cost and review burden across version changes, not isolated model benchmark scores."
+  ],
+  "tradeoff": "Do not assume the harness is always more important than the model. The purpose of decomposition is to identify the actual cause. Some failures involve interactions that cannot be reduced to one component; retain that uncertainty rather than force a convenient label.",
+  "illustrative_case": "Illustrative application: an agent appears unable to calculate margin, but the retrieved field contains gross revenue while the prompt assumes net revenue. Replacing the model will not resolve the business-definition mismatch.",
+  "line_id": "E",
+  "short_title": "Debug the whole system",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-18",
+    "AI-19",
+    "AI-25",
+    "AI-33"
+  ],
+  "evidence_ids": [
+    "harness-components",
+    "harness-portability",
+    "blomfield-correction-loop",
+    "newport-end-to-end"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S27",
+    "S35"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

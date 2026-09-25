@@ -1,0 +1,59 @@
+{
+  "id": "AI-01",
+  "number": 1,
+  "slug": "licences-are-not-strategy",
+  "title": "Buying AI licences and calling it a strategy",
+  "summary": "Define the business change before treating tool access as progress.",
+  "diagnosis": "A rollout plan is substituting for a business hypothesis when it names licences, training and usage targets but cannot identify the work that should change. The missing decision is not necessarily which technology to buy. It may be who receives the benefit, what constraint matters and who can change the process. Separate exploratory access from a committed business improvement programme.",
+  "diagnostic_questions": [
+    "Which business outcome is this initiative meant to change, for whom, and against what baseline?",
+    "Which workflow, decision or service will work differently—not merely faster within the same step?",
+    "Who owns the benefit and can change the process, staffing priorities or service design?"
+  ],
+  "proposed_actions": [
+    "Write a one-page use-case charter naming the problem, affected users, current baseline, proposed change and accountable business owner.",
+    "Choose a bounded workflow and state what evidence would justify continuing, changing or stopping; keep a separate budget for open-ended learning.",
+    "Compare AI with process simplification, existing software and doing nothing before committing to a delivery architecture."
+  ],
+  "working_artifact": "Use-case charter: business problem; customer or internal user; workflow boundary; baseline; intended outcome; alternative approaches; owner; dependencies; experiment budget; decision date; stop criteria.",
+  "measures": [
+    "Share of funded initiatives with a named outcome owner and an observable baseline, using all funded initiatives as the denominator.",
+    "Change in the existing functional KPI, accompanied by quality, review effort and adoption context.",
+    "Time from a business question to a decision supported by real workflow evidence, not to a demonstration."
+  ],
+  "tradeoff": "A strategy need not forecast everything. Exploratory work can be worthwhile without a mature financial case, but its learning objective and affordable downside should be explicit. Conversely, a polished charter is not proof that the proposed change will work.",
+  "illustrative_case": "Illustrative application: a support team replaces “deploy an assistant to everyone” with “reduce the time to a correct resolution for two recurring issue types without increasing repeat contacts.” Tool selection becomes one decision inside that hypothesis.",
+  "line_id": "A",
+  "short_title": "Strategy, not licences",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-03",
+    "AI-05",
+    "AI-07",
+    "AI-30"
+  ],
+  "evidence_ids": [
+    "levie-outcomes",
+    "reshuffle-coordination",
+    "effectuation-bounded-experiment"
+  ],
+  "source_ids": [
+    "S01",
+    "S02",
+    "S11",
+    "S28"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      5,
+      12
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

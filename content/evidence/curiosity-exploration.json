@@ -1,0 +1,16 @@
+{
+  "id": "curiosity-exploration",
+  "source_id": "S32",
+  "type": "counterpoint",
+  "title": "Not every valuable exploration starts with a mature KPI",
+  "text": "Pearson’s curiosity essay presents interestingness as an early search signal when the eventual application is not yet known. As a counterweight to rigid portfolio scoring, it supports reserving some bounded exploration space rather than requiring every learning activity to promise immediate financial return.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual essay, not evidence that curiosity alone predicts commercial value. Exploration still needs resource boundaries and a learning record.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

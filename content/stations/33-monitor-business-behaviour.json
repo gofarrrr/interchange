@@ -1,0 +1,62 @@
+{
+  "id": "AI-33",
+  "number": 33,
+  "slug": "monitor-business-behaviour",
+  "title": "Waiting for users to tell you something has broken",
+  "summary": "Monitor whether the service is doing the job correctly, not merely whether it is online.",
+  "diagnosis": "A live endpoint can return wrong, stale or unusable results. Useful observability connects task outcomes to data freshness, tool failures, costs and human review. Alerts need accountable responders and actions; otherwise telemetry is only a growing archive. Collect enough evidence to diagnose failures without turning logs into an uncontrolled copy of sensitive company information.",
+  "diagnostic_questions": [
+    "Which failures could remain invisible while requests continue to succeed technically?",
+    "What would detect stale data, silent quality loss, rising correction time or unusual spending?",
+    "Who receives each alert, how will they investigate it and what are they allowed to stop?"
+  ],
+  "proposed_actions": [
+    "Instrument task-level outcomes and key dependencies, including freshness, tool effects, cost and review queues; distinguish technical completion from acceptance.",
+    "Define service expectations and alerts tied to actionable failure conditions, with named responders and an escalation route.",
+    "Use sampled expert checks and relevant regression tests where quality is not directly observable; protect and limit sensitive traces."
+  ],
+  "working_artifact": "Operational dashboard specification: task outcome; system status; data freshness; quality sample; tool errors; cost; review queue; configuration version; alert threshold; responder; playbook; privacy controls.",
+  "measures": [
+    "Time from an injected or real failure to detection, diagnosis and containment.",
+    "Accepted-task quality and error patterns over time, including difficult-case and source-change segments.",
+    "Alert usefulness and unowned alerts, alongside retention and access compliance for monitoring data."
+  ],
+  "tradeoff": "Logs are evidence, not learning by themselves. A model’s confidence or a user’s continued use does not prove correctness. Avoid setting universal alert thresholds without understanding baseline variation and the consequences of missed detection.",
+  "illustrative_case": "Illustrative application: a daily data refresh stops but the agent continues answering from last week’s records. Monitoring freshness and answer provenance catches a failure that service uptime alone would miss.",
+  "line_id": "F",
+  "short_title": "Monitor the work",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-05",
+    "AI-16",
+    "AI-27",
+    "AI-34"
+  ],
+  "evidence_ids": [
+    "harness-components",
+    "blomfield-correction-loop",
+    "rao-feedback"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S35",
+    "S38"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36,
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

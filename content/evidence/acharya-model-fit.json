@@ -1,0 +1,16 @@
+{
+  "id": "acharya-model-fit",
+  "source_id": "S19",
+  "type": "counterpoint",
+  "title": "Model selection is a task experiment, not a brand preference",
+  "text": "Acharya’s discussion calls for practical familiarity with different models and connects selection to the task’s upside and verifiability. A useful application is to compare configurations on the same accepted-work definition rather than presume the cheapest or most capable model is always the economical choice.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Investor/practitioner opinion in supplied summary. Model-specific capability and cost claims are not treated as current facts.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

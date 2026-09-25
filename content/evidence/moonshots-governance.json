@@ -1,0 +1,16 @@
+{
+  "id": "moonshots-governance",
+  "source_id": "S25",
+  "type": "solution",
+  "title": "Governance surrounds the operating loop",
+  "text": "The proposed architecture includes evaluations, searchable logs, constrained actions, review queues and rollback around sensing and execution. It is useful as a completeness check: a workflow is not governed merely because a person approved its original launch.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "A proposed architecture, not evidence that the complete system has been independently validated or that every action is reversible.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

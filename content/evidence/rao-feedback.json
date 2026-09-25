@@ -1,0 +1,16 @@
+{
+  "id": "rao-feedback",
+  "source_id": "S38",
+  "type": "diagnosis",
+  "title": "Action can grow faster than the ability to understand its effects",
+  "text": "Rao’s conceptual distinction concerns whether acting generates usable information or instead outruns feedback and creates external costs. Applied to an agent, the question is how much it can change before the organisation can observe, interpret and contain an error.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "A conceptual lens, not a quantitative law. The practical limits and indicators proposed here require local testing.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

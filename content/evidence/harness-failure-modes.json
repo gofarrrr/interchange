@@ -1,0 +1,16 @@
+{
+  "id": "harness-failure-modes",
+  "source_id": "S14",
+  "type": "diagnosis",
+  "title": "Integrations fail through partial effects, not just bad answers",
+  "text": "The supplied failure dossier includes unsafe retries, partial transactions, duplicate actions, poisoned context, weak identity boundaries and missing recovery. These are useful test categories because a superficially successful response can coexist with a damaged record or an action executed twice.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Editorial risk analysis. It proposes mechanisms to investigate, not measured failure frequencies.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

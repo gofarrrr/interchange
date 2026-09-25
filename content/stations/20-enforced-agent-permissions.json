@@ -1,0 +1,60 @@
+{
+  "id": "AI-20",
+  "number": 20,
+  "slug": "enforced-agent-permissions",
+  "title": "Confusing instructions with access controls",
+  "summary": "Enforce what an agent may read and do in software, using identities and permissions appropriate to its job.",
+  "diagnosis": "A prompt expresses an intended behaviour; it does not remove a capability from the surrounding system. Scope the agent’s actual access, distinguish the requesting user from the service identity and make consequential actions inspectable and attributable. Separate read, write, send, delete and spending authority rather than treating a connector as a single undifferentiated permission.",
+  "diagnostic_questions": [
+    "What can the agent actually do with its current credentials, regardless of its instructions?",
+    "Whose authority is represented by each action, and can it exceed the requesting user’s permitted scope?",
+    "Can access be revoked or narrowed without relying on the agent to cooperate?"
+  ],
+  "proposed_actions": [
+    "Create a capability matrix by task and identity; grant only the data and actions needed for the approved job.",
+    "Enforce permissions at the service and tool boundary, with appropriate short-lived credentials and approval for consequential actions.",
+    "Test denied actions and cross-user cases; keep an attributable record of the requester, agent identity, approved scope and executed effect."
+  ],
+  "working_artifact": "Permission matrix: workflow; requester role; agent identity; resource; read/write/send/delete/spend capability; limit; approval rule; credential lifetime; audit record; revocation owner.",
+  "measures": [
+    "Share of live agents with reviewed, purpose-specific permissions and identifiable service ownership.",
+    "Successful enforcement of denial cases in controlled tests, including cross-user and cross-tenant boundaries where relevant.",
+    "Time to revoke access and detect an action outside the approved scope."
+  ],
+  "tradeoff": "Least privilege should not become zero useful access. The aim is enough authority to perform a defined task, with the boundary enforced outside generated text. An approval control is meaningful only when the approver can understand and reject the action.",
+  "illustrative_case": "Illustrative application: a service may draft a customer credit but cannot execute it above a configured amount without a separately authenticated approval. An instruction in the customer’s email cannot raise that limit.",
+  "line_id": "D",
+  "short_title": "Enforce permissions",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-10",
+    "AI-21",
+    "AI-22",
+    "AI-24"
+  ],
+  "evidence_ids": [
+    "harness-control-plane",
+    "daily-identity"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S14"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      19,
+      23,
+      35,
+      38,
+      41
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 2
+}

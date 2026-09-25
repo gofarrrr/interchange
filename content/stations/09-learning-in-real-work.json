@@ -1,0 +1,63 @@
+{
+  "id": "AI-09",
+  "number": 9,
+  "slug": "learning-in-real-work",
+  "title": "Expecting licences and a training session to change how people work",
+  "summary": "Develop role-specific capability through real tasks, feedback and protected practice.",
+  "diagnosis": "A generic course can introduce a tool without helping someone recognise a useful task, check the output or recover from a failure. Users, subject-matter experts, builders, reviewers and operators need different competencies. Training should therefore be connected to the workflow people will actually perform and the responsibility they will carry, not measured only by attendance.",
+  "diagnostic_questions": [
+    "What must each role be able to do safely and competently after training?",
+    "Do employees have approved tools, useful data, examples and time to practise on relevant work?",
+    "Where can they get help when an output is plausible but wrong or a task crosses their expertise?"
+  ],
+  "proposed_actions": [
+    "Define practical skill expectations by role, including verification, escalation and data handling—not just prompting.",
+    "Use supervised work examples, peer clinics and reusable case libraries; protect learning time in workloads.",
+    "Check whether people can perform and critique representative tasks, then update the support material from recurring misunderstandings."
+  ],
+  "working_artifact": "Role-based learning plan: task examples; required judgement; permitted actions; verification method; failure cases; practice environment; mentor/help channel; protected time; evidence of practical competence.",
+  "measures": [
+    "Task quality and correction ability on representative exercises, not self-reported confidence alone.",
+    "Time to independent, appropriate use within each role’s authority boundary.",
+    "Recurring help requests, abandonment and review burden, used to improve training rather than rank employees by token use."
+  ],
+  "tradeoff": "Cross-functional assistance can make unfamiliar tasks accessible without creating professional expertise. Preserve routes to expert review and supervised practice. Avoid treating employees’ concerns or access problems as evidence that they lack motivation.",
+  "illustrative_case": "Illustrative application: a sales analyst learns to inspect generated queries and explain the meaning of the result; a service operator learns to detect failures and pause the job. They do not need identical courses or identical access.",
+  "line_id": "B",
+  "short_title": "Learn in real work",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-10",
+    "AI-12",
+    "AI-13",
+    "AI-17"
+  ],
+  "evidence_ids": [
+    "cybernetic-bounded-evidence",
+    "openai-use-not-output",
+    "daily-citizen-lifecycle",
+    "choudary-judgement"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S12",
+    "S18",
+    "S40"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      17,
+      29,
+      30,
+      31
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

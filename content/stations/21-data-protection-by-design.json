@@ -1,0 +1,59 @@
+{
+  "id": "AI-21",
+  "number": 21,
+  "slug": "data-protection-by-design",
+  "title": "Making data protection depend on employees remembering the rules",
+  "summary": "Make approved data handling understandable and supported by technical controls across the information lifecycle.",
+  "diagnosis": "Data protection can fail at input, retrieval, output, logs, persistent memory or sharing—not only when someone forgets to remove a name. Identify the permitted purpose and audience at each stage. Account settings and contracts matter, but they need to be connected to an approved working path that people can actually use.",
+  "diagnostic_questions": [
+    "Which services and accounts receive company information, and who has checked their permitted use and retention arrangements?",
+    "Can sensitive information move from a legitimate read into an inappropriate output, trace or shared memory?",
+    "Are collection, access, retention, correction and deletion responsibilities assigned?"
+  ],
+  "proposed_actions": [
+    "Classify the data and approved purposes for each workflow; provide supported accounts and connectors rather than rely on informal personal use.",
+    "Apply suitable access restrictions and automated input/output checks, and minimise what is retained in traces and memory.",
+    "Define retention and deletion processes with responsible specialists, then test the real data path—including logs, cached copies and downstream destinations."
+  ],
+  "working_artifact": "Data-flow and lifecycle record: input; sensitivity; purpose; service/account; access; transformations; output recipients; logs; memory; retention; deletion/correction route; responsible owner.",
+  "measures": [
+    "Coverage of live workflows by a reviewed data-flow record and approved service/account arrangement.",
+    "Detected leakage or overexposure in controlled tests and operational incidents, without exposing sensitive test data in dashboards.",
+    "Completion of retention, access-review and deletion obligations for the defined data population."
+  ],
+  "tradeoff": "Removing names alone does not establish that information is non-sensitive. Local hosting and ownership also do not automatically make a system secure. Legal or contractual requirements depend on the actual use and jurisdiction and require appropriate specialist review; this page is not a compliance determination.",
+  "illustrative_case": "Illustrative application: an assistant legitimately reads an employee record but must not include salary details in a broadly shared incident summary or retain them in an unrestricted debugging log.",
+  "line_id": "D",
+  "short_title": "Protect data by design",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-11",
+    "AI-16",
+    "AI-20",
+    "AI-33"
+  ],
+  "evidence_ids": [
+    "daily-context-lifecycle",
+    "context-precedent-risk",
+    "tan-knowledge-conflicts"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S16",
+    "S39"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

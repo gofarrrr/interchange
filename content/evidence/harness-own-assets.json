@@ -1,0 +1,16 @@
+{
+  "id": "harness-own-assets",
+  "source_id": "S14",
+  "type": "solution",
+  "title": "Contract for control of the assets needed to operate and improve",
+  "text": "The expanded note identifies policies, company context, evaluations, tool semantics and operational records as assets to own or contractually control. The point is practical continuity: another competent team needs enough information and access to run, diagnose and change the system.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Compiler recommendation, not legal advice or a claim that every component should be built internally.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

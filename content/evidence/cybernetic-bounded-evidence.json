@@ -1,0 +1,16 @@
+{
+  "id": "cybernetic-bounded-evidence",
+  "source_id": "S12",
+  "type": "observation",
+  "title": "Task-level help does not establish role replacement",
+  "text": "The supplied Cybernetic Teammate research note reports a randomised product-innovation exercise in which AI-assisted individuals could perform comparably to unassisted teams on assessed ideas. This is a useful example of testing work quality rather than counting usage, while preserving the boundary between an exercise and sustained organisational performance.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Original study not retrieved here. Working-paper and journal versions differ; no numerical effects are reproduced. The exercise does not establish implementation value or permanent expertise.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

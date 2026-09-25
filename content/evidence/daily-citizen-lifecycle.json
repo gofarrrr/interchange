@@ -1,0 +1,16 @@
+{
+  "id": "daily-citizen-lifecycle",
+  "source_id": "S05",
+  "type": "solution",
+  "title": "Enable domain experts without pretending all builders are engineers",
+  "text": "The video-derived note distinguishes reusable skills and subject-matter intent from engineering responsibility, and calls for a governed development lifecycle for non-technical builders. This supports a division between contributing business knowledge, experimenting safely and accepting responsibility for a production service.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Source-note synthesis; it does not specify a complete production standard. The practical promotion gates in this knowledge base are proposed applications.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

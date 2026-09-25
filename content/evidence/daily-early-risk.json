@@ -1,0 +1,16 @@
+{
+  "id": "daily-early-risk",
+  "source_id": "S05",
+  "type": "solution",
+  "title": "Build a route for participation from risk and support functions",
+  "text": "The source note places Legal, HR and IT involvement alongside rollout rather than as a final rejection step. The useful lesson is organisational: agree how useful experimentation can proceed and what information these teams need before a prototype becomes an operating dependency.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner guidance, not a statement of legal sufficiency or a universal approval procedure.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

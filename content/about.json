@@ -1,0 +1,62 @@
+{
+  "id": "about-interchange",
+  "title": "A living field guide.",
+  "intro": "36 connected problems in AI transformation. A place to find useful perspectives, ask better questions and follow the original sources.",
+  "origins": {
+    "heading": "Origins & inspiration.",
+    "intro": "INTERCHANGE started with two posts on X about the mistakes organisations make with AI transformation.",
+    "credits": [
+      {
+        "id": "origin-mark-ajzenstadt",
+        "author": "Mark Ajzenstadt",
+        "handle": "@mardehaym",
+        "title": "30 mistakes I see enterprises make with AI transformation",
+        "list_size": 30,
+        "url": "https://x.com/mardehaym/status/2103172822067466587"
+      },
+      {
+        "id": "origin-alex-lieberman",
+        "author": "Alex Lieberman",
+        "handle": "@businessbarista",
+        "title": "37 mistakes companies make with AI transformation",
+        "list_size": 37,
+        "url": "https://x.com/businessbarista/status/2102763567422251107"
+      }
+    ],
+    "synthesis": "I used these lists as a starting point, bringing overlapping themes together and reorganising and expanding them into 36 stations across six lines. INTERCHANGE adds a curated structure, commentary and links to further reading; it does not claim the original ideas or source material as its own.",
+    "credit_note": "Credit for the original posts belongs to their authors. Attribution acknowledges inspiration; it does not imply their endorsement of, or participation in, INTERCHANGE."
+  },
+  "living_guide": {
+    "heading": "A living guide, not a finished checklist.",
+    "paragraphs": [
+      "I keep this guide open to revision. When I find a useful source, I look for what it adds: a missing nuance, a different lens, a counterargument or another way to approach the problem. I use that material to expand, qualify or correct the relevant stations.",
+      "The 36 stations are the current organising structure, not 36 final answers. New sources do not have to agree with what is already here. Useful disagreements and the circumstances in which different approaches work belong in the guide too."
+    ],
+    "principle": "The goal is deeper understanding, not a longer bibliography."
+  },
+  "editorial_approach": {
+    "heading": "What earns a place here.",
+    "items": [
+      {
+        "title": "A new lens.",
+        "text": "A source reveals an overlooked perspective, a different context or a limitation that changes how a station should be understood."
+      },
+      {
+        "title": "A useful challenge.",
+        "text": "A finding or argument complicates an earlier conclusion. It should qualify the station, not be hidden because it disagrees."
+      },
+      {
+        "title": "A practical alternative.",
+        "text": "A case or method offers another way to approach the problem, with enough context to explain when it may help and when it may not."
+      }
+    ],
+    "closing": "Each addition should make its contribution clear, keep the original author visible and give the reader a direct route to the source. Source claims, interpretation and proposed actions remain distinct."
+  },
+  "_provenance": {
+    "credit_basis": "The site owner identified these exact two posts as the source lists used to create the 36-station synthesis. The two list texts were supplied earlier in the conversation.",
+    "identity_check": "Search-index results for the exact X status URLs confirmed both display names, handles and opening titles on 2026-09-25.",
+    "access_limit": "Direct fetching of both X status pages returned HTTP 403. Full post text and exact publication dates were not independently re-read or verified in this update. No claim of endorsement, partnership or independent corroboration is made.",
+    "living_guide_basis": "The site owner described a personal intention to update relevant stations with useful new sources, nuances, lenses and approaches. This is not a request for scheduled monitoring.",
+    "research_counts": "These are origin credits, not new station-evidence records. Existing research-source and evidence counts are unchanged."
+  }
+}

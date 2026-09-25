@@ -1,0 +1,13 @@
+{
+  "id": "S14",
+  "title": "The enterprise AI agent harness matters more than the model",
+  "author_or_organization": "Ian Thomas / Diginomica; additional corpus analysis",
+  "source_type": "technical practitioner analysis",
+  "date_as_supplied": "2026-06-25",
+  "original_url": "https://diginomica.com/enterprise-ai-agent-harness-matters-more-model",
+  "limitations": "Supplied analytical note, not original article text. Risk dossiers and proposed enterprise architecture include compiler extensions, explicitly labelled where used. No universal model-versus-harness performance ranking established.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "not-verified"
+}

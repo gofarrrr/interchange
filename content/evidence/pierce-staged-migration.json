@@ -1,0 +1,16 @@
+{
+  "id": "pierce-staged-migration",
+  "source_id": "S22",
+  "type": "solution",
+  "title": "Migration can be staged around an operating unit",
+  "text": "The guide proposes moving one department at a time and stabilising its daily work before proceeding. That is an example of a bounded migration unit and adoption checkpoint. It suggests asking what must remain interoperable while old and new workflows coexist.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "A proposed delivery pattern, not comparative evidence that departmental sequencing is always best; value-stream sequencing may be more appropriate.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

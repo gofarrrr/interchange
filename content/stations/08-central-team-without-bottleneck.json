@@ -1,0 +1,59 @@
+{
+  "id": "AI-08",
+  "number": 8,
+  "slug": "central-team-without-bottleneck",
+  "title": "Building a central AI team that becomes everyone’s bottleneck",
+  "summary": "Centralise reusable support and essential controls while keeping local outcomes and workflow knowledge close to the work.",
+  "diagnosis": "Central expertise is valuable, but a central team asked to discover, build, approve and support every use case becomes a queue. Unrestricted decentralisation creates a different problem: duplicated integrations, inconsistent controls and unowned applications. Distinguish shared capabilities from local delivery decisions, and make the route for obtaining help explicit.",
+  "diagnostic_questions": [
+    "Which requests genuinely need specialist central work, and which are waiting for permission or reusable components?",
+    "Can business teams build within a supported path without bypassing controls?",
+    "Who maintains shared context, evaluation tools and integrations after the first team benefits?"
+  ],
+  "proposed_actions": [
+    "Publish a central service catalog with supported platforms, reusable patterns, review services, escalation routes and response expectations.",
+    "Delegate bounded decisions to trained local owners; keep non-negotiable identity, data and release controls common.",
+    "Fund maintenance of shared capabilities and recurring knowledge exchange, not only the visible backlog of new prototypes."
+  ],
+  "working_artifact": "Federated operating model: central services; local responsibilities; approved building paths; required review gates; support capacity; reusable component owners; exception process; knowledge-sharing cadence.",
+  "measures": [
+    "Request lead time by category and proportion resolved through supported self-service.",
+    "Reuse of maintained components, with duplication and support burden measured rather than assumed away.",
+    "Rate of unsupported deployments and unresolved ownership gaps, interpreted without punishing honest reporting."
+  ],
+  "tradeoff": "Federation is not a reason to distribute specialist security or reliability decisions to unprepared teams. Equally, a centre of excellence should not become the exclusive owner of business knowledge. Organisational size and risk may justify different degrees of centralisation.",
+  "illustrative_case": "Illustrative application: the central team provides identity, connectors and evaluation tooling; a finance process owner supplies reconciliation rules and acceptance cases. Shared support accelerates local delivery without transferring all finance judgement to the platform team.",
+  "line_id": "B",
+  "short_title": "Avoid the bottleneck",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-07",
+    "AI-09",
+    "AI-10",
+    "AI-36"
+  ],
+  "evidence_ids": [
+    "levie-operating-model",
+    "octopus-guardrails",
+    "octopus-context-culture",
+    "every-company-agents"
+  ],
+  "source_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      11
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

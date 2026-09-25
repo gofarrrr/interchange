@@ -1,0 +1,16 @@
+{
+  "id": "context-decision-history",
+  "source_id": "S16",
+  "type": "diagnosis",
+  "title": "Current records omit why a decision was made",
+  "text": "The context-graphs note distinguishes operational objects and their current state from the evidence, policy, exceptions and approvals behind a decision. That distinction exposes missing context in many integrations: two identical-looking outcomes may have been produced under different rules.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Venture-capital thesis represented in supplied analysis; not evidence that building a graph guarantees better decisions.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

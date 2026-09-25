@@ -1,0 +1,31 @@
+{
+  "base": "/field-guide/",
+  "output": "dist-subpath",
+  "transport": "Real Node HTTP server + Python urllib",
+  "tests": [
+    {
+      "test": "All generated canonical pages return HTML with HTTP 200",
+      "count": 58,
+      "status": "passed"
+    },
+    {
+      "test": "Five shared assets return their correct MIME type",
+      "status": "passed"
+    },
+    {
+      "test": "404, POST 405, HEAD 200 with empty body",
+      "status": "passed"
+    },
+    {
+      "test": "Server exposes output only, not authoring content or source code",
+      "status": "passed"
+    },
+    {
+      "test": "BASE_PATH boundary enforced",
+      "status": "passed"
+    }
+  ],
+  "failures": 0,
+  "browser_HTTP_navigation": "Not claimed by this transport check",
+  "external_sources": "Not fetched"
+}

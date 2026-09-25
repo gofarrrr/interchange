@@ -1,0 +1,16 @@
+{
+  "id": "every-visible-delegation",
+  "source_id": "S03",
+  "type": "solution",
+  "title": "Keep delegated decisions visible before execution",
+  "text": "The companion material describes an operating manual and a visible review surface for proposed email or customer actions. A person owns exceptional cases and approvals; the agent’s intermediate work remains inspectable. This offers a concrete alternative to an opaque personal automation.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "An attributed workflow pattern, not a tested guarantee. Visibility must be paired with reviewer capacity and enforceable permissions.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

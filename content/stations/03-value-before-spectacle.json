@@ -1,0 +1,68 @@
+{
+  "id": "AI-03",
+  "number": 3,
+  "slug": "value-before-spectacle",
+  "title": "Choosing projects for spectacle rather than business value",
+  "summary": "Choose useful problems and make room for bounded discovery—not just impressive demonstrations.",
+  "diagnosis": "A project can be visually impressive yet disconnected from a meaningful constraint. A small task can also be too small to matter. The decision should consider frequency, consequence, feasibility, adoption effort and the ability to turn a local gain into a better service. Separate improvements to current work from experiments that may reveal an entirely new capability.",
+  "diagnostic_questions": [
+    "Who will repeatedly use the result, and what work becomes easier or newly possible?",
+    "Does the proposed change relieve the current constraint or produce more work for another queue?",
+    "Is this an optimisation project with a known outcome or an exploration whose first deliverable is information?"
+  ],
+  "proposed_actions": [
+    "Build a short opportunity portfolio scored against customer value, workflow friction, risk, data access and practical ownership; keep scoring transparent rather than pretend it is precise prediction.",
+    "Reserve a bounded exploration lane for ideas that do not yet have a stable business case; ask what each experiment taught.",
+    "Prefer a credible route from a small win to a useful operating change over isolated demos that cannot be maintained or adopted."
+  ],
+  "working_artifact": "Opportunity card: user; recurring problem; constraint; value hypothesis; current alternatives; feasibility uncertainty; risk; adoption cost; reusable learning; next decision. Include a separate label for exploratory work.",
+  "measures": [
+    "Proportion of tested opportunities reaching recurring, accepted use—not merely demonstration completion.",
+    "Bottleneck movement and downstream workload after each local improvement.",
+    "For exploration, decision-relevant uncertainties resolved within the agreed resource boundary, not invented cash returns."
+  ],
+  "tradeoff": "Quick wins can build trust, but choosing only easy tasks can avoid the work that matters. Large opportunities should be broken into informative experiments, not rejected simply because their full outcome is distant.",
+  "illustrative_case": "Illustrative application: a flashy autonomous presentation builder competes with a modest tool that finds missing evidence before a customer review. The better first experiment depends on actual delay, quality and user need—not the novelty of the demo.",
+  "line_id": "A",
+  "short_title": "Value over spectacle",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-01",
+    "AI-02",
+    "AI-05",
+    "AI-30"
+  ],
+  "evidence_ids": [
+    "pearson-new-capability",
+    "effectuation-bounded-experiment",
+    "curiosity-exploration"
+  ],
+  "source_ids": [
+    "S01",
+    "S11",
+    "S31",
+    "S32"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      5,
+      12,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

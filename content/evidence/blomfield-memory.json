@@ -1,0 +1,16 @@
+{
+  "id": "blomfield-memory",
+  "source_id": "S35",
+  "type": "observation",
+  "title": "Actual practice can diverge from the official manual",
+  "text": "The notes describe comparing accumulated guidance with advice given in real interactions. That is useful for identifying outdated procedure and exceptions, but the observed advice still needs review before becoming a general rule. Recording more interactions also raises consent and access questions.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "First-party account; does not justify recording all meetings or treating observed practice as approved policy.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

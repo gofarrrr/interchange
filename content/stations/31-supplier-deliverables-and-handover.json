@@ -1,0 +1,58 @@
+{
+  "id": "AI-31",
+  "number": 31,
+  "slug": "supplier-deliverables-and-handover",
+  "title": "Buying external help without clear deliverables, ownership or an exit plan",
+  "summary": "Buy a defined outcome and the ability to operate it, not indefinite dependence on the original supplier.",
+  "diagnosis": "Discovery and implementation can both be worthwhile, but they need different deliverables. A consultant may help identify uncertainty without promising a production build; a production supplier must leave an operable system. Establish what the company will receive, control and be able to maintain before the relationship becomes essential. A handover document without access or tested rebuildability is not enough.",
+  "diagnostic_questions": [
+    "What tangible evidence or decision must discovery deliver before more work is authorised?",
+    "Which code, configuration, context, tests, data and operating records will the company control?",
+    "Could another competent team diagnose and operate the service without the supplier’s private accounts or undocumented knowledge?"
+  ],
+  "proposed_actions": [
+    "Separate discovery, pilot and production commitments with explicit deliverables, acceptance criteria and decision points.",
+    "Agree responsibilities for documentation, access, support, updates, incident response and the relevant usage/ownership rights with appropriate procurement and legal support.",
+    "Test handover: have a different operator reproduce a deployment, run evaluations and perform a recovery exercise using the supplied materials."
+  ],
+  "working_artifact": "Supplier continuity pack: scope; deliverables; acceptance evidence; owned/controlled assets; repository/account access; data rights; support terms; architecture; dependencies; tests; runbooks; handover drill; exit responsibilities.",
+  "measures": [
+    "Acceptance of agreed deliverables against evidence, not billed activity alone.",
+    "Time for an independent competent operator to rebuild, diagnose and restore the service.",
+    "Unresolved single-supplier dependencies and recurring support effort after handover."
+  ],
+  "tradeoff": "Outsourcing can provide useful expertise and capacity; building internally can also create dependence on one employee. Do not treat promotional criticism of consulting firms as comparative evidence. Contract terms and liability allocation require review for the actual arrangement.",
+  "illustrative_case": "Illustrative application: discovery ends with a process map, feasibility evidence, identified data gaps and a costed decision—not merely a larger estimate. Production acceptance additionally requires credentials, tests and a handover that another operator can use.",
+  "line_id": "F",
+  "short_title": "Plan the handover",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-07",
+    "AI-32",
+    "AI-34",
+    "AI-35"
+  ],
+  "evidence_ids": [
+    "harness-own-assets",
+    "foss-make-buy"
+  ],
+  "source_ids": [
+    "S01",
+    "S06",
+    "S14"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      36,
+      37,
+      38
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 2
+}

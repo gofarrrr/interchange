@@ -1,0 +1,16 @@
+{
+  "id": "every-eval-before-runtime",
+  "source_id": "S03",
+  "type": "solution",
+  "title": "Test when a skill should not activate",
+  "text": "Every’s companion workflow notes recommend writing evaluation cases before relying on long-running agents, including situations that should not trigger the skill. The retained artifact is not just a better prompt but trigger rules, realistic cases and reusable lessons from verified failures.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Companion notes point to another Every article; that linked original was not independently opened here.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

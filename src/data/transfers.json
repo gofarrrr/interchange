@@ -1,0 +1,34 @@
+[
+  {
+    "from": "AI-05",
+    "to": "AI-25",
+    "kind": "read-with",
+    "reason": "Business outcomes need explicit acceptance criteria.",
+    "review_status": "proposed",
+    "id": "05-25"
+  },
+  {
+    "from": "AI-10",
+    "to": "AI-20",
+    "kind": "read-with",
+    "reason": "A governed production path includes enforced permissions.",
+    "review_status": "proposed",
+    "id": "10-20"
+  },
+  {
+    "from": "AI-19",
+    "to": "AI-34",
+    "kind": "read-with",
+    "reason": "Integration behaviour needs a recovery plan.",
+    "review_status": "proposed",
+    "id": "19-34"
+  },
+  {
+    "from": "AI-28",
+    "to": "AI-35",
+    "kind": "read-with",
+    "reason": "Review throughput requires an operational owner.",
+    "review_status": "proposed",
+    "id": "28-35"
+  }
+]

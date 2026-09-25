@@ -1,0 +1,16 @@
+{
+  "id": "every-company-agents",
+  "source_id": "S03",
+  "type": "observation",
+  "title": "Personal automation and a maintained company service are different",
+  "text": "Shipper describes moving from personal agents toward agents responsible for team or company jobs, with continuing engineering and maintenance. This offers a concrete explanation for why an individual’s useful experiment still needs a service owner, shared context and ongoing support before others rely on it.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "First-party account from Every; neither a representative enterprise sample nor a guaranteed scale-up pattern.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "harness-injection",
+  "source_id": "S14",
+  "type": "diagnosis",
+  "title": "Retrieved content can compete with authorised instructions",
+  "text": "The compiler’s security analysis includes prompt injection and compromised memory or context. The practical distinction is between content the agent must examine and instructions entitled to govern its actions. Tools should not accept a permission change merely because a document asks the agent to make one.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "A conceptual failure analysis in supplied notes, not independent security testing of any named product.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

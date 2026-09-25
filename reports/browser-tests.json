@@ -1,0 +1,91 @@
+{
+  "environment": "Chromium, isolated-document rendering of the standalone build",
+  "browser_url_navigation": "Not tested: container-managed Chromium blocks URL navigation. HTTP serving tested separately.",
+  "storage_success": "Uses explicit in-memory test double; blocked storage branch tested separately.",
+  "external_source_availability": "Not tested. Source URLs and locators are inherited, not re-verified.",
+  "tests": [
+    {
+      "test": "Homepage renders 36 unique station anchors",
+      "status": "passed"
+    },
+    {
+      "test": "Station hover shows real station copy",
+      "status": "passed"
+    },
+    {
+      "test": "Line focus filters stations without moving geometry",
+      "status": "passed"
+    },
+    {
+      "test": "Keyboard Enter opens canonical station content",
+      "status": "passed"
+    },
+    {
+      "test": "Visible evidence qualifications and original-source deep link",
+      "status": "passed"
+    },
+    {
+      "test": "Unavailable storage has an honest fallback",
+      "status": "passed"
+    },
+    {
+      "test": "Saved-station behavior and route persistence (storage test double)",
+      "status": "passed"
+    },
+    {
+      "test": "Search shortcut, ranking, Escape and result navigation",
+      "status": "passed"
+    },
+    {
+      "test": "Index line filter, text filter and empty state",
+      "status": "passed"
+    },
+    {
+      "test": "Source directory contains and filters 31 supplied public links",
+      "status": "passed"
+    },
+    {
+      "test": "Curated journey opens existing stations",
+      "status": "passed"
+    },
+    {
+      "test": "All 36 station pages open with original-source links",
+      "status": "passed"
+    },
+    {
+      "test": "Hero actions stay clear of route strokes at wide desktop widths",
+      "status": "passed"
+    },
+    {
+      "test": "Reflow at six widths and functional mobile route strip",
+      "status": "passed"
+    },
+    {
+      "test": "Reduced-motion preference disables transitions",
+      "status": "passed"
+    },
+    {
+      "test": "Unknown route has a useful 404 page",
+      "status": "passed"
+    },
+    {
+      "test": "Interactive controls have readable or explicit accessible names",
+      "status": "passed"
+    },
+    {
+      "test": "No-JavaScript text index remains complete",
+      "status": "passed"
+    }
+  ],
+  "javascript_errors": [],
+  "passed": 18,
+  "failed": 0,
+  "not_certified": [
+    "Safari",
+    "Firefox",
+    "real screen-reader workflows",
+    "WCAG compliance",
+    "Astro adapter",
+    "Pagefind binary"
+  ]
+}

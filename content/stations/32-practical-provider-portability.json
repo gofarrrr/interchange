@@ -1,0 +1,62 @@
+{
+  "id": "AI-32",
+  "number": 32,
+  "slug": "practical-provider-portability",
+  "title": "Choosing a provider without understanding the cost of changing it",
+  "summary": "Understand where dependence lives and test a realistic exit path without overengineering portability.",
+  "diagnosis": "A standard API can make a technical connection easy to replace while leaving prompts, tools, evaluations, data formats and commercial rights tied to one provider. Conversely, an elaborate provider-neutral platform may cost more than the flexibility it creates. Identify the dependencies that matter for continuity, bargaining power and future improvement, then test the replacement effort that is actually relevant.",
+  "diagnostic_questions": [
+    "Which assets and behaviours depend on the current provider rather than on the business task itself?",
+    "Can the company export and use the context, configurations, evaluations and records needed to reproduce the service?",
+    "What evidence would justify switching rather than remaining with an adequate existing solution?"
+  ],
+  "proposed_actions": [
+    "Maintain a dependency map covering technical interfaces, behavioural assumptions, data access, contracts and operational expertise.",
+    "Keep business definitions, evaluations and critical context under suitable control, and test an alternative configuration on representative tasks when the exposure warrants it.",
+    "Make switching decisions against expected future value, migration cost and risk—not sunk spending or model-release excitement."
+  ],
+  "working_artifact": "Portability assessment: dependency; owner/provider; export/access rights; alternative; adaptation required; evaluation results; migration cost; continuity risk; trigger for reconsideration; retained business assets.",
+  "measures": [
+    "Measured effort and quality change in a bounded substitution test.",
+    "Proportion of critical context, evaluations and operating artifacts accessible in usable form.",
+    "Expected switching benefit and continuity risk compared with the cost of maintaining portability machinery."
+  ],
+  "tradeoff": "No source establishes that models are interchangeable commodities or that one ecosystem is always a mistake. A single-provider design may be rational. The error is unexamined dependence, especially when the organisation cannot access the assets needed to leave.",
+  "illustrative_case": "Illustrative application: a second model connects in an afternoon but fails the existing tool-call and exception tests. The migration requires instruction and harness changes, so “we can switch APIs” was not a complete exit plan.",
+  "line_id": "F",
+  "short_title": "Keep switching feasible",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-06",
+    "AI-27",
+    "AI-31",
+    "AI-35"
+  ],
+  "evidence_ids": [
+    "harness-portability",
+    "foss-make-buy",
+    "levie-data-portability",
+    "twelve-own-context"
+  ],
+  "source_ids": [
+    "S01",
+    "S02",
+    "S06",
+    "S14",
+    "S36"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      36,
+      37,
+      38
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

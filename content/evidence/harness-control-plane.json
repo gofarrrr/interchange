@@ -1,0 +1,16 @@
+{
+  "id": "harness-control-plane",
+  "source_id": "S14",
+  "type": "solution",
+  "title": "Separate the agent’s reasoning from enforced controls",
+  "text": "The compiler’s expanded architecture adds identity, access policy, approval routing, evaluation, cost controls and operational oversight to a basic reasoning loop. These mechanisms belong in the surrounding service and tool interfaces; a generated instruction does not itself enforce them.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Explicit supplied editorial extension, not a quotation or validated reference architecture from Ian Thomas.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

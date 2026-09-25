@@ -1,0 +1,16 @@
+{
+  "id": "pearson-learning-assets",
+  "source_id": "S31",
+  "type": "solution",
+  "title": "A correction becomes valuable when it changes a tested process",
+  "text": "The supplied analysis connects work traces to expert review, revised rules or tools, reuse and subsequent outcomes. It also treats a skill file as an operating asset with trigger conditions, permissions, expected output, tests and an escalation path—not merely a reusable prompt.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "These implementation details are the corpus compiler’s analytical extension of Pearson’s essay, not a separately validated framework.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

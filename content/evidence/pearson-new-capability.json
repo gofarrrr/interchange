@@ -1,0 +1,16 @@
+{
+  "id": "pearson-new-capability",
+  "source_id": "S31",
+  "type": "observation",
+  "title": "Savings and newly possible work need separate benefit stories",
+  "text": "Pearson’s editorial-workflow example distinguishes lower preparation effort from the ability to reconsider more research and produce more tailored work. Those are different benefits: one releases capacity; the other expands a feasible service. Neither should automatically be translated into cash savings.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "First-person illustration and conceptual argument; no controlled return-on-investment estimate is supplied.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

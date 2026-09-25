@@ -1,0 +1,16 @@
+{
+  "id": "newport-end-to-end",
+  "source_id": "S27",
+  "type": "diagnosis",
+  "title": "Subtask competence can hide interface and decision failures",
+  "text": "Newport’s late-2025 assessment separates text-native coding environments from heterogeneous interfaces and underspecified real-world requests. The useful diagnostic questions concern hidden preferences, observable state and failures across dependent steps—not whether an agent can explain a plausible plan.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Dated commentary represented in supplied notes. This is not a statement of current product limitations or a quantified reliability model.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

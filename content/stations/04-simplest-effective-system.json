@@ -1,0 +1,66 @@
+{
+  "id": "AI-04",
+  "number": 4,
+  "slug": "simplest-effective-system",
+  "title": "Building an agent when simpler software would do",
+  "summary": "Use AI where interpretation helps and ordinary software where explicit rules are sufficient.",
+  "diagnosis": "An agent-first design introduces choices and failure paths even when the task is already well specified. Conversely, forcing all ambiguous work into rigid rules can create an unmaintainable exception tree. Split the workflow by what each step requires: retrieval, deterministic computation, interpretation, decision authority or action. Select the simplest complete system that meets the acceptance criteria.",
+  "diagnostic_questions": [
+    "Which steps genuinely require interpretation rather than lookup, arithmetic or an explicit rule?",
+    "Can an existing service or a small workflow solve the problem without autonomous planning?",
+    "Does each additional agent or tool interaction add useful capability worth its cost and failure surface?"
+  ],
+  "proposed_actions": [
+    "Prototype a non-agent baseline, such as search plus a form, deterministic extraction checks or rules-based routing.",
+    "Separate probabilistic interpretation from calculations, validation and authorised writes; make the boundary inspectable.",
+    "Increase autonomy only when representative tests show a clear benefit over the simpler alternative, including maintenance and review effort."
+  ],
+  "working_artifact": "Architecture decision record: task decomposition; deterministic steps; AI-dependent steps; non-AI baseline; alternatives tested; acceptance evidence; operating cost; failure modes; rationale for each autonomous action.",
+  "measures": [
+    "Accepted-task success for simple and agentic alternatives on the same cases.",
+    "Total cost per accepted task, including review, retries, tool charges and maintenance.",
+    "Number of operational dependencies and failure paths that require human support, interpreted alongside demonstrated value."
+  ],
+  "tradeoff": "Simplicity is not the same as refusing AI or forcing every workflow into rules. A hybrid may be the least complex effective solution. Neither a traditional script nor an agent becomes safe merely because its architecture has a familiar label.",
+  "illustrative_case": "Illustrative application: a model interprets a customer’s request, structured code calculates the permitted refund and a service enforces the approval threshold. The model does not need unrestricted authority to invent or execute the entire refund process.",
+  "line_id": "A",
+  "short_title": "Use simpler software",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-02",
+    "AI-06",
+    "AI-19",
+    "AI-27"
+  ],
+  "evidence_ids": [
+    "tan-computation",
+    "newport-end-to-end",
+    "harness-components"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S27",
+    "S39"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

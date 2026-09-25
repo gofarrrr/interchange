@@ -1,0 +1,16 @@
+{
+  "id": "context-precedent-risk",
+  "source_id": "S16",
+  "type": "counterpoint",
+  "title": "Recorded precedent can preserve old mistakes",
+  "text": "The compiler’s risk analysis identifies policy drift, incomplete capture, biased precedent and poorly governed reuse as dangers in decision histories. A prior exception should remain tied to its scope and authority; it should not silently become the default rule for later cases.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Explicit editorial synthesis. The proposed governance controls are reasoned applications, not results of a cited experiment.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

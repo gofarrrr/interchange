@@ -1,0 +1,16 @@
+{
+  "id": "sphere-artifacts",
+  "source_id": "S30",
+  "type": "observation",
+  "title": "Operational artifacts reveal only part of expert work",
+  "text": "Sphere’s supplied note distinguishes expertise itself from the artifacts left when experts act. It describes retrieving evidence, returning cited answers and having experts validate them. That is useful when institutional knowledge is dispersed across past work, while preserving the difference between a trace and complete understanding.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Vendor practitioner material. Reported accuracy and speed metrics are excluded because their evaluation scope is insufficiently disclosed.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

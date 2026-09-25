@@ -1,0 +1,64 @@
+{
+  "id": "AI-02",
+  "number": 2,
+  "slug": "understand-before-automating",
+  "title": "Automating a process nobody understands",
+  "summary": "Map real work, including its exceptions and informal decisions, before deciding what to automate.",
+  "diagnosis": "A workflow diagram can be technically correct and operationally false. Work may actually pass through private spreadsheets, calls, queues and improvised interpretations. Some missing steps are undocumented knowledge; others are unresolved decisions about how the business should operate. Distinguish those two situations so that an engineer is not asked to invent policy while building an integration.",
+  "diagnostic_questions": [
+    "Can a person follow one ordinary case and one difficult case from trigger to accepted completion?",
+    "Where does the work wait, change format, need clarification or rely on an unnamed expert?",
+    "Which steps are unnecessary, and which apparent inefficiencies protect quality, relationships or accountability?"
+  ],
+  "proposed_actions": [
+    "Observe real cases with frontline workers; capture inputs, transformations, handoffs, waits, decisions, exceptions and completion evidence.",
+    "Assign business owners to unresolved rules before implementation; distinguish historical practice from approved policy.",
+    "Redesign the smallest useful end-to-end slice, comparing elimination, simplification and automation rather than preserving every existing step."
+  ],
+  "working_artifact": "Reality-based workflow map: trigger; input source; step owner; active effort; waiting time; decision rule; evidence; tool; exception route; approved outcome. Attach representative normal and difficult cases.",
+  "measures": [
+    "End-to-end elapsed time and active touch time, reported separately for comparable case types.",
+    "Rework and clarification loops per completed case.",
+    "Fraction of consequential decisions with an agreed rule or explicitly owned judgement boundary."
+  ],
+  "tradeoff": "Do not spend months documenting the entire company before trying anything. Map deeply enough to understand the chosen scope and its consequential dependencies. Do not remove a handoff merely because it is slow: first establish whether it serves a legitimate control or customer purpose.",
+  "illustrative_case": "Illustrative application: invoice matching takes minutes, but obtaining the correct contract and approving an exception takes days. Improving extraction alone may have little effect until the evidence and approval path are redesigned.",
+  "line_id": "A",
+  "short_title": "Understand the work",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-04",
+    "AI-15",
+    "AI-17",
+    "AI-19"
+  ],
+  "evidence_ids": [
+    "process-hidden-decisions",
+    "pierce-map-work"
+  ],
+  "source_ids": [
+    "S01",
+    "S22",
+    "S24"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 2
+}

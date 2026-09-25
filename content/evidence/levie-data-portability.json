@@ -1,0 +1,16 @@
+{
+  "id": "levie-data-portability",
+  "source_id": "S02",
+  "type": "observation",
+  "title": "Reusable context and provider choice are related",
+  "text": "Levie connects fragmented enterprise data with the need for company-specific context and discusses interest in multiple models. The design question is which context, tools and definitions should remain under company control when the model changes.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Interest in multiple providers is not proof that switching is cheap or that a multimodel design is necessary for every use case.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

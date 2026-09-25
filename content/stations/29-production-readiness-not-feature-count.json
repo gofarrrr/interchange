@@ -1,0 +1,67 @@
+{
+  "id": "AI-29",
+  "number": 29,
+  "slug": "production-readiness-not-feature-count",
+  "title": "Calling a demo production-ready—or estimating “90% done” by counting features",
+  "summary": "Estimate remaining uncertainty and operational work rather than the fraction of visible features built.",
+  "diagnosis": "A polished demonstration can avoid the workflows most likely to fail in production. Feature counts conceal unresolved integrations, rare exceptions, review capacity, deployment and support. Treat readiness as evidence about real operating conditions, not a percentage inferred from the easiest completed screens or tasks. Make the remaining unknowns visible before users depend on the service.",
+  "diagnostic_questions": [
+    "Which difficult workflows, integration states and user behaviours remain untested?",
+    "What support, monitoring, recovery and access work is absent from the feature list?",
+    "Does the stated completion status follow from verified evidence or from a manual assertion?"
+  ],
+  "proposed_actions": [
+    "Identify high-uncertainty and high-consequence workflows early and test them before polishing the easy path.",
+    "Use a readiness checklist covering acceptance, identity, monitoring, support, rollback and live-system constraints; name the release decision owner.",
+    "Estimate remaining work from unresolved risks and dependencies, and show what is unproven rather than publish a misleading feature percentage."
+  ],
+  "working_artifact": "Readiness dossier: intended scope; tested workflows; unresolved risks; production dependencies; capacity; access; monitoring; recovery; support; ownership; evidence links; release/no-release decision.",
+  "measures": [
+    "Coverage of critical workflows and operational failure modes by passed, relevant tests.",
+    "Unresolved high-consequence unknowns and time to resolve them, rather than a raw feature-completion percentage.",
+    "Post-release defects, support demand and rollback events compared with the readiness assumptions."
+  ],
+  "tradeoff": "A prototype can be successful without being production-ready. Do not burden early discovery with every production requirement, but do not let prototype enthusiasm erase those requirements when dependency and exposure increase.",
+  "illustrative_case": "Illustrative application: an ordering agent handles routine orders but cannot reconcile substitutions after a partial shipment. That final workflow may contain most of the remaining business risk despite representing one item on a long feature list.",
+  "line_id": "E",
+  "short_title": "Go beyond the demo",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-10",
+    "AI-19",
+    "AI-26",
+    "AI-34"
+  ],
+  "evidence_ids": [
+    "daily-release-ownership",
+    "ondrej-context-versioning",
+    "newport-end-to-end"
+  ],
+  "source_ids": [
+    "S01",
+    "S05",
+    "S13",
+    "S27"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      35
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

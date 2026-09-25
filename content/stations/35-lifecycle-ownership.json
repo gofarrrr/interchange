@@ -1,0 +1,63 @@
+{
+  "id": "AI-35",
+  "number": 35,
+  "slug": "lifecycle-ownership",
+  "title": "Treating launch as the end of ownership",
+  "summary": "Fund and assign the full service lifecycle: operation, change, support, knowledge maintenance and retirement.",
+  "diagnosis": "A project may have a delivery team but no enduring owner after launch. Meanwhile models, data, tools, users and business rules change. Treat the deployed workflow as an operating service with accountable stewardship. Ownership should survive personnel changes and include the authority to restrict or retire a system whose value or safety no longer justifies its cost.",
+  "diagnostic_questions": [
+    "Who owns the service after the project closes, and what resources are committed to that work?",
+    "Who approves changes to the model, context, rules, access and evaluations?",
+    "How will dependencies, credentials, retained data and user expectations be handled when the service is retired?"
+  ],
+  "proposed_actions": [
+    "Register every live workflow with operational and business owners, deputies, dependencies, permissions, costs and support routes.",
+    "Fund recurring monitoring, expert review, regression testing, knowledge updates and user feedback; define change and incident responsibilities.",
+    "Set reassessment and retirement triggers, then decommission deliberately: revoke access, stop schedules, preserve required evidence and communicate the replacement or closure."
+  ],
+  "working_artifact": "Service ownership record: purpose; users; business and operational owners; deputy; budget; dependencies; permissions; support; evaluations; change history; knowledge owner; retirement conditions; decommissioning checklist.",
+  "measures": [
+    "Share of live services with current owners, working support paths and reviewed dependencies.",
+    "Age of unresolved defects, obsolete rules and unreviewed configuration changes.",
+    "Services retired or constrained when their costs, risks or usefulness no longer justify operation, with completed access removal."
+  ],
+  "tradeoff": "An inventory without funded responsibility creates the appearance of governance. Similarly, a supplier support contract does not eliminate internal outcome ownership. Small teams can use lightweight records, but the duty to maintain and retire the service remains.",
+  "illustrative_case": "Illustrative application: a team member’s scheduled assistant keeps running after they leave. A service registry and offboarding process identify the owner, review the ongoing need and revoke or transfer the access deliberately.",
+  "line_id": "F",
+  "short_title": "Own the lifecycle",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-07",
+    "AI-17",
+    "AI-31",
+    "AI-33"
+  ],
+  "evidence_ids": [
+    "every-company-agents",
+    "pearson-learning-assets",
+    "twelve-rubrics-traces"
+  ],
+  "source_ids": [
+    "S01",
+    "S03",
+    "S31",
+    "S36"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      11,
+      34,
+      35,
+      36,
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

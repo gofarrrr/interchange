@@ -1,0 +1,16 @@
+{
+  "id": "harness-portability",
+  "source_id": "S14",
+  "type": "counterpoint",
+  "title": "An easy API change can conceal a difficult behavioural change",
+  "text": "The supplied analysis explains that model choice and agent-environment choice are different decisions. Provider-specific behaviour and integration assumptions can remain even behind a common interface. The organisation should test the complete replacement configuration, not infer portability from the connection code alone.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Corpus analysis of the article’s implications; no benchmark of migration effort is provided.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

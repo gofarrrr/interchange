@@ -1,0 +1,16 @@
+{
+  "id": "tan-computation",
+  "source_id": "S39",
+  "type": "solution",
+  "title": "Use generated reasoning and deterministic execution differently",
+  "text": "Tan’s supplied talk distinguishes interpretation of ambiguous intent from arithmetic, database operations and constraint handling. His examples place the latter in scripts and structured tools rather than ask language generation to be the calculation engine.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner account; broader claims equating plain-language instructions with production engineering are not adopted.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

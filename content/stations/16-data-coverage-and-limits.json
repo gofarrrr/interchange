@@ -1,0 +1,61 @@
+{
+  "id": "AI-16",
+  "number": 16,
+  "slug": "data-coverage-and-limits",
+  "title": "Treating an available data feed as the whole picture",
+  "summary": "Make the boundary of the evidence visible: coverage, missingness, history and freshness.",
+  "diagnosis": "An answer can be correct for a source but misleading for the business. The source may exclude certain customers, historical periods, events or fields. Absence in an extract does not establish absence in reality. Treat the feed’s scope as part of the answer and define when insufficient coverage requires abstention, clarification or another data source.",
+  "diagnostic_questions": [
+    "Which customers, regions, products and periods are not represented?",
+    "Are missing values genuine negatives, unavailable fields, failed ingestion or a permissions effect?",
+    "Can the user tell what the answer includes, excludes and assumes about freshness?"
+  ],
+  "proposed_actions": [
+    "Publish a coverage manifest for each source and connect it to the retrieval or answering workflow.",
+    "Test known-absent, partially covered and stale cases; require the system to distinguish “not found here” from “does not exist.”",
+    "Monitor ingestion and schema changes so that coverage loss becomes an operational event rather than an invisible change in answers."
+  ],
+  "working_artifact": "Coverage manifest: source; eligible population; excluded groups; fields; history start; update cadence; last successful refresh; permission-related gaps; null meanings; known defects; escalation source.",
+  "measures": [
+    "Coverage of the declared population and required fields, using explicit denominators.",
+    "Rate of answers that overstate available evidence or omit material limitations.",
+    "Detection delay for stale feeds, ingestion gaps and schema changes; distinguish expected lag from failure."
+  ],
+  "tradeoff": "The Microsoft report is only adjacent reading for this issue, not a detailed feed-completeness method. Coverage testing here is a proposed application derived from the corpus’s warnings about incomplete context and unverified evidence. Restricting access may correctly limit coverage; the answer should not circumvent that boundary.",
+  "illustrative_case": "Illustrative application: a customer feed starts last year. A question about lifetime value cannot be answered as a lifetime total without identifying the missing history or consulting another approved source.",
+  "line_id": "C",
+  "short_title": "Know the blind spots",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-14",
+    "AI-15",
+    "AI-18",
+    "AI-33"
+  ],
+  "evidence_ids": [
+    "sphere-artifacts",
+    "sphere-evidence-limits",
+    "context-precedent-risk",
+    "openai-use-not-output"
+  ],
+  "source_ids": [
+    "S01",
+    "S16",
+    "S30",
+    "S40"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

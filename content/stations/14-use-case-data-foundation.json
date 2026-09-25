@@ -1,0 +1,70 @@
+{
+  "id": "AI-14",
+  "number": 14,
+  "slug": "use-case-data-foundation",
+  "title": "Waiting for perfect data—or assuming AI will repair the data for you",
+  "summary": "Prepare the data needed for the chosen use case without making every project depend on a complete enterprise rebuild.",
+  "diagnosis": "Two opposite assumptions create delay or failure: that all data must be cleaned before any experiment, or that a model can compensate for missing, stale and inaccessible information. Determine the minimum trustworthy input for the chosen scope. A read-only experiment may be possible before a major migration, but its source limits and the cost of adapting it later must remain visible.",
+  "diagnostic_questions": [
+    "Which specific data defects prevent this use case from meeting its acceptance criteria?",
+    "Can the useful scope be narrowed while preserving permissions, freshness and a clear explanation of limitations?",
+    "What changes when the source system migrates, and who will maintain the adapter or replacement?"
+  ],
+  "proposed_actions": [
+    "Create a use-case data contract naming required fields, definitions, coverage, freshness, access and known gaps.",
+    "Repair or constrain the blocking issues first; test representative extracts before authorising consequential actions.",
+    "Consider staged read-only access, a replica or an approved integration where appropriate, documenting lag, reconciliation and migration dependencies rather than assuming them away."
+  ],
+  "working_artifact": "Use-case data readiness record: required sources and fields; permitted purpose; definitions; completeness; freshness target; owner; access path; known exclusions; remediation; future migration impact.",
+  "measures": [
+    "Task failure and escalation attributable to missing, stale, inconsistent or inaccessible data.",
+    "Share of required fields meeting the declared contract for the actual eligible population.",
+    "Time to a bounded trustworthy experiment, plus the maintenance and adaptation cost it creates."
+  ],
+  "tradeoff": "The supplied materials do not demonstrate that a replica or pre-migration route is feasible in any particular ERP environment. That is an architecture option to assess locally. Avoid replacing a justified data programme with a collection of fragile AI-specific extracts.",
+  "illustrative_case": "Illustrative application: a purchasing team tests a read-only answer service on a defined set of approved supplier records, rather than waiting for the entire ERP migration or pretending the extract includes every supplier.",
+  "line_id": "C",
+  "short_title": "Fix useful data",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-15",
+    "AI-16",
+    "AI-18",
+    "AI-19"
+  ],
+  "evidence_ids": [
+    "levie-data-portability",
+    "pierce-staged-migration",
+    "reshuffle-coordination",
+    "sphere-evidence-limits"
+  ],
+  "source_ids": [
+    "S01",
+    "S02",
+    "S22",
+    "S28",
+    "S30"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

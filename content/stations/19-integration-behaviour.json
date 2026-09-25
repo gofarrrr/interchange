@@ -1,0 +1,67 @@
+{
+  "id": "AI-19",
+  "number": 19,
+  "slug": "integration-behaviour",
+  "title": "Assuming connected systems will work together correctly",
+  "summary": "Test business semantics and partial effects, not just successful API connections.",
+  "diagnosis": "A tool can connect successfully while acting on the wrong identity, unit, period or record. Multi-step work adds the possibility that one action succeeds and the next fails. Define how state moves between systems, how retries are recognised and how discrepancies are reconciled. The contract must describe business meaning and failure behaviour as well as technical fields.",
+  "diagnostic_questions": [
+    "How are identities, versions, units, currencies and status meanings matched between systems?",
+    "What happens if the response times out after an action has already succeeded?",
+    "Can partial completion, duplicate events and out-of-order updates be detected and repaired?"
+  ],
+  "proposed_actions": [
+    "Document each tool’s allowed effects, preconditions, success evidence and failure states; keep calculations and validations explicit.",
+    "Use suitable duplicate-prevention and reconciliation mechanisms for consequential writes, then test timeouts and retries in a safe environment.",
+    "Validate complete real workflows across source and destination systems, including permission boundaries and downstream acceptance."
+  ],
+  "working_artifact": "Integration contract: entity mapping; field meaning; units; version/freshness; authorisation; preconditions; allowed writes; duplicate handling; partial-failure state; reconciliation owner; recovery procedure.",
+  "measures": [
+    "End-to-end accepted completion, not connector uptime alone.",
+    "Duplicate actions, mismatched records and unreconciled partial transactions per eligible workflow run.",
+    "Time to detect and resolve integration discrepancies, with affected business outcomes recorded."
+  ],
+  "tradeoff": "The appropriate transaction and retry mechanism depends on the actual platforms; no generic integration pattern can guarantee correctness everywhere. Simplifying the workflow may be safer than coordinating a large chain of autonomous agents.",
+  "illustrative_case": "Illustrative application: a payment request times out after the bank accepted it. A blind retry can pay twice; the workflow must check the transaction state and reconcile the result before another payment is authorised.",
+  "line_id": "C",
+  "short_title": "Test integrations",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-04",
+    "AI-15",
+    "AI-27",
+    "AI-34"
+  ],
+  "evidence_ids": [
+    "harness-components",
+    "harness-failure-modes",
+    "newport-end-to-end"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S27"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      38,
+      41
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

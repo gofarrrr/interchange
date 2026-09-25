@@ -1,0 +1,8 @@
+/** Local link validation only. External URL syntax is validated in the domain layer.
+ *  This does not claim external documents or their passages were re-verified. */
+import {readFileSync,readdirSync,statSync,existsSync} from 'node:fs';import {join,resolve} from 'node:path';import {root} from '../src/load.mjs';import {normalizeBase} from '../src/domain.mjs';
+const out=resolve(root,process.env.OUT_DIR||'dist');const base=normalizeBase(process.env.BASE_PATH||'/');
+function files(dir){return readdirSync(dir).flatMap(f=>statSync(join(dir,f)).isDirectory()?files(join(dir,f)):[join(dir,f)]);}
+const errors=[];let count=0;
+for(const file of files(out).filter(f=>f.endsWith('.html'))){const html=readFileSync(file,'utf8');const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){const raw=m[1].replaceAll('&amp;','&');if(raw.startsWith('#')){if(raw.length>1&&!ids.has(raw.slice(1)))errors.push({file,missingAnchor:raw});continue;}if(!raw.startsWith(base)||raw.startsWith('//'))continue;const uri=new URL(raw,'https://local.invalid');let path=resolve(out,decodeURIComponent(uri.pathname.slice(base.length)));if(uri.pathname.endsWith('/'))path=join(path,'index.html');if(!existsSync(path))errors.push({file,missingFile:raw});else if(uri.hash&&path.endsWith('.html')){const target=readFileSync(path,'utf8');if(!target.includes(`id="${decodeURIComponent(uri.hash.slice(1))}"`))errors.push({file,missingTargetAnchor:raw});}count++;}}
+console.log(JSON.stringify({local_links_checked:count,errors,external_verification:'Not performed by this script.'},null,2));if(errors.length)process.exitCode=1;

@@ -1,0 +1,16 @@
+{
+  "id": "foss-governance",
+  "source_id": "S06",
+  "type": "counterpoint",
+  "title": "Cheaper communication does not remove governance work",
+  "text": "Foss argues that firms and markets must be compared as ways to govern specific transactions. Adaptation when conditions change, relationship-specific investments and difficult-to-measure performance remain relevant even when exchanging information becomes easier. This challenges any automatic inference from AI capability to a flat organisation or universal outsourcing.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Economic argument, not an empirical forecast. The appropriate boundary depends on the particular business and transaction.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

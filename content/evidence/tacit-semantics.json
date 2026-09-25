@@ -1,0 +1,16 @@
+{
+  "id": "tacit-semantics",
+  "source_id": "S10",
+  "type": "solution",
+  "title": "A semantic layer records how the business uses its language",
+  "text": "The supplied note connects reusable expertise with shared entities, synonyms, regional context and policy meaning. A semantic layer is therefore more than a dictionary: it should explain which interpretation applies in a particular business setting.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual/practitioner guidance; no claim that a particular database or vendor product supplies this automatically.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "tacit-priority",
+  "source_id": "S10",
+  "type": "solution",
+  "title": "Capture consequential exceptions, not every possible fact",
+  "text": "The CMR source note describes identifying critical expertise and making context-dependent reasoning visible through cases and exceptions. The practical opportunity is to prioritise knowledge that repeatedly changes important decisions, rather than launch an indiscriminate document-everything programme.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner article represented in analytical notes, not proof that all tacit knowledge can be fully codified.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

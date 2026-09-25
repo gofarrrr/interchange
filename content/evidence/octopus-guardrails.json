@@ -1,0 +1,16 @@
+{
+  "id": "octopus-guardrails",
+  "source_id": "S04",
+  "type": "solution",
+  "title": "Distribute decisions within explicit boundaries",
+  "text": "The book’s decentralisation guidance pairs local decision-making with executive guardrails, clear decision lanes, a changed coaching role for managers and removal of cross-team blockers. Distributed work therefore does not mean that each team invents its own risk policy or loses access to shared expertise.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Management framework with illustrative cases; not a causal validation of a single organisational design.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

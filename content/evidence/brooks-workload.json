@@ -1,0 +1,16 @@
+{
+  "id": "brooks-workload",
+  "source_id": "S34",
+  "type": "counterpoint",
+  "title": "Monitor cognitive load as well as productivity",
+  "text": "Brooks’s supplied opinion piece raises the possibility that people use saved time to take on more work and supervise more parallel activity. It is a prompt to investigate workload, concentration and learning during rollout rather than assume faster generation automatically improves employee experience.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Opinion with secondary study references, not independently verified empirical evidence here. The article’s personality typology and social predictions are not used as diagnoses.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

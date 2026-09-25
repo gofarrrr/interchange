@@ -1,0 +1,16 @@
+{
+  "id": "process-local-maturity",
+  "source_id": "S24",
+  "type": "counterpoint",
+  "title": "The same software does not imply the same readiness",
+  "text": "The supplied scenarios contrast companies using similar systems but having different process clarity and decision discipline. This gives a practical reason to check local workflow maturity before copying another implementation, even when both businesses use the same customer-management platform.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Scenarios illustrate a mechanism; they are not a controlled study of causes of success.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

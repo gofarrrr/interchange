@@ -1,0 +1,10 @@
+{
+  "origin": "Supplied INTERCHANGE handoff data, derived from the 36-point knowledge base. Content wording preserved.",
+  "stations": 36,
+  "sources_with_supplied_urls": 31,
+  "evidence_with_supplied_source_urls": 60,
+  "excluded_source_families": 9,
+  "excluded_evidence": 15,
+  "publication_approval": "None. No automatic promotion to approved.",
+  "note": "No private original artifacts, internal filenames, line-number locators, or full works copied into the application."
+}

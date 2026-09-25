@@ -1,0 +1,62 @@
+{
+  "id": "AI-18",
+  "number": 18,
+  "slug": "relevant-retrieval",
+  "title": "Making the model read everything to find one thing",
+  "summary": "Provide permission-aware retrieval that returns the right evidence and makes retrieval failures diagnosable.",
+  "diagnosis": "A large context window does not decide what evidence matters, whether the correct source was found or which user may see it. Give the model tools suited to the task: search, filtering, structured queries and progressive detail. Evaluate retrieval independently enough to tell whether an incorrect answer came from missing evidence or misuse of evidence that was available.",
+  "diagnostic_questions": [
+    "Can the system retrieve the authoritative record without receiving irrelevant or unauthorised material?",
+    "Do retrieved results carry source identity, version, date and enough surrounding context to interpret them?",
+    "Are known retrieval failures represented in tests, including conflicting, missing and access-restricted evidence?"
+  ],
+  "proposed_actions": [
+    "Design task-specific search and filtering tools with explicit input/output contracts and enforced permissions.",
+    "Return relevant passages or records with provenance and enough context to preserve qualifications; allow deeper retrieval when needed.",
+    "Test retrieval coverage and answer grounding separately, then trace both through end-to-end acceptance cases."
+  ],
+  "working_artifact": "Retrieval test set: question; requesting role; authorised source set; expected evidence; distractors; conflicting versions; missing-evidence behaviour; cited answer; retrieval and answer failure labels.",
+  "measures": [
+    "Evidence-retrieval success on a curated set of business questions, with important misses inspected individually.",
+    "Answer correctness and support by cited evidence, not citation presence alone.",
+    "Latency, context volume and cost alongside retrieval quality; avoid optimising token reduction in isolation."
+  ],
+  "tradeoff": "A smaller response can remove necessary qualifications just as a larger one can bury them. Search quality does not repair obsolete policy or incomplete coverage. Use source access rules as hard boundaries rather than ask the agent to decide what confidential evidence it may disclose.",
+  "illustrative_case": "Illustrative application: a pricing assistant retrieves the active contract clause and current exception policy for the customer rather than loading every contract and discount spreadsheet into one request.",
+  "line_id": "C",
+  "short_title": "Retrieve what matters",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-14",
+    "AI-16",
+    "AI-20",
+    "AI-27"
+  ],
+  "evidence_ids": [
+    "harness-components",
+    "sphere-evidence-limits",
+    "tan-knowledge-conflicts"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S30",
+    "S39"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 1
+}

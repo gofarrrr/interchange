@@ -1,0 +1,16 @@
+{
+  "id": "ondrej-context-versioning",
+  "source_id": "S13",
+  "type": "solution",
+  "title": "Treat task context as maintained project material",
+  "text": "The supplied 10X cheatsheet describes conventions, project specifications, active work and logs as maintained Markdown artifacts. It also distinguishes a manually asserted completion status from one derived from outstanding work. This is useful for detecting stale context and falsely complete projects.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "Derived cheatsheet from the same episode, not independent evidence. Exact terminology and speaker wording require video verification.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

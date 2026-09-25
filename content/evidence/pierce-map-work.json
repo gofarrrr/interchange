@@ -1,0 +1,16 @@
+{
+  "id": "pierce-map-work",
+  "source_id": "S22",
+  "type": "solution",
+  "title": "Map triggers, handoffs and completion before consolidation",
+  "text": "Pierce’s guide starts with an inventory of workflows and asks how work starts, how it moves and what completion means. It then separates tools to retain, absorb or remove. The useful contribution is the sequence of diagnostic questions, rather than the assumption that every business needs one replacement system.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner guide with a small-business emphasis. A one-database architecture and claimed outcomes are not accepted as universal prescriptions.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

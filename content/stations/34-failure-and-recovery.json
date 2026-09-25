@@ -1,0 +1,56 @@
+{
+  "id": "AI-34",
+  "number": 34,
+  "slug": "failure-and-recovery",
+  "title": "Launching without a failure and recovery plan",
+  "summary": "Prepare to stop, contain, reconcile and continue the business when an AI-enabled workflow fails.",
+  "diagnosis": "Turning off an agent prevents some new actions but does not reveal what already happened or reverse external effects. A recovery plan must address credentials, partial work, affected records, users and business continuity. Define the fallback and test it before the old process or operational expertise disappears. For irreversible actions, recovery may mean remediation rather than rollback.",
+  "diagnostic_questions": [
+    "Can authorised staff pause new work and revoke access without the original builder or supplier?",
+    "How will the team identify completed, incomplete, duplicated and uncertain actions?",
+    "What workable process serves the customer while the system is unavailable or untrusted?"
+  ],
+  "proposed_actions": [
+    "Create a runbook for pausing, inspecting, revoking, containing and communicating, with named decision-makers and preserved evidence.",
+    "Define reconciliation and remediation for external effects, plus a manual or alternative-system fallback with sufficient capacity.",
+    "Run a controlled recovery drill, including a supplier outage or staff absence, and verify that the restored service passes relevant tests before resuming."
+  ],
+  "working_artifact": "Recovery runbook: trigger; stop authority; pause/revoke steps; evidence preservation; affected-work inventory; reconciliation; user communication; fallback; restoration tests; approval to resume; lessons and regression cases.",
+  "measures": [
+    "Time to pause or revoke and time to restore an acceptable business service, measured in a drill.",
+    "Unreconciled or duplicate actions after recovery, including records whose state remains uncertain.",
+    "Fallback capacity and completion quality under realistic interruption conditions."
+  ],
+  "tradeoff": "The supplied materials offer recovery patterns, not validated guarantees for the user’s infrastructure. Some actions cannot be undone: an email, disclosure or external transaction may require repair and communication. Set containment objectives according to consequence, not a generic uptime target.",
+  "illustrative_case": "Illustrative application: an agent sends incorrect order updates. Pausing it is only the first step; the team must identify recipients, correct the messages, reconcile order state and prevent duplicate notifications when service resumes.",
+  "line_id": "F",
+  "short_title": "Prepare recovery",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-19",
+    "AI-23",
+    "AI-29",
+    "AI-33"
+  ],
+  "evidence_ids": [
+    "harness-failure-modes",
+    "moonshots-governance"
+  ],
+  "source_ids": [
+    "S01",
+    "S14",
+    "S25"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      43
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 2
+}

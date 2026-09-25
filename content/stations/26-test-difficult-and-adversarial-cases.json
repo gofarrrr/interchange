@@ -1,0 +1,63 @@
+{
+  "id": "AI-26",
+  "number": 26,
+  "slug": "test-difficult-and-adversarial-cases",
+  "title": "Letting the builders test only the happy paths",
+  "summary": "Use domain users, exceptions and adversarial cases to test the boundaries of the entire workflow.",
+  "diagnosis": "Builders know the intended path and may unconsciously supply missing context or avoid awkward requests. Real work includes ambiguity, unusual units, unavailable tools, stale rules and requests that should not be executed. Bring people who understand the business consequences into the test process, and test correct refusal and escalation as first-class outcomes.",
+  "diagnostic_questions": [
+    "Which cases would an experienced employee hesitate over or send to someone else?",
+    "Have missing evidence, conflicting rules, denied access, partial completion and unusual units been tested?",
+    "Can testers challenge assumptions independently of the people who designed the system?"
+  ],
+  "proposed_actions": [
+    "Recruit representative domain users and independent reviewers; ask them to supply difficult real cases and explain why they matter.",
+    "Create a risk-based coverage matrix spanning normal, ambiguous, exceptional, denied and adversarial situations; avoid relying only on random easy examples.",
+    "Test both the output and actual tool effects, including stop/ask-for-help behaviour; preserve failures with verified expected results."
+  ],
+  "working_artifact": "Test coverage matrix: task type; risk; case origin; normal/exception/adversarial label; expected action; expected non-action; reviewer; observed outcome; defect owner; regression case.",
+  "measures": [
+    "Coverage of important failure categories rather than a raw test count.",
+    "Consequential errors and appropriate escalations by case type; averages must not conceal severe rare cases.",
+    "Defects discovered by domain or independent testing after builder tests pass, with correction and re-test status."
+  ],
+  "tradeoff": "An adversarial test does not make a system secure, and a larger test set is not automatically a better one. Prioritise plausible, consequential failures while retaining enough representative normal work to avoid optimising only for refusal.",
+  "illustrative_case": "Illustrative application: the order assistant must distinguish five cases containing multiple items from five individual items, ask about an ambiguous unit and avoid submitting an order before the ambiguity is resolved.",
+  "line_id": "E",
+  "short_title": "Test the hard cases",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-20",
+    "AI-22",
+    "AI-24",
+    "AI-25"
+  ],
+  "evidence_ids": [
+    "every-eval-before-runtime",
+    "harness-failure-modes",
+    "harness-injection",
+    "dwarkesh-critical-task"
+  ],
+  "source_ids": [
+    "S01",
+    "S03",
+    "S14",
+    "S15"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      19,
+      23,
+      34,
+      35,
+      36
+    ],
+    "relationship": "adjacent",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 0
+}

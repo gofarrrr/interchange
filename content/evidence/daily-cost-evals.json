@@ -1,0 +1,16 @@
+{
+  "id": "daily-cost-evals",
+  "source_id": "S05",
+  "type": "solution",
+  "title": "Evaluate the delivered task, including the surrounding setup",
+  "text": "The source note links cost per successful task with internal evaluations and a system built from context, tools and instructions. This supports evaluating complete task configurations and making quality criteria explicit before interpreting a lower generation bill as progress.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Video-derived summary, not a measured enterprise benchmark; details come from a mixture of the original list and presenter commentary.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

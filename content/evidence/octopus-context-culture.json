@@ -1,0 +1,16 @@
+{
+  "id": "octopus-context-culture",
+  "source_id": "S04",
+  "type": "diagnosis",
+  "title": "Shared context and incentives make local authority usable",
+  "text": "The structured note describes distributed intelligence as depending on shared cross-functional context and a culture reinforced through rewards, roles and actual decisions. Granting nominal autonomy without those supports may simply relocate coordination work to overloaded local teams.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Book-derived management argument. Centralised context can also concentrate control and failure, a tension identified in the supplied analysis.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

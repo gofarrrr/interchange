@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-astro/
+dist-subpath/
+.env
+server.pid
+server.log
+__pycache__/

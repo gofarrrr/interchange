@@ -1,0 +1,16 @@
+{
+  "id": "harness-components",
+  "source_id": "S14",
+  "type": "diagnosis",
+  "title": "Investigate the complete execution environment",
+  "text": "The Diginomica note separates instructions, memory, execution environment, connections and the operating loop. A failed answer or action may originate in any of these components. This gives a more useful debugging structure than replacing the model before checking whether it received the right information and tools.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Article represented in analytical notes. The title’s strong model-versus-harness ranking is not accepted as a universal empirical result.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

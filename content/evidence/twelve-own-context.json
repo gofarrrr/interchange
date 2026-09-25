@@ -1,0 +1,16 @@
+{
+  "id": "twelve-own-context",
+  "source_id": "S36",
+  "type": "solution",
+  "title": "Keep reusable business assets under durable control",
+  "text": "Huber’s doctrine distinguishes company context and tools from rented model capability and commodity infrastructure. This is a useful procurement question: which assets would be required to reproduce the service or improve it with a different supplier?",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner heuristic. It does not mean that every internal application should be custom-built or that provider contracts are automatically sufficient.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

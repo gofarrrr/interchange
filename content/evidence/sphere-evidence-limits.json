@@ -1,0 +1,16 @@
+{
+  "id": "sphere-evidence-limits",
+  "source_id": "S30",
+  "type": "counterpoint",
+  "title": "A citation is not proof of current authority",
+  "text": "The supplied analysis warns that a cited artifact may still be outdated, inapplicable or incomplete. Persistent memory also needs correction and expiry. This is especially useful for answers about exceptions: finding a previous decision should trigger an applicability check rather than automatic reuse.",
+  "attribution_layer": "supplied-editorial-synthesis",
+  "qualification": "This is the corpus compiler’s analytical extension, not an independently evaluated vendor capability.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

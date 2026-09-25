@@ -1,0 +1,16 @@
+{
+  "id": "blomfield-correction-loop",
+  "source_id": "S35",
+  "type": "observation",
+  "title": "A useful learning loop connects failures to reviewed changes",
+  "text": "The supplied YC example describes a data-query agent and the use of failed attempts to improve its future operation. The key pattern is the return path from a real task to a checked correction—not the assumption that recording usage automatically teaches the system what was right.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "First-party example in edited notes; performance improvements and verification quality were not independently checked.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

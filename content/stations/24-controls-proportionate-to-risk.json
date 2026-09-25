@@ -1,0 +1,58 @@
+{
+  "id": "AI-24",
+  "number": 24,
+  "slug": "controls-proportionate-to-risk",
+  "title": "Applying the same controls to every use case",
+  "summary": "Calibrate autonomy and assurance to each decision’s consequences, uncertainty and reversibility.",
+  "diagnosis": "A drafting tool and a system that changes a customer’s entitlement do not expose people to the same consequences. Even within one workflow, a read-only step and an irreversible action may need different controls. Avoid collapsing task autonomy, user collaboration and organisational readiness into a single maturity score. Assess who can be affected and what recourse exists.",
+  "diagnostic_questions": [
+    "Who could be harmed by an incorrect or unfair result, and can the effect be reversed in practice?",
+    "Which decisions require stronger evidence, specialist review or an opportunity to challenge the outcome?",
+    "Can the organisation actually monitor and support the level of autonomy being proposed?"
+  ],
+  "proposed_actions": [
+    "Classify the workflow’s decisions by consequence, sensitivity, uncertainty, affected population and reversibility, using specialists where needed.",
+    "Choose task-specific control patterns: assistance, reviewed proposal, constrained execution or stronger approval; make prohibited uses explicit.",
+    "Test relevant quality, fairness, misuse and recovery concerns, and provide a route for affected users to obtain correction or human review."
+  ],
+  "working_artifact": "Decision risk record: purpose; affected people; possible harm; evidence limits; data sensitivity; allowed autonomy; review competence; action limits; recourse; recovery; owner; reassessment triggers.",
+  "measures": [
+    "Coverage of consequential decisions by a current risk and authority assessment.",
+    "Performance and harmful-error patterns across relevant case categories or populations, with privacy-preserving evaluation design.",
+    "Ability to identify, challenge and remediate adverse outcomes—not just average accuracy."
+  ],
+  "tradeoff": "No single accuracy threshold establishes that a consequential workflow is acceptable. Human review is not sufficient without skill and capacity. This page proposes design questions; it does not establish legal compliance or prescribe a jurisdiction-specific standard.",
+  "illustrative_case": "Illustrative application: a service can categorise routine requests automatically, draft a recommended decision for specialist review and reserve final changes to customer eligibility for a separately governed path.",
+  "line_id": "D",
+  "short_title": "Match controls to risk",
+  "publication_status": "research-draft",
+  "related_ids": [
+    "AI-13",
+    "AI-20",
+    "AI-26",
+    "AI-34"
+  ],
+  "evidence_ids": [
+    "dwarkesh-critical-task"
+  ],
+  "source_ids": [
+    "S01",
+    "S15"
+  ],
+  "report_reference": {
+    "source_id": "S01",
+    "pages": [
+      19,
+      23,
+      35,
+      38,
+      41
+    ],
+    "relationship": "direct-theme",
+    "review_status": "inherited-not-reverified"
+  },
+  "review": {
+    "status": "pending"
+  },
+  "omitted_evidence_count": 3
+}

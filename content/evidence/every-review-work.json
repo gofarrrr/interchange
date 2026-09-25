@@ -1,0 +1,16 @@
+{
+  "id": "every-review-work",
+  "source_id": "S03",
+  "type": "diagnosis",
+  "title": "Cheap production can expand review and selection work",
+  "text": "The essay describes how more accessible execution changes the work of deciding what matters, judging the result and carrying responsibility. This is useful for capacity planning: additional drafts or code are not automatically additional accepted output when review, prioritisation or distribution remains constrained.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual and first-party account. No causal estimate of reviewer burden or universal labour outcome is established.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

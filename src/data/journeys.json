@@ -1,0 +1,44 @@
+[
+  {
+    "id": "prove-value",
+    "title": "We need to prove value",
+    "description": "Start with the problem. End with a decision.",
+    "points": [
+      1,
+      2,
+      5,
+      6,
+      25,
+      30
+    ]
+  },
+  {
+    "id": "launch-agents",
+    "title": "Our agents are going live",
+    "description": "Check authority, tests and recovery.",
+    "points": [
+      20,
+      21,
+      22,
+      23,
+      26,
+      33,
+      34
+    ]
+  },
+  {
+    "id": "scale-pilots",
+    "title": "Our pilots are not scaling",
+    "description": "Follow the work beyond the demonstration.",
+    "points": [
+      7,
+      10,
+      12,
+      19,
+      28,
+      29,
+      35,
+      36
+    ]
+  }
+]

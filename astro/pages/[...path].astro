@@ -1,0 +1,17 @@
+---
+// Optional Astro adapter: one render boundary, no duplicated templates/content.
+import {load} from '../../src/load.mjs';
+import {createRenderer} from '../../src/render.mjs';
+import {normalizeBase} from '../../src/domain.mjs';
+export function getStaticPaths(){
+  const renderer=createRenderer(load({preview:process.env.PUBLIC_RELEASE!=='1'}),{
+    base:normalizeBase(process.env.BASE_PATH||'/'),siteURL:process.env.SITE_URL||''
+  });
+  return renderer.pages.map(page=>({
+    params:{path:page.path==='/'?undefined:page.path.replace(/^\/+|\/+$/g,'')},
+    props:{html:renderer.document(page).replace(/<script id="site-data" type="application\/json">[\s\S]*?<\/script>/,`<script src="${normalizeBase(process.env.BASE_PATH||'/')}assets/data.js" defer></script>`)}
+  }));
+}
+const {html}=Astro.props;
+---
+<Fragment set:html={html} />

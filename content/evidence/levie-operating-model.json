@@ -1,0 +1,16 @@
+{
+  "id": "levie-operating-model",
+  "source_id": "S02",
+  "type": "diagnosis",
+  "title": "The operating model is part of the problem",
+  "text": "The same post describes questions about cross-functional work, central management of agents, deployment, testing and ownership. Buying access leaves those decisions unresolved. It also identifies fragmented information and uneven internal skills as obstacles that a model choice alone does not address.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "The post reports themes rather than disclosing a causal comparison of organisational designs.",
+  "public_locator": {
+    "kind": "unverified",
+    "value": "Original passage locator not yet verified. Based on supplied research notes."
+  },
+  "review": {
+    "status": "pending"
+  }
+}
