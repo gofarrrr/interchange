@@ -2,7 +2,12 @@
   "buildCommand": "node scripts/build.mjs",
   "installCommand": "echo 'Zero runtime dependencies'",
   "outputDirectory": "dist",
-  "cleanUrls": true,
+  "trailingSlash": true,
+  "cleanUrls": false,
+  "rewrites": [
+    { "source": "/index", "destination": "/index/index.html" },
+    { "source": "/index/", "destination": "/index/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
