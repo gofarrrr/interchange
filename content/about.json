@@ -57,6 +57,6 @@
     "identity_check": "Search-index results for the exact X status URLs confirmed both display names, handles and opening titles on 2026-09-25.",
     "access_limit": "Direct fetching of both X status pages returned HTTP 403. Full post text and exact publication dates were not independently re-read or verified in this update. No claim of endorsement, partnership or independent corroboration is made.",
     "living_guide_basis": "The site owner described a personal intention to update relevant stations with useful new sources, nuances, lenses and approaches. This is not a request for scheduled monitoring.",
-    "research_counts": "These are origin credits, not new station-evidence records. Existing research-source and evidence counts are unchanged."
+    "research_counts": "Origin credits themselves do not count as research-source or evidence records; later curated additions may change those totals."
   }
 }
