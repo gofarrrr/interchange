@@ -1,0 +1,13 @@
+{
+  "id": "S41",
+  "title": "Your AI Strategy Is Measuring the Wrong Things",
+  "author_or_organization": "Salim Ismail",
+  "source_type": "video presentation and transcript",
+  "date_as_supplied": "2026",
+  "original_url": "https://www.youtube.com/watch?v=Hvr8t-w9GCE",
+  "limitations": "Executive presentation and diagnostic heuristics. Proposed operational thresholds (such as the 50% time-shift test) and maturity ladders are conceptual frameworks rather than validated empirical laws. Human override rate is presented as an ungameable metric, but in practice remains vulnerable to reviewer fatigue, changing case complexity, and unmeasured escaped defects.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

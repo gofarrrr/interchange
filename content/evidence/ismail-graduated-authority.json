@@ -1,0 +1,16 @@
+{
+  "id": "ismail-graduated-authority",
+  "source_id": "S42",
+  "type": "heuristic",
+  "title": "Graduated authority envelopes and the fiduciary wedge",
+  "text": "The manuscript outlines graduated authority: systems earn expanded operational discretion based on demonstrated performance telemetry rather than static permission grants. Consequential and irreversible commitments (financial disbursements, legal agreements, external disclosures) remain bound by a 'fiduciary wedge' requiring accountable human sign-off, whereas routine reversible actions operate under confidence-scored exception routing.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Governance model proposal. Machine-generated confidence scores are frequently uncalibrated on out-of-distribution events, and demonstrated success on routine cases does not guarantee safety during unprecedented operational stress.",
+  "public_locator": {
+    "kind": "section",
+    "value": "Chapter 2, 'The Human/AI Decision Boundary' and Chapter 3, 'Safe Autonomy'"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

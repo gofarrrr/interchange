@@ -8,12 +8,14 @@
   "diagnostic_questions": [
     "What was the pre-change baseline, and are the compared cases similar in difficulty and volume?",
     "Does “completed” mean generated, reviewed, accepted, used or resolved for the customer?",
-    "Where are checking, correction, escalation and displaced downstream work included?"
+    "Where are checking, correction, escalation and displaced downstream work included?",
+    "What measured result would contradict the current claim of progress, and who is assigned and protected to present that counter-case?"
   ],
   "proposed_actions": [
     "Choose an existing business measure, add quality and risk guardrails, and define the unit of accepted work before rollout.",
     "Collect active effort and end-to-end time separately; use a comparison design appropriate to the decision and document its limitations.",
-    "Record whether released capacity becomes more throughput, better service, less overtime or a realised cost change; do not count all of these as the same benefit."
+    "Record whether released capacity becomes more throughput, better service, less overtime or a realised cost change; do not count all of these as the same benefit.",
+    "Eliminate incentives and leaderboards tied to input volume (such as tokens burned, prompts submitted or seats provisioned) that reward compute consumption under Goodhart’s Law."
   ],
   "working_artifact": "Measurement contract: unit of work; acceptance definition; eligible population; baseline period; comparison approach; outcome measure; quality floor; review/rework accounting; benefit owner; known confounders.",
   "measures": [
@@ -21,7 +23,7 @@
     "End-to-end resolution time and repeat-contact or rework rate for comparable cases.",
     "Realised capacity use or customer outcome, distinguishing measured change from an untested attribution to AI."
   ],
-  "tradeoff": "Not every pilot permits a randomised design, and not every outcome appears quickly. Report uncertainty rather than replace missing evidence with usage. Research about task use or assessed ideas should not be promoted into claims about realised enterprise profit.",
+  "tradeoff": "Not every pilot permits a randomised design, and not every outcome appears quickly. Report uncertainty rather than replace missing evidence with usage. Research about task use or assessed ideas should not be promoted into claims about realised enterprise profit. Similarly, tracking operational telemetry such as human override rates can reveal learning, but a falling override rate does not prove better decisions: it can also reflect reviewer fatigue, permissive rubber-stamping, or shifting case difficulty.",
   "illustrative_case": "Illustrative application: an assistant doubles drafts produced, but managers reject more of them and the publishing queue grows. The activity metric improves while accepted delivery and customer value remain unchanged.",
   "line_id": "A",
   "short_title": "Measure outcomes",
@@ -35,13 +37,15 @@
   "evidence_ids": [
     "levie-outcomes",
     "openai-use-not-output",
-    "cybernetic-bounded-evidence"
+    "cybernetic-bounded-evidence",
+    "ismail-narrative-inversion"
   ],
   "source_ids": [
     "S01",
     "S02",
     "S12",
-    "S40"
+    "S40",
+    "S41"
   ],
   "report_reference": {
     "source_id": "S01",

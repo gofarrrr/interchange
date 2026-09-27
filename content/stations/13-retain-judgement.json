@@ -4,11 +4,11 @@
   "slug": "retain-judgement",
   "title": "Outsourcing judgement along with the task",
   "summary": "Keep the capacity to judge the work, challenge its assumptions and accept responsibility for its consequences.",
-  "diagnosis": "A system can produce an apparently complete answer without deciding whether the question was useful, the evidence sufficient or the action appropriate. Human review also fails when the reviewer lacks expertise, time, independence or authority. Specify the judgement that remains necessary and preserve opportunities for people to learn it; a nominal approval button does not do that work.",
+  "diagnosis": "A system can produce an apparently complete answer without deciding whether the question was useful, the evidence sufficient or the action appropriate. As routine execution moves to models, humans shift from gatekeepers on the critical path to validators on the exception path—a transition familiar from the history of accounting automation. Human review fails when the reviewer lacks expertise, time, independence or authority. Furthermore, this validator model breaks down if entry-level tasks where future reviewers once learned contextual judgment are automated away without an explicit apprenticeship path. Specify the judgement that remains necessary and preserve opportunities for people to learn it; a nominal approval button does not do that work.",
   "diagnostic_questions": [
     "What must a competent reviewer understand beyond the final generated output?",
     "Can the reviewer reject, change or escalate the result, and do they have time to inspect the evidence?",
-    "Which learning opportunities disappear when routine work is automated, and how will future experts develop?"
+    "Which learning opportunities disappear when routine work is automated, and how will junior staff develop the contextual judgment needed to validate and challenge model outputs?"
   ],
   "proposed_actions": [
     "Define reviewer responsibilities around evidence, context, assumptions, quality and consequences; do not reduce review to stylistic editing.",
@@ -21,7 +21,7 @@
     "Review time, queue size and disagreement/escalation patterns alongside output volume.",
     "Demonstrated ability to explain or challenge decisions without simply repeating the model’s answer."
   ],
-  "tradeoff": "Do not assume that a human is always more accurate or that an extra model is independent verification. Choose checks based on the failure mechanism. Preserve human accountability without pretending that responsibility alone supplies skill or attention.",
+  "tradeoff": "Do not assume that a human is always more accurate or that an extra model is independent verification. A human-above-the-loop validator model reduces routine review bottlenecks, but assumes people retain the contextual competence to catch subtle errors. Choose checks based on the failure mechanism. Preserve human accountability without pretending that responsibility alone supplies skill or attention.",
   "illustrative_case": "Illustrative application: a reviewer of a customer recommendation checks whether the evidence fits this customer and whether the action is permitted—not merely whether the recommendation sounds professional.",
   "line_id": "B",
   "short_title": "Keep your judgement",
@@ -36,14 +36,16 @@
     "choudary-judgement",
     "dwarkesh-critical-task",
     "blomfield-review-apprenticeship",
-    "every-visible-delegation"
+    "every-visible-delegation",
+    "ismail-validator-loop"
   ],
   "source_ids": [
     "S01",
     "S03",
     "S15",
     "S18",
-    "S35"
+    "S35",
+    "S42"
   ],
   "report_reference": {
     "source_id": "S01",

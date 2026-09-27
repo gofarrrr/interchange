@@ -23,7 +23,7 @@ test('Living-guide copy explains nuance, disagreement and alternatives without c
   for(const phrase of ['A living guide, not a finished checklist.','different lens','counterargument','expand, qualify or correct','not 36 final answers','not an automatic feed','not a longer bibliography'])assert.ok(html.includes(phrase),phrase);
 });
 test('Origin credits are not presented as research evidence or endorsement',()=>{
-  assert.equal(site.sources.length,31);assert.equal(site.evidence.length,60);
+  assert.equal(site.sources.length,36);assert.equal(site.evidence.length,70);
   assert.ok(aboutBody().includes('does not imply their endorsement'));
   assert.ok(!site.evidence.some(e=>e.source_id.startsWith('origin-')));
   assert.equal(checkPublication(data).length,72);

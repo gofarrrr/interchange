@@ -17,7 +17,7 @@ The owner provided the exact two URLs and the original list texts earlier in the
 
 `content/about.json` holds the editable origin credits and living-guide statement. `src/about.mjs` validates the fields and explicitly projects only public ones. Its `_provenance` section is internal and never shipped in the generated HTML or public data. The same renderer builds About for static hosting, offline HTML and the optional Astro adapter. `ABOUT.md` is a generated reading copy; rebuild after editing the JSON.
 
-Origin credits remain separate from `content/sources/` and `content/evidence/`. They do not inflate the 31 research-source families or 60 source-perspective records inherited from v1.0. If a particular post is later used to support a station claim, add a separately reviewed, attributed evidence record for that specific use.
+Origin credits remain separate from `content/sources/` and `content/evidence/`. They do not count toward research-source families or source-perspective records (which stood at 31 and 60 respectively in the v1.1 baseline, prior to the v1.3 operational additions). If a particular post is later used to support a station claim, add a separately reviewed, attributed evidence record for that specific use.
 
 ## The guide is open to revision
 

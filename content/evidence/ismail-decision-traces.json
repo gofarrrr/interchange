@@ -1,0 +1,16 @@
+{
+  "id": "ismail-decision-traces",
+  "source_id": "S42",
+  "type": "solution",
+  "title": "Capturing tacit judgment as durable exception traces",
+  "text": "Rather than attempting to extract expert knowledge into static manuals, the manuscript proposes capturing runtime decision traces whenever an expert resolves an ambiguous exception (inputs gathered, policy invoked, approver identity, precedent). The manuscript also highlights a contested counterargument, attributed to Alloy Partners, that aggressive delayering can remove tacit translation and cross-functional integration work whose loss may only become visible later, echoing the delayed innovation deficits of 1990s corporate reengineering.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual mechanism design and retrospective historical analysis. Logging decision traces creates unstructured precedent data that requires ongoing curation, schema maintenance, and privacy controls.",
+  "public_locator": {
+    "kind": "section",
+    "value": "Chapter 6, 'The Strongest Counter-Argument' and 'From Coordinator to Exception Architect'"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

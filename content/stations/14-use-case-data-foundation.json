@@ -4,11 +4,12 @@
   "slug": "use-case-data-foundation",
   "title": "Waiting for perfect data—or assuming AI will repair the data for you",
   "summary": "Prepare the data needed for the chosen use case without making every project depend on a complete enterprise rebuild.",
-  "diagnosis": "Two opposite assumptions create delay or failure: that all data must be cleaned before any experiment, or that a model can compensate for missing, stale and inaccessible information. Determine the minimum trustworthy input for the chosen scope. A read-only experiment may be possible before a major migration, but its source limits and the cost of adapting it later must remain visible.",
+  "diagnosis": "Two opposite assumptions create delay or failure: that all data must be cleaned before any experiment, or that a model can compensate for missing, stale and inaccessible information. Determine the minimum trustworthy input for the chosen scope. A read-only experiment may be possible before a major migration, but its source limits and the cost of adapting it later must remain visible. The manuscript offers a stronger architectural counter-view: repeated local extracts can create fragile integration, and proposes an independent governed data layer where semantics travel with the data, demoting transactional systems from data gatekeepers to consistency engines.",
   "diagnostic_questions": [
     "Which specific data defects prevent this use case from meeting its acceptance criteria?",
     "Can the useful scope be narrowed while preserving permissions, freshness and a clear explanation of limitations?",
-    "What changes when the source system migrates, and who will maintain the adapter or replacement?"
+    "What changes when the source system migrates, and who will maintain the adapter or replacement?",
+    "Does the extracted data carry its business semantics and governance rules with it, or will every downstream workflow have to re-engineer context?"
   ],
   "proposed_actions": [
     "Create a use-case data contract naming required fields, definitions, coverage, freshness, access and known gaps.",
@@ -21,7 +22,7 @@
     "Share of required fields meeting the declared contract for the actual eligible population.",
     "Time to a bounded trustworthy experiment, plus the maintenance and adaptation cost it creates."
   ],
-  "tradeoff": "The supplied materials do not demonstrate that a replica or pre-migration route is feasible in any particular ERP environment. That is an architecture option to assess locally. Avoid replacing a justified data programme with a collection of fragile AI-specific extracts.",
+  "tradeoff": "The supplied materials do not demonstrate that a replica or pre-migration route is feasible in any particular ERP environment. That is an architecture option to assess locally. Maintain the tension between speed and independence: local extracts enable rapid learning today, but accumulating unmanaged ad-hoc extracts recreates the architectural lock-in they bypassed. Avoid replacing a justified data programme with a collection of fragile AI-specific pipelines.",
   "illustrative_case": "Illustrative application: a purchasing team tests a read-only answer service on a defined set of approved supplier records, rather than waiting for the entire ERP migration or pretending the extract includes every supplier.",
   "line_id": "C",
   "short_title": "Fix useful data",
@@ -36,14 +37,16 @@
     "levie-data-portability",
     "pierce-staged-migration",
     "reshuffle-coordination",
-    "sphere-evidence-limits"
+    "sphere-evidence-limits",
+    "ismail-data-plane-inversion"
   ],
   "source_ids": [
     "S01",
     "S02",
     "S22",
     "S28",
-    "S30"
+    "S30",
+    "S42"
   ],
   "report_reference": {
     "source_id": "S01",

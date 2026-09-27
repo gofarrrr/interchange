@@ -1,0 +1,13 @@
+{
+  "id": "S43",
+  "title": "What Happens When Intelligence Becomes Almost Free",
+  "author_or_organization": "Salim Ismail",
+  "source_type": "video presentation and breakdown",
+  "date_as_supplied": "2026",
+  "original_url": "https://www.youtube.com/watch?v=R4AnpMknO4o",
+  "limitations": "Conceptual breakdown of low-cost contextual micro-decisions versus broad autonomous agents. Vendor marketing claims regarding 'zero hallucinations' are unverified and contradicted by the probabilistic nature of neural models. The 74% labor claim in the video commentary conflates a specific APQC workflow monotonicity result with aggregate enterprise employment.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

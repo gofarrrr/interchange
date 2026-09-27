@@ -4,10 +4,11 @@
   "slug": "review-capacity-and-throughput",
   "title": "Generating work faster than people can check and use it",
   "summary": "Plan the capacity to review, accept and use output—not just the capacity to generate it.",
-  "diagnosis": "Faster generation can move the constraint into testing, expert review, publication or customer adoption. Teams may then accumulate unfinished work or approve too quickly to keep up. Measure the queue from proposal to accepted use and decide which checking can be automated, which needs expertise and how demand should be limited while that capacity is developed.",
+  "diagnosis": "Faster generation can move the constraint into testing, expert review, publication or customer adoption: individual tasks run minutes faster, yet total end-to-end cycle time remains flat because work waits in the same approval queues. In Ju’s classification, monotonic tasks can execute without coordination for correctness, whereas non-monotonic tasks still require coordination; this formal property does not determine whether human judgment or coordination for quality remains useful. Measure the queue from proposal to accepted use and decide which checking can be automated, which needs expertise and how demand should be limited while that capacity is developed.",
   "diagnostic_questions": [
     "Where does generated work wait, and how much is discarded or rewritten before use?",
     "Do reviewers have time and evidence to detect the failures they are responsible for catching?",
+    "Has faster drafting reduced the end-to-end cycle time to customer delivery, or merely relocated waiting work into an overloaded approval queue?",
     "Has automation removed the practice through which future reviewers would learn?"
   ],
   "proposed_actions": [
@@ -19,9 +20,9 @@
   "measures": [
     "Accepted and used output per period, with rejected or abandoned volume visible.",
     "Queue age, work in progress, review effort and consequential defects escaping review.",
-    "Reviewer workload and demonstrated detection quality, not just number of approvals per hour."
+    "Reviewer workload and demonstrated detection quality, including human override rate audited alongside escaped defect rates to detect rubber-stamping."
   ],
-  "tradeoff": "Human review is not a universal solution, and code generation is not the same as software delivery. A second AI reviewer may help but can share the original system’s blind spots. Calibrate checks to the failure mechanism rather than use review theatre to preserve output speed.",
+  "tradeoff": "Human review is not a universal solution, and code generation is not the same as software delivery. A second AI reviewer may help but can share the original system’s blind spots. Monotonicity analysis indicates that many enterprise workflows can run asynchronously without coordination for correctness, but coordination may still be required for quality, customer context or strategic coherence. Calibrate checks to the failure mechanism rather than use review theatre to preserve output speed.",
   "illustrative_case": "Illustrative application: an engineering team generates more changes but every change still needs a scarce manual acceptance test. Improving testability or narrowing the change stream may create more completed value than further generation speed.",
   "line_id": "E",
   "short_title": "Plan review capacity",
@@ -36,14 +37,18 @@
     "every-review-work",
     "blomfield-review-apprenticeship",
     "choudary-judgement",
-    "brooks-workload"
+    "brooks-workload",
+    "ismail-congestion-coordination",
+    "ju-monotonicity-coordination"
   ],
   "source_ids": [
     "S01",
     "S03",
     "S18",
     "S34",
-    "S35"
+    "S35",
+    "S41",
+    "S44"
   ],
   "report_reference": {
     "source_id": "S01",

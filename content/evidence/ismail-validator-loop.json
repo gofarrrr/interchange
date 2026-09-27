@@ -1,0 +1,16 @@
+{
+  "id": "ismail-validator-loop",
+  "source_id": "S42",
+  "type": "qualification",
+  "title": "The validator transition and the severed apprenticeship ladder",
+  "text": "The manuscript argues that human roles shift from routine execution gatekeepers to exception validators, drawing on the historical precedent of accounting automation from physical ledgers to spreadsheets and ERP. However, it explicitly notes that automating all entry-level execution breaks the junior apprenticeship loop through which future experts historically acquired the contextual tacit knowledge needed to evaluate edge cases.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Historical analogy and prescriptive workforce thesis. Re-engineering junior learning pathways alongside AI deployment remains an operational proposal rather than a demonstrated industry-wide solution.",
+  "public_locator": {
+    "kind": "section",
+    "value": "Chapter 2, 'The Human/AI Decision Boundary' and Chapter 6, 'The Missing Junior Loop'"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

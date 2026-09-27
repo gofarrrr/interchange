@@ -1,0 +1,16 @@
+{
+  "id": "ismail-contextual-conditionals",
+  "source_id": "S43",
+  "type": "solution",
+  "title": "Contextual conditionals as an intermediate architectural choice",
+  "text": "Ismail distinguishes broad autonomous agents from narrow contextual conditionals (\"intelligence as an if-statement\"). Rather than building a multi-step planning agent or forcing ambiguous workflows into rigid boolean rules, a low-cost model can perform a single semantic check or routing judgment within conventional software. This introduces a middle design choice between brittle static rules and complex agentic coordination.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Conceptual category proposition, not an endorsement of vendor claims regarding zero error rates. Probabilistic checks still fail or drift and require calibrated confidence thresholds and deterministic fallback paths.",
+  "public_locator": {
+    "kind": "timestamp",
+    "value": "Video 01:25-02:52"
+  },
+  "review": {
+    "status": "pending"
+  }
+}
