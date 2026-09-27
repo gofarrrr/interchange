@@ -1,6 +1,6 @@
 # Changelog implementacji
 
-## v1.3 — 26 września 2026
+## v1.3 — 27 września 2026
 
 Wzbogacono 9 stacji o nowe perspektywy badawcze i operacyjne na podstawie materiałów Salima Ismaila, pracy Haranga Ju oraz eseju i wystąpienia Ishaana Sehgala (Omnara):
 - Dodano 5 rekordów źródeł (`content/sources/S41.json` do `S45.json`): wystąpienie wideo o mierzeniu strategii AI (S41), manuskrypt „The Organizational Singularity” v25 (S42), wideo o tanich mikrodecyzjach (S43), preprint akademicki Haranga Ju o monotoniczności zadań (S44) oraz esej techniczny Ishaana Sehgala / Omnara „The Log Is the Agent” (S45).

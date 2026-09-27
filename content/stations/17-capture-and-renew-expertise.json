@@ -4,7 +4,7 @@
   "slug": "capture-and-renew-expertise",
   "title": "Leaving essential business rules in people’s heads",
   "summary": "Capture decision-relevant expertise while preserving the people and practice that keep it current.",
-  "diagnosis": "A process can depend on an experienced colleague’s recognition of exceptions that never appear in a manual. Capturing this knowledge requires cases, reasoning and applicability—not just recording a meeting. Elicitation also faces trust barriers: specialists hesitate to codify tacit expertise if they anticipate it diminishes their future standing. Rather than asking experts to write static rulebooks, systems should capture runtime decision traces of actual exception handling (inputs, policy invoked, approver, precedent). Assign stewardship and preserve opportunities for future experts to learn through supervised work.",
+  "diagnosis": "A process can depend on an experienced colleague’s recognition of exceptions that never appear in a manual. Capturing this knowledge requires cases, reasoning and applicability—not just recording a meeting. Elicitation also faces trust barriers: specialists hesitate to codify tacit expertise if they anticipate it diminishes their future standing. Runtime decision traces can complement static documentation by recording how real exceptions were resolved (inputs, policy invoked, approver, precedent). Assign stewardship and preserve opportunities for future experts to learn through supervised work.",
   "diagnostic_questions": [
     "Which decisions repeatedly require a particular person, and what makes those cases unusual?",
     "Can experts explain the evidence, tradeoffs and circumstances under which a rule should not apply?",

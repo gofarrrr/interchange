@@ -2,8 +2,8 @@
   "id": "ismail-congestion-coordination",
   "source_id": "S41",
   "type": "diagnosis",
-  "title": "Congestion latency and the approval queue bottleneck",
-  "text": "Ismail and Azhar define 'congestion' as the operational failure where individual tasks accelerate dramatically while total organizational cycle time remains unchanged, because generated outputs pile up in existing human review and sign-off queues. While tracking human override rates over time can signal operational learning, a declining override rate must be evaluated against reviewer fatigue, permissive rubber-stamping, and silent escaped defects.",
+  "title": "Task-speed gains and the approval queue bottleneck",
+  "text": "Ismail points out that accelerating individual tasks can leave total organizational cycle time unchanged when work continues to wait in existing human approval and review queues. While tracking human override rates over time can indicate operational learning, a declining override rate must be evaluated against reviewer fatigue, rubber-stamping, and escaped defects.",
   "attribution_layer": "source-as-represented",
   "qualification": "Operational critique and diagnostic metric. A lower override rate is not an unalloyed indicator of higher quality; it can also reflect shifting case complexity, reduced checking rigor, or narrower task delegation.",
   "public_locator": {

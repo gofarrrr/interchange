@@ -22,7 +22,7 @@
     "Proportion of critical context, evaluations and operating artifacts accessible in usable form.",
     "Expected switching benefit and continuity risk compared with the cost of maintaining portability machinery."
   ],
-  "tradeoff": "No source establishes that models are interchangeable commodities or that one ecosystem is always a mistake. A single-provider design may be rational. The error is unexamined dependence, especially when the organisation cannot access the assets needed to leave. Retaining operational decision traces and logs is essential for long-term portability, but storing and indexing massive telemetry carries its own storage and governance overhead.",
+  "tradeoff": "No source establishes that models are interchangeable commodities or that one ecosystem is always a mistake. A single-provider design may be rational. The error is unexamined dependence, especially when the organisation cannot access the assets needed to leave. Retaining relevant operational history can improve portability when agent behaviour depends on path-dependent context, but storing and indexing extensive telemetry carries its own data governance and storage overhead.",
   "illustrative_case": "Illustrative application: a second model connects in an afternoon but fails the existing tool-call and exception tests. The migration requires instruction and harness changes, so “we can switch APIs” was not a complete exit plan.",
   "line_id": "F",
   "short_title": "Keep switching feasible",

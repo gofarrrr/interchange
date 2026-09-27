@@ -8,8 +8,7 @@
   "diagnostic_questions": [
     "What must a competent reviewer understand beyond the final generated output?",
     "Can the reviewer reject, change or escalate the result, and do they have time to inspect the evidence?",
-    "Which learning opportunities disappear when routine work is automated, and how will future experts develop?",
-    "How will junior staff develop the expertise required to validate and challenge model outputs once entry-level tasks are automated?"
+    "Which learning opportunities disappear when routine work is automated, and how will junior staff develop the contextual judgment needed to validate and challenge model outputs?"
   ],
   "proposed_actions": [
     "Define reviewer responsibilities around evidence, context, assumptions, quality and consequences; do not reduce review to stylistic editing.",
