@@ -1,16 +1,14 @@
-# INTERCHANGE — działająca implementacja v1.1
+# INTERCHANGE — działająca implementacja v1.3
 
 **Status: wersja do przeglądu zespołowego, nie zatwierdzona publikacja.**
 
 36 tematów o transformacji AI, sześć linii, własna mapa SVG i spokojne strony do czytania. To rzeczywisty interfejs HTML/CSS/JavaScript z pełną treścią, a nie obraz makiety. Projekt realizuje kierunek „Everything is neutral except the network”.
 
-## Zmiany v1.1 — autorzy i żywy przewodnik
+## Zmiany v1.3 — operacyjne wzbogacenie 9 stacji (Ismail / Ju / Sehgal)
 
-About zawiera widoczne podziękowanie dla Marka Ajzenstadta i Alexa Liebermana oraz bezpośrednie linki do obu wskazanych postów na X. Osobna sekcja wyjaśnia, że 36 stacji stanowi strukturę rozwijaną przez kuratora: nowe materiały mają wnosić niuanse, inne perspektywy, kontrargumenty i alternatywne sposoby działania.
+Dodano 5 nowych rodzin źródeł (S41–S45) oraz 10 przypisanych perspektyw dowodowych do 9 stacji, wzbogacając diagnozy i pytania o warunki kontekstowe (AI-04), kulturę metryk wejściowych i rolę kontr-przypadku (AI-05), utratę ścieżki terminowania (AI-13), inwersję warstwy danych (AI-14), rejestrację śladów decyzyjnych oraz kontrargument Alloy Partners dot. delayeringu (AI-17), stopniowaną autoryzację i klin powierniczy (AI-24), symptom kongestii oraz analizę monotoniczności zadań Haranga Ju (AI-28), instytucjonalną ochronę kontr-tezy w pilotach (AI-30) oraz koszty migracji i własność dziennika zdarzeń Ishaana Sehgala / Omnara (AI-32). Łącznie: 36 rodzin źródeł i 70 przypisanych perspektyw.
 
-Edytuj ten opis w `content/about.json`. Te dwa posty są inspiracją dla struktury, nie nowymi dowodami dla wszystkich stacji; liczba źródeł badawczych i statusy zatwierdzenia nie zmieniły się. Nie dodano automatycznego pobierania postów ani monitorowania.
-
-[Zasady aktualizowania i atrybucji](docs/ORIGINS-AND-UPDATES.md) · [Tekst About](ABOUT.md)
+[Zasady aktualizowania i atrybucji](docs/ORIGINS-AND-UPDATES.md) · [Tekst About](ABOUT.md) · [Changelog](docs/CHANGELOG.md)
 
 ## Otwórz od razu
 
@@ -50,7 +48,7 @@ npm run build
 - Zapisywanie tematów w tej przeglądarce, kopiowanie linku i szablonu roboczego; bez kont i analityki.
 - Budowanie statycznych stron, walidacja danych, testy, kontrola linków wewnętrznych, obsługa subścieżki i blokada niezatwierdzonej publikacji.
 
-Wersja zawiera **58 stron**, **31 rodzin źródłowych z dostarczonymi publicznymi URL** i **60 przypisanych perspektyw**. Te liczby nie oznaczają niezależnej weryfikacji źródeł. Treść i interfejs pozostają po angielsku, zgodnie z materiałem wejściowym. Instrukcja dla zespołu jest po polsku.
+Wersja zawiera **58 stron**, **36 rodzin źródłowych z dostarczonymi publicznymi URL** i **70 przypisanych perspektyw**. Te liczby nie oznaczają niezależnej weryfikacji źródeł. Treść i interfejs pozostają po angielsku, zgodnie z materiałem wejściowym. Instrukcja dla zespołu jest po polsku.
 
 ## Architektura — ważne rozróżnienie
 

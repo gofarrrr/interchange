@@ -4,11 +4,12 @@
   "slug": "capture-and-renew-expertise",
   "title": "Leaving essential business rules in people’s heads",
   "summary": "Capture decision-relevant expertise while preserving the people and practice that keep it current.",
-  "diagnosis": "A process can depend on an experienced colleague’s recognition of exceptions that never appear in a manual. Capturing this knowledge requires cases, reasoning and applicability—not just recording a meeting. Historical practice must also be distinguished from current policy. Assign stewardship and preserve opportunities for future experts to learn through supervised work.",
+  "diagnosis": "A process can depend on an experienced colleague’s recognition of exceptions that never appear in a manual. Capturing this knowledge requires cases, reasoning and applicability—not just recording a meeting. Elicitation also faces trust barriers: specialists hesitate to codify tacit expertise if they anticipate it diminishes their future standing. Rather than asking experts to write static rulebooks, systems should capture runtime decision traces of actual exception handling (inputs, policy invoked, approver, precedent). Assign stewardship and preserve opportunities for future experts to learn through supervised work.",
   "diagnostic_questions": [
     "Which decisions repeatedly require a particular person, and what makes those cases unusual?",
     "Can experts explain the evidence, tradeoffs and circumstances under which a rule should not apply?",
-    "Who validates, updates or retires captured knowledge after the original expert leaves?"
+    "Who validates, updates or retires captured knowledge after the original expert leaves?",
+    "Do specialists have career security and incentives to codify their tacit knowledge, or does sharing expertise threaten their future standing?"
   ],
   "proposed_actions": [
     "Prioritise consequential, recurring decisions and interview experts using real contrasting cases rather than abstract requests to document everything.",
@@ -21,7 +22,7 @@
     "Share of reused rules with current ownership, applicability boundaries and test cases.",
     "Detection and correction of obsolete or overgeneralised rules, plus development of additional competent reviewers."
   ],
-  "tradeoff": "Do not claim that a recording or context graph captures all tacit expertise. Some judgement remains contextual and experiential. Capturing more interactions also creates privacy and retention responsibilities; selective, consent-aware evidence is preferable to indiscriminate surveillance.",
+  "tradeoff": "Do not claim that a recording or context graph captures all tacit expertise. Some judgement remains contextual and experiential. Capturing more interactions also creates privacy and retention responsibilities; selective, consent-aware evidence is preferable to indiscriminate surveillance. Furthermore, the manuscript presents a counterargument, attributed to Alloy Partners, that aggressive delayering can remove tacit translation and integration work whose loss may only become visible later (repeating the 1990s re-engineering precedent where initial delayering was followed years later by an innovation deficit).",
   "illustrative_case": "Illustrative application: a retiring planner reviews ordinary substitutions, acceptable exceptions and superficially similar cases where substitution would be unsafe. The contrasts become validated knowledge and evaluation cases, not just a transcript.",
   "line_id": "C",
   "short_title": "Capture the know-how",
@@ -36,18 +37,21 @@
     "tacit-priority",
     "tacit-curators",
     "sphere-artifacts",
-    "blomfield-memory"
+    "blomfield-memory",
+    "ismail-decision-traces"
   ],
   "source_ids": [
     "S01",
     "S10",
     "S30",
-    "S35"
+    "S35",
+    "S42"
   ],
   "report_reference": {
     "source_id": "S01",
     "pages": [
       30,
+      31,
       34,
       35,
       36

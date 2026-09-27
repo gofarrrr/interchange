@@ -20,7 +20,7 @@ Krótkie nazwy są przeznaczone do mapy. Pełne nazwy i dłuższa treść należ
 
 Zachowaj rozróżnienie: wypowiedź autora źródła, dostarczona synteza redakcyjna oraz propozycja działania. Nie zamieniaj syntezy w cytat. Ograniczenia muszą być widoczne przy perspektywie, a nie tylko w odległej bibliografii.
 
-Wersja otrzymana do kodowania zawiera 36 tematów, 31 rodzin źródeł z URL i 60 połączonych perspektyw. Wyłączono 9 rodzin bez publicznego URL i 15 perspektyw bez takiego oryginału. Nie dołączono książek, PDF ani wewnętrznych nazw plików. Pełny import opisuje `src/data/import-report.json`.
+Wersja bazowa v1.1 zawierała 36 tematów, 31 rodzin źródeł z URL i 60 połączonych perspektyw (w v1.3 rozszerzona o 5 rodzin źródeł S41–S45 i 10 perspektyw do łącznie 36 rodzin i 70 perspektyw). Wyłączono 9 rodzin bez publicznego URL i 15 perspektyw bez takiego oryginału. Nie dołączono książek, PDF ani wewnętrznych nazw plików. Pełny import opisuje `src/data/import-report.json`.
 
 ## Statusy
 

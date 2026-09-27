@@ -7,11 +7,13 @@
   "diagnosis": "A drafting tool and a system that changes a customer’s entitlement do not expose people to the same consequences. Even within one workflow, a read-only step and an irreversible action may need different controls. Avoid collapsing task autonomy, user collaboration and organisational readiness into a single maturity score. Assess who can be affected and what recourse exists.",
   "diagnostic_questions": [
     "Who could be harmed by an incorrect or unfair result, and can the effect be reversed in practice?",
+    "Which actions are genuinely reversible two-way doors suitable for automated execution, and which are one-way fiduciary commitments that must never execute without human sign-off?",
     "Which decisions require stronger evidence, specialist review or an opportunity to challenge the outcome?",
     "Can the organisation actually monitor and support the level of autonomy being proposed?"
   ],
   "proposed_actions": [
     "Classify the workflow’s decisions by consequence, sensitivity, uncertainty, affected population and reversibility, using specialists where needed.",
+    "Implement graduated authority envelopes where agents earn expanded operational discretion based on demonstrated performance telemetry, while reserving irreversible commitments under a strict fiduciary boundary requiring accountable human sign-off.",
     "Choose task-specific control patterns: assistance, reviewed proposal, constrained execution or stronger approval; make prohibited uses explicit.",
     "Test relevant quality, fairness, misuse and recovery concerns, and provide a route for affected users to obtain correction or human review."
   ],
@@ -21,7 +23,7 @@
     "Performance and harmful-error patterns across relevant case categories or populations, with privacy-preserving evaluation design.",
     "Ability to identify, challenge and remediate adverse outcomes—not just average accuracy."
   ],
-  "tradeoff": "No single accuracy threshold establishes that a consequential workflow is acceptable. Human review is not sufficient without skill and capacity. This page proposes design questions; it does not establish legal compliance or prescribe a jurisdiction-specific standard.",
+  "tradeoff": "No single accuracy threshold establishes that a consequential workflow is acceptable. Graduated authority based on operational telemetry helps scale autonomy safely, but past performance on normal distributions does not guarantee safety during rare systemic shocks or adversarial conditions. Human review is not sufficient without skill and capacity. This page proposes design questions; it does not establish legal compliance or prescribe a jurisdiction-specific standard.",
   "illustrative_case": "Illustrative application: a service can categorise routine requests automatically, draft a recommended decision for specialist review and reserve final changes to customer eligibility for a separately governed path.",
   "line_id": "D",
   "short_title": "Match controls to risk",
@@ -33,11 +35,13 @@
     "AI-34"
   ],
   "evidence_ids": [
-    "dwarkesh-critical-task"
+    "dwarkesh-critical-task",
+    "ismail-graduated-authority"
   ],
   "source_ids": [
     "S01",
-    "S15"
+    "S15",
+    "S42"
   ],
   "report_reference": {
     "source_id": "S01",

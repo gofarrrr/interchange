@@ -4,13 +4,15 @@
   "slug": "simplest-effective-system",
   "title": "Building an agent when simpler software would do",
   "summary": "Use AI where interpretation helps and ordinary software where explicit rules are sufficient.",
-  "diagnosis": "An agent-first design introduces choices and failure paths even when the task is already well specified. Conversely, forcing all ambiguous work into rigid rules can create an unmaintainable exception tree. Split the workflow by what each step requires: retrieval, deterministic computation, interpretation, decision authority or action. Select the simplest complete system that meets the acceptance criteria.",
+  "diagnosis": "An agent-first design introduces choices and failure paths even when the task is already well specified. Conversely, forcing all ambiguous work into rigid rules can create an unmaintainable exception tree. Between rigid deterministic rules and open-ended autonomous agents lies a middle design space: a bounded contextual model call that performs a narrow semantic check or routing decision within an otherwise conventional deterministic pipeline. Split the workflow by what each step requires: retrieval, deterministic computation, interpretation, decision authority or action. Select the simplest complete system that meets the acceptance criteria.",
   "diagnostic_questions": [
     "Which steps genuinely require interpretation rather than lookup, arithmetic or an explicit rule?",
+    "Could a narrow contextual model check resolve the ambiguity within ordinary software before introducing autonomous planning or multi-agent loops?",
     "Can an existing service or a small workflow solve the problem without autonomous planning?",
     "Does each additional agent or tool interaction add useful capability worth its cost and failure surface?"
   ],
   "proposed_actions": [
+    "Distinguish deterministic calculation (ordinary code), narrow contextual judgment (constrained model call), open-ended planning (agentic workflow) and unresolved policy (human decision).",
     "Prototype a non-agent baseline, such as search plus a form, deterministic extraction checks or rules-based routing.",
     "Separate probabilistic interpretation from calculations, validation and authorised writes; make the boundary inspectable.",
     "Increase autonomy only when representative tests show a clear benefit over the simpler alternative, including maintenance and review effort."
@@ -21,7 +23,7 @@
     "Total cost per accepted task, including review, retries, tool charges and maintenance.",
     "Number of operational dependencies and failure paths that require human support, interpreted alongside demonstrated value."
   ],
-  "tradeoff": "Simplicity is not the same as refusing AI or forcing every workflow into rules. A hybrid may be the least complex effective solution. Neither a traditional script nor an agent becomes safe merely because its architecture has a familiar label.",
+  "tradeoff": "Simplicity is not the same as refusing AI or forcing every workflow into rules. A hybrid may be the least complex effective solution: using a constrained contextual check inside conventional code is simpler than an autonomous agent, but still introduces probabilistic failure into previously deterministic software. Neither a traditional script nor an agent becomes safe merely because its architecture has a familiar label.",
   "illustrative_case": "Illustrative application: a model interprets a customer’s request, structured code calculates the permitted refund and a service enforces the approval threshold. The model does not need unrestricted authority to invent or execute the entire refund process.",
   "line_id": "A",
   "short_title": "Use simpler software",
@@ -35,13 +37,15 @@
   "evidence_ids": [
     "tan-computation",
     "newport-end-to-end",
-    "harness-components"
+    "harness-components",
+    "ismail-contextual-conditionals"
   ],
   "source_ids": [
     "S01",
     "S14",
     "S27",
-    "S39"
+    "S39",
+    "S43"
   ],
   "report_reference": {
     "source_id": "S01",

@@ -7,7 +7,7 @@
   "diagnosis": "An endless pilot consumes attention without committing to adoption or closure. A rigid programme can create the opposite failure: evidence arrives but cannot change the roadmap. Maintain a durable business direction while allowing experiments to alter scope, architecture and priorities. Define what would count as useful learning and who has authority to act on it.",
   "diagnostic_questions": [
     "What decision will this pilot enable, and when will that decision be made?",
-    "Which evidence would cause the team to stop, narrow the scope or choose a different approach?",
+    "Which evidence would cause the team to stop, narrow the scope or choose a different approach, and who is institutionally protected to surface that counter-case?",
     "What must be funded and owned for a successful pilot to become sustained use?"
   ],
   "proposed_actions": [
@@ -36,14 +36,16 @@
     "effectuation-bounded-experiment",
     "moonshots-parallel-run",
     "curiosity-exploration",
-    "rao-real-outcomes"
+    "rao-real-outcomes",
+    "ismail-pilot-disconfirmation"
   ],
   "source_ids": [
     "S01",
     "S11",
     "S25",
     "S32",
-    "S38"
+    "S38",
+    "S41"
   ],
   "report_reference": {
     "source_id": "S01",

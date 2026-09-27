@@ -1,5 +1,22 @@
 # Changelog implementacji
 
+## v1.3 — 26 września 2026
+
+Wzbogacono 9 stacji o nowe perspektywy badawcze i operacyjne na podstawie materiałów Salima Ismaila, pracy Haranga Ju oraz eseju i wystąpienia Ishaana Sehgala (Omnara):
+- Dodano 5 rekordów źródeł (`content/sources/S41.json` do `S45.json`): wystąpienie wideo o mierzeniu strategii AI (S41), manuskrypt „The Organizational Singularity” v25 (S42), wideo o tanich mikrodecyzjach (S43), preprint akademicki Haranga Ju o monotoniczności zadań (S44) oraz esej techniczny Ishaana Sehgala / Omnara „The Log Is the Agent” (S45).
+- Dodano 10 ograniczonych perspektyw dowodowych (`content/evidence/`): `ismail-contextual-conditionals`, `ismail-narrative-inversion`, `ismail-validator-loop`, `ismail-data-plane-inversion`, `ismail-decision-traces`, `ismail-graduated-authority`, `ismail-congestion-coordination`, `ju-monotonicity-coordination`, `ismail-pilot-disconfirmation`, `sehgal-log-portability`.
+- Wzbogacono stacje:
+  - **AI-04**: dodano przestrzeń warunków kontekstowych („intelligence as an if-statement”) między sztywnymi regułami a autonomicznymi agentami.
+  - **AI-05**: wprowadzono powiązanie metryk wejściowych z kulturą decyzyjną opartą na narracjach (zamiast dowodach), brak roli broniącej kontr-przypadku oraz eliminację rankingów zużycia tokenów.
+  - **AI-13**: wprowadzono przejście od rutynowej bramki do walidacji wyjątków oraz ostrzeżenie przed zniszczeniem ścieżki terminowania (junior loop).
+  - **AI-14**: sformułowano napięcie architektoniczne między doraźnymi ekstraktami danych na potrzeby use case'u a inwersją warstwy danych i przenośnością semantyki.
+  - **AI-17**: dodano rejestrację śladów decyzyjnych (decision traces) jako precedensu, bariery zaufania przy ujawnianiu wiedzy milczącej oraz przytoczono kontrargument przypisywany Alloy Partners o ryzyku utraty niewidocznej pracy integracyjnej przy agresywnym delayeringu (lekcja z reengineeringu lat 90.).
+  - **AI-24**: wprowadzono stopniowaną autoryzację (graduated authority) zdobywaną telemetrycznie oraz klin powierniczy (fiduciary wedge) zastrzegający nieodwracalne decyzje dla ludzi.
+  - **AI-28**: wyjaśniono symptom kongestii (przyspieszenie zadań przy niezmienionym cycle time firmy), wprowadzono analizę monotoniczności Ju (ze ścisłym rozróżnieniem 74% workflowów APQC vs 42% zadań O*NET oraz zastrzeżeniem, że monotoniczność dotyczy poprawności, nie jakości) oraz ostrożność interpretacyjną wokół wskaźnika override rate.
+  - **AI-30**: wzbogacono pytanie diagnostyczne o instytucjonalną ochronę dla roli prezentującej kontr-tezę przy kryteriach zatrzymania pilota.
+  - **AI-32**: rozszerzono analizę kosztów zmiany dostawcy o rejestr zdarzeń i telemetrię operacyjną (`sehgal-log-portability`), przypisując tezę bezpośrednio do źródła Ishaan Sehgal / Omnara (S45) z zachowaniem manuskryptu Ismaila (S42) jako wtórnej adaptacji.
+- Wszystkie nowe rekordy źródeł (S41–S45) posiadają zweryfikowany dostęp publiczny (`access: "verified-public"`), a ich recenzje redakcyjne pozostają w statusie `pending` zgodnie z fail-closed regułą bramki publikacyjnej. Struktura 6 linii i 36 stacji pozostała nienaruszona.
+
 ## v1.2 — 25 września 2026
 
 Usunięto kolizję między niebieską linią sieci a linkiem „How it works” na szerokich viewportach. Przyczyną było osobne powiększanie hero od 1500 px, które przesuwało CTA w dół przy niezmienionej geometrii mapy. Duży desktop zachowuje teraz ten sam rytm typograficzny, a linki hero otrzymały neutralny kartograficzny halo/maskę, dzięki czemu linia nie może obniżać czytelności tekstu przy różnicach fontów i renderingu.

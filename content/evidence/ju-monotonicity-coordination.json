@@ -1,0 +1,16 @@
+{
+  "id": "ju-monotonicity-coordination",
+  "source_id": "S44",
+  "type": "observation",
+  "title": "Monotonicity analysis and the boundaries of avoidable coordination",
+  "text": "Ju applies the distributed systems CALM theorem to enterprise workflows, demonstrating that coordination mechanisms are required for correctness only when tasks are non-monotonic (where new information can invalidate prior conclusions). Across 65 APQC enterprise workflows, 74% were classified as monotonic and provably executable without coordination, with non-monotonic workflows clustering heavily around shared finite resources such as budgets, headcounts, and physical capacity. Replicating on 13,417 O*NET occupational tasks yielded a 42% monotonic rate.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Academic preprint under review; tasks evaluated in simulation. Crucially, the author notes that monotonicity guarantees only computational correctness without synchronization, not qualitative coherence, strategic alignment, or task quality.",
+  "public_locator": {
+    "kind": "section",
+    "value": "Preprint arXiv:2602.18673, Section 3-4"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

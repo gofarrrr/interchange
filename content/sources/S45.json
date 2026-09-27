@@ -1,0 +1,13 @@
+{
+  "id": "S45",
+  "title": "The Log Is the Agent",
+  "author_or_organization": "Ishaan Sehgal (Omnara)",
+  "source_type": "practitioner technical essay and keynote",
+  "date_as_supplied": "2026-06",
+  "original_url": "https://www.omnara.com/blog/the-log-is-the-agent",
+  "limitations": "Vendor-origin architectural argument and position paper by the founder of Omnara (an open-source agent command center), also delivered as an AI Engineer World's Fair keynote. Proposes treating append-only event logs as the persistent definition of an agent rather than models or runtime infrastructure. Retaining, redacting, and replaying extensive agent telemetry creates substantial data-governance, storage, and privacy overhead in enterprise settings.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

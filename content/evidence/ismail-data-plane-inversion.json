@@ -1,0 +1,16 @@
+{
+  "id": "ismail-data-plane-inversion",
+  "source_id": "S42",
+  "type": "critique",
+  "title": "The architectural limit of application-siloed data extracts",
+  "text": "The manuscript argues that enterprise AI stalls primarily at the data integration layer when models are bolted onto locked transactional applications (\"group drive\"). It advocates for an independent governed data layer where semantic meaning travels bound to each object, demoting transactional engines from data gatekeepers to consistency processors. This challenges the long-term viability of relying solely on isolated, point-to-point use-case data extracts.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Architectural manifesto and directional framework. Decoupling enterprise data requires substantial governance investment, and analytical stores cannot replace the ACID guarantees required for operational transaction processing.",
+  "public_locator": {
+    "kind": "section",
+    "value": "Chapter 8, 'The Data Plane Inversion' and 'Make Meaning Portable'"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

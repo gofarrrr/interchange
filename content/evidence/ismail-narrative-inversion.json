@@ -1,0 +1,16 @@
+{
+  "id": "ismail-narrative-inversion",
+  "source_id": "S41",
+  "type": "diagnosis",
+  "title": "Narrative inversion and vanity input metrics",
+  "text": "Ismail links input-heavy AI metrics to a broader decision culture in which evidence is often selected after a preferred narrative has formed, and argues that organizations rarely assign someone to develop the counter-case. In this environment, measurement dashboards routinely focus on vanity input proxies—such as token consumption, prompts submitted, or seats provisioned—rather than tracking verified changes in accepted business outcomes.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Diagnostic critique based on executive observations; does not provide formal ethnographic or econometric survey data. Formalizing a red-team or counter-role can itself degenerate into performative governance if the role lacks real authority to halt funding.",
+  "public_locator": {
+    "kind": "timestamp",
+    "value": "Video 00:00:27-00:02:43"
+  },
+  "review": {
+    "status": "pending"
+  }
+}

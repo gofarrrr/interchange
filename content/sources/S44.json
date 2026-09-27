@@ -1,0 +1,13 @@
+{
+  "id": "S44",
+  "title": "When Coordination Is Avoidable: A Monotonicity Analysis of Organizational Tasks",
+  "author_or_organization": "Harang Ju",
+  "source_type": "academic preprint (arXiv:2602.18673)",
+  "date_as_supplied": "2026",
+  "original_url": "https://arxiv.org/abs/2602.18673",
+  "limitations": "Preprint from Johns Hopkins Carey Business School, not yet peer-reviewed. Applies the distributed-systems CALM theorem to Thompson's task interdependence taxonomy. Evaluates 65 APQC enterprise workflows (finding 74% monotonic) and 13,417 O*NET occupational tasks (finding 42% monotonic). The author explicitly notes that monotonicity guarantees only correctness under asynchronous execution, not output quality or organizational coherence.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}
