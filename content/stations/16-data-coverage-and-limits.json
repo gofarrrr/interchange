@@ -39,21 +39,11 @@
     "openai-use-not-output"
   ],
   "source_ids": [
-    "S01",
     "S16",
     "S30",
     "S40"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      34,
-      35,
-      36
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

@@ -38,24 +38,11 @@
     "twelve-rubrics-traces"
   ],
   "source_ids": [
-    "S01",
     "S03",
     "S31",
     "S36"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      11,
-      34,
-      35,
-      36,
-      38,
-      41
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

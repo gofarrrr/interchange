@@ -38,20 +38,11 @@
     "tan-knowledge-conflicts"
   ],
   "source_ids": [
-    "S01",
     "S05",
     "S16",
     "S39"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      38,
-      41
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

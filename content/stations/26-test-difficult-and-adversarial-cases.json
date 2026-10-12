@@ -39,23 +39,11 @@
     "dwarkesh-critical-task"
   ],
   "source_ids": [
-    "S01",
     "S03",
     "S14",
     "S15"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      19,
-      23,
-      34,
-      35,
-      36
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

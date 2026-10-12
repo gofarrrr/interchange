@@ -38,23 +38,11 @@
     "rao-feedback"
   ],
   "source_ids": [
-    "S01",
     "S14",
     "S35",
     "S38"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      34,
-      35,
-      36,
-      38,
-      41
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

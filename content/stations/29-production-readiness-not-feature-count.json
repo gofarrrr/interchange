@@ -39,29 +39,12 @@
     "emergence-non-linear-leverage"
   ],
   "source_ids": [
-    "S01",
     "S05",
     "S13",
     "S27",
     "S48"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      35
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

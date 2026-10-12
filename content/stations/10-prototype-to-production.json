@@ -38,18 +38,10 @@
     "ondrej-context-versioning"
   ],
   "source_ids": [
-    "S01",
     "S05",
     "S13"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      11
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

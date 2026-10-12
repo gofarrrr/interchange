@@ -38,19 +38,10 @@
     "context-precedent-risk"
   ],
   "source_ids": [
-    "S01",
     "S14",
     "S16"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      38,
-      41
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

@@ -38,21 +38,11 @@
     "willison-verification-fatigue"
   ],
   "source_ids": [
-    "S01",
     "S14",
     "S38",
     "S57"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      19,
-      23,
-      35
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

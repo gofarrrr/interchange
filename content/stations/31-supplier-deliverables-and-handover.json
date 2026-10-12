@@ -38,21 +38,11 @@
     "pucek-compounding-handover"
   ],
   "source_ids": [
-    "S01",
     "S06",
     "S14",
     "S46"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      36,
-      37,
-      38
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

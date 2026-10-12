@@ -40,21 +40,13 @@
     "buhler-jevons-paradox-thinking"
   ],
   "source_ids": [
-    "S01",
     "S05",
     "S19",
     "S31",
     "S48",
     "S49"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      25
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

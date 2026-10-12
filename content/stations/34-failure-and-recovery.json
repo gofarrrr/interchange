@@ -37,18 +37,10 @@
     "moonshots-governance"
   ],
   "source_ids": [
-    "S01",
     "S14",
     "S25"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      43
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },

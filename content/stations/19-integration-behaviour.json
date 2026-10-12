@@ -38,28 +38,10 @@
     "newport-end-to-end"
   ],
   "source_ids": [
-    "S01",
     "S14",
     "S27"
   ],
-  "report_reference": {
-    "source_id": "S01",
-    "pages": [
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      38,
-      41
-    ],
-    "relationship": "adjacent",
-    "review_status": "inherited-not-reverified"
-  },
+  "report_reference": null,
   "review": {
     "status": "pending"
   },
