@@ -320,7 +320,7 @@ function sentenceSpans(text) {
       const doc=document.querySelector('.reading-document');
       if(!doc||!query.trim())return;
       const candidates=Array.from(doc.querySelectorAll('p, li, .working-artifact p'))
-        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer, .needle-float-bar')&&el.textContent.trim().length>20);
+        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer')&&el.textContent.trim().length>20);
       if(!candidates.length)return;
 
       const passages=candidates.map((el,i)=>({id:'p'+i,text:el.textContent.trim()}));
@@ -373,110 +373,10 @@ function sentenceSpans(text) {
       const id=stationPage.getAttribute('data-station-page');
       if(id)store('visited',[...new Set([...stored('visited'),id])]);
 
-      const needleBar=document.querySelector('[data-needle-bar]');
-      const needleInput=document.querySelector('[data-needle-input]');
-      const needleClose=document.querySelector('[data-needle-close]');
-      const needleStatus=document.querySelector('[data-needle-status]');
-      const needleOther=document.querySelector('[data-needle-other]');
-      const needleTriggers=document.querySelectorAll('[data-needle-trigger]');
-
-      const openNeedleBar=()=>{
-        if(!needleBar)return;
-        needleBar.hidden=false;
-        if(needleInput instanceof HTMLInputElement){
-          needleInput.focus();
-          needleInput.select();
-        }
-      };
-
-      const closeNeedleBar=()=>{
-        if(!needleBar)return;
-        needleBar.hidden=true;
-        clearNeedleHighlights();
-        if(needleOther instanceof HTMLElement){
-          needleOther.hidden=true;
-          needleOther.replaceChildren();
-        }
-        if(needleInput instanceof HTMLInputElement)needleInput.value='';
-        if(needleStatus)needleStatus.textContent='Press Enter';
-      };
-
-      needleTriggers.forEach(btn=>btn.addEventListener('click',openNeedleBar,{signal}));
-      needleClose?.addEventListener('click',closeNeedleBar,{signal});
-
-      const handleNeedleSearch=async(q)=>{
-        const trimmed=q.trim();
-        if(!trimmed)return;
-        if(needleBar)needleBar.hidden=false;
-        if(needleOther instanceof HTMLElement){
-          needleOther.hidden=true;
-          needleOther.replaceChildren();
-        }
-        if(needleStatus)needleStatus.textContent='Pinpointing…';
-        const res=await pinpointInStation(trimmed);
-        if(res?.found){
-          if(needleStatus)needleStatus.textContent='Passage pinpointed below ↓';
-        }else{
-          // Not found on this station! Check across the 36 stations in the guide!
-          let otherMatch=null;
-          const searchItems=window.__SITE_DATA__?.search||data?.search||[];
-          if(searchItems.length){
-            const matches=rankSearch(searchItems,trimmed,5)
-              .filter(item=>item.kind==='station'&&item.id!==id);
-            if(matches.length>0)otherMatch=matches[0];
-          }
-          if(otherMatch){
-            if(needleStatus)needleStatus.textContent='Not on this station · ';
-            if(needleOther instanceof HTMLElement){
-              needleOther.hidden=false;
-              needleOther.innerHTML=`Found on <a href="${otherMatch.url}?needle=${encodeURIComponent(trimmed)}">Station ${otherMatch.number} (${otherMatch.short||otherMatch.title}) →</a>`;
-            }
-            toast(`Not on this station. Found on Station ${otherMatch.number} (${otherMatch.short||otherMatch.title}).`);
-          }else{
-            if(needleStatus)needleStatus.textContent='No matching passage. Try other words or ';
-            if(needleOther instanceof HTMLElement){
-              needleOther.hidden=false;
-              needleOther.innerHTML=`<button type="button" class="text-button" data-needle-open-dialog style="font-size:11px;text-decoration:underline;">Search guide with Jev →</button>`;
-              needleOther.querySelector('[data-needle-open-dialog]')?.addEventListener('click',()=>{
-                openSearch();
-                const dInput=dialog?.querySelector('input');
-                if(dInput instanceof HTMLInputElement){dInput.value=trimmed;renderResults(dialog,trimmed);}
-              },{signal});
-            }
-          }
-        }
-      };
-
-      needleInput?.addEventListener('keydown',e=>{
-        if(e.key==='Enter'){
-          e.preventDefault();
-          if(needleInput instanceof HTMLInputElement&&needleInput.value){
-            handleNeedleSearch(needleInput.value);
-          }
-        }else if(e.key==='Escape'){
-          closeNeedleBar();
-        }
-      },{signal});
-
-      needleInput?.addEventListener('input',()=>{
-        if(needleInput instanceof HTMLInputElement&&!needleInput.value.trim()){
-          clearNeedleHighlights();
-          if(needleOther instanceof HTMLElement){
-            needleOther.hidden=true;
-            needleOther.replaceChildren();
-          }
-          if(needleStatus)needleStatus.textContent='Press Enter';
-        }
-      },{signal});
-
       const urlParams=new URLSearchParams(location.search);
       const needleQuery=urlParams.get('needle')||urlParams.get('q');
       if(needleQuery){
-        if(needleInput instanceof HTMLInputElement){
-          needleInput.value=needleQuery;
-        }
-        if(needleBar)needleBar.hidden=false;
-        setTimeout(()=>handleNeedleSearch(needleQuery),350);
+        setTimeout(()=>pinpointInStation(needleQuery),350);
       }
     }
     document.querySelectorAll('[data-save]').forEach(el=>el.addEventListener('click',()=>{const id=el.getAttribute('data-save');if(!id)return;let ids=stored('saved');ids=ids.includes(id)?ids.filter(x=>x!==id):[...ids,id];if(store('saved',ids)){updateSaved();toast(ids.includes(id)?'Station saved locally on this device.':'Station removed from this device.');}else{toast('Browser storage is unavailable. Save the station link instead.');}},{signal}));
@@ -496,21 +396,8 @@ function sentenceSpans(text) {
       const editing=target instanceof HTMLElement&&(target.matches('input,textarea,select')||target.isContentEditable);
       if((event.key==='/'&&!editing)||((event.ctrlKey||event.metaKey)&&event.key==='k')){
         event.preventDefault();openSearch();
-      }else if((event.key==='f'||event.key==='F')&&!editing&&!event.ctrlKey&&!event.metaKey&&!event.altKey){
-        const needleBar=document.querySelector('[data-needle-bar]');
-        const needleInput=document.querySelector('[data-needle-input]');
-        if(needleBar&&needleInput instanceof HTMLInputElement){
-          event.preventDefault();
-          needleBar.hidden=false;
-          needleInput.focus();
-          needleInput.select();
-        }
       }else if(event.key==='Escape'){
-        const needleBar=document.querySelector('[data-needle-bar]');
-        if(needleBar&&!needleBar.hidden){
-          needleBar.hidden=true;
-          clearNeedleHighlights();
-        }
+        clearNeedleHighlights();
       }
     },{signal});
     document.querySelectorAll('[data-search-tab]').forEach(tab=>{tab.addEventListener('click',()=>{const val=tab.getAttribute('data-search-tab')||'all';activeSearchTab=val;document.querySelectorAll('[data-search-tab]').forEach(t=>{const active=t.getAttribute('data-search-tab')===val;t.classList.toggle('is-active',active);t.setAttribute('aria-selected',String(active));});const scope=tab.closest('dialog')||tab.closest('main');if(scope instanceof HTMLElement){const container=scope.querySelector('[data-search-results]');const status=scope.querySelector('[data-search-status]');if(container&&status)renderFiltered(container,status);}},{signal});});

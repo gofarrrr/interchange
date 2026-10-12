@@ -22,16 +22,16 @@ import { loadRaw } from '../src/load.mjs';
 import { project, stationPath } from '../src/domain.mjs';
 import { createRenderer } from '../src/render.mjs';
 
-test('every station renders static Needle in-page search bar and rail trigger', () => {
+test('every station renders clean reading layout without intrusive search bars', () => {
   const data = loadRaw();
   const site = project(data);
   const renderer = createRenderer(site);
   for (const s of site.stations) {
     const page = renderer.pages.find(p => p.path === stationPath(s));
     assert.ok(page, `Station page not found for ${s.id}`);
-    assert.ok(page.body.includes('data-needle-bar'), `Station ${s.id} missing data-needle-bar`);
-    assert.ok(page.body.includes('data-needle-input'), `Station ${s.id} missing data-needle-input`);
-    assert.ok(page.body.includes('data-needle-trigger'), `Station ${s.id} missing data-needle-trigger`);
-    assert.ok(!page.body.includes('station-needle-bar'), `Station ${s.id} should not have disruptive station-needle-bar in reading body`);
+    assert.ok(page.body.includes(`data-station-page="${s.id}"`), `Station ${s.id} missing data-station-page attribute`);
+    assert.ok(!page.body.includes('data-needle-bar'), `Station ${s.id} should not contain data-needle-bar`);
+    assert.ok(!page.body.includes('data-needle-input'), `Station ${s.id} should not contain data-needle-input`);
+    assert.ok(!page.body.includes('station-needle-bar'), `Station ${s.id} should not have station-needle-bar in reading body`);
   }
 });
