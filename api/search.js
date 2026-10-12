@@ -122,6 +122,9 @@ async function pinpointWithJev(query, passages) {
         clearTimeout(timer);
         const data = await response.json();
         const answers = data?.answers || {};
+        const qNorm = normaliseText(query);
+        const qWords = qNorm.split(' ').filter(w => w.length > 2);
+
         const scored = passages.map(p => {
           const ans = answers[p.id];
           const prob = typeof ans?.noul === 'number' ? Math.round(ans.noul * 100) / 100 : (ans?.probability ?? 0.5);
@@ -134,7 +137,25 @@ async function pinpointWithJev(query, passages) {
               focusSentence = sentences[idx].text;
             }
           }
-          return { id: p.id, probability: prob, focusText: focusSentence, fullText: p.text };
+
+          const pNorm = normaliseText(p.text);
+          const fNorm = normaliseText(focusSentence);
+          let wordMatches = 0;
+          for (const w of qWords) {
+            if (pNorm.includes(w) || (w.length >= 4 && pNorm.includes(w.slice(0, 4)))) {
+              wordMatches++;
+            }
+          }
+          const wordOverlap = qWords.length ? wordMatches / qWords.length : 0;
+          let exactBonus = 0;
+          if (pNorm.includes(qNorm) || fNorm.includes(qNorm)) {
+            exactBonus = 0.20;
+          } else if (wordOverlap > 0.4) {
+            exactBonus = 0.12 * wordOverlap;
+          }
+          const finalProb = Math.min(0.99, Math.round((prob * 0.8 + exactBonus) * 100) / 100);
+
+          return { id: p.id, probability: finalProb, focusText: focusSentence, fullText: p.text };
         }).sort((a, b) => b.probability - a.probability);
 
         return {

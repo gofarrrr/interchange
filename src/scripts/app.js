@@ -113,7 +113,10 @@
           snLabel.innerHTML='<span class="needle-icon">🪡</span> Key sentence (in context):';
           const snText=document.createElement('p');
           snText.textContent=bestSentence;
-          snippet.append(snLabel,snText);
+          const snAction=document.createElement('span');
+          snAction.className='needle-snippet-action meta';
+          snAction.textContent='Jump to passage on station →';
+          snippet.append(snLabel,snText,snAction);
           content.append(snippet);
         }
       }
@@ -187,6 +190,7 @@
         CSS.highlights.delete('needle-focus');
         CSS.highlights.delete('needle-context');
       }
+      document.querySelectorAll('.needle-target-badge').forEach(el=>el.remove());
       document.querySelectorAll('.is-needle-target').forEach(el=>el.classList.remove('is-needle-target'));
     }
 
@@ -194,6 +198,12 @@
       clearNeedleHighlights();
       if(!targetEl)return;
       targetEl.classList.add('is-needle-target');
+
+      const badge=document.createElement('span');
+      badge.className='needle-target-badge mono';
+      badge.textContent='🪡 Needle in context · matching passage';
+      targetEl.prepend(badge);
+
       targetEl.scrollIntoView({behavior:'smooth',block:'center'});
 
       if(globalThis.CSS?.highlights&&globalThis.Highlight&&window.Range){
@@ -202,6 +212,7 @@
           const walker=document.createTreeWalker(targetEl,NodeFilter.SHOW_TEXT);
           let node;
           while((node=walker.nextNode())){
+            if(node.parentElement?.closest('.needle-target-badge'))continue;
             const idx=node.textContent.indexOf(trimmed);
             if(idx!==-1){
               const r=new Range();

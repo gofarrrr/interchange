@@ -1781,16 +1781,42 @@ kbd {
   color: var(--text-3, #888);
   margin-bottom: 3px;
 }
-.needle-snippet-label span.needle-icon {
+.needle-snippet-action {
+  display: block;
   font-size: 11px;
+  color: var(--accent, #147AD6);
+  font-weight: 500;
+  margin-top: 5px;
+}
+.needle-target-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #92400E;
+  background: #FEF3C7;
+  border: 1px solid #FCD34D;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: fit-content;
 }
 .is-needle-target {
-  animation: needle-pulse 3s ease-out forwards;
+  position: relative;
+  border-left: 3px solid #F59E0B !important;
+  padding-left: 14px !important;
+  background-color: rgba(245, 158, 11, 0.08);
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s ease;
+  animation: needle-pulse 2s ease-out;
 }
 @keyframes needle-pulse {
-  0% { background-color: rgba(245, 158, 11, 0.28); }
-  70% { background-color: rgba(245, 158, 11, 0.1); }
-  100% { background-color: transparent; }
+  0% { background-color: rgba(245, 158, 11, 0.32); }
+  50% { background-color: rgba(245, 158, 11, 0.18); }
+  100% { background-color: rgba(245, 158, 11, 0.08); }
 }
 .needle-inpage-box {
   margin-top: 12px;
