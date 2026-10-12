@@ -1,0 +1,16 @@
+{
+  "id": "buhler-jevons-paradox-thinking",
+  "source_id": "S49",
+  "type": "counterpoint",
+  "title": "Collapsing cognitive costs induce the Jevons paradox of organizational thinking",
+  "text": "Because human thinking has historically been expensive, most operational questions and edge cases went unexamined by default. When the marginal cost of cognitive analysis plummets, organizations do not simply answer existing questions faster; demand for cognitive work expands exponentially into previously unviable investigations, personalized workflows, and continuous operational auditing. Consequently, compute and cognitive spend will surge rather than shrink.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Macroeconomic conceptual extrapolation applying the Jevons paradox to cognitive labor; does not account for organizational attention bottlenecks or analysis paralysis.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Most problems on Earth currently go un-thought-about, because thinking is expensive. As thinking becomes cheaper, we will think about vastly more problems."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

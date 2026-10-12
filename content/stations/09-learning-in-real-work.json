@@ -36,14 +36,16 @@
     "cybernetic-bounded-evidence",
     "openai-use-not-output",
     "daily-citizen-lifecycle",
-    "choudary-judgement"
+    "choudary-judgement",
+    "emergence-doers-next-to-builders"
   ],
   "source_ids": [
     "S01",
     "S05",
     "S12",
     "S18",
-    "S40"
+    "S40",
+    "S48"
   ],
   "report_reference": {
     "source_id": "S01",

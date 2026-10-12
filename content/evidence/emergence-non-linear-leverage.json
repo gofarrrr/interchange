@@ -1,0 +1,16 @@
+{
+  "id": "emergence-non-linear-leverage",
+  "source_id": "S48",
+  "type": "solution",
+  "title": "Proprietary delivery platforms decouple revenue expansion from headcount growth",
+  "text": "Traditional professional services firms suffer from linear economics where revenue growth requires proportional headcount expansion. AI-native services achieve non-linear leverage by channeling delivery through proprietary platforms that capture workflow metadata, edge-case resolutions, and systems of record. As the platform's autonomous completion rate rises, gross margins expand from services levels (30–50%) toward software economics (70%+).",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Venture financial model for tech-enabled services; relies on early portfolio gross margin trajectories and assumes competitive defensibility of proprietary delivery engines.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Breaking the linear relationship between headcount and revenue... building proprietary software and delivery platforms that improve gross margins toward 70-80% over time."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,5 +1,22 @@
 # Changelog implementacji
 
+## v1.5 — 12 października 2026
+
+Wzbogacono 6 stacji o perspektywy operacyjne i ekonomiczne na podstawie fundamentalnych publikacji Emergence Capital oraz Sequoia Capital:
+- Dodano 3 rekordy źródeł:
+  - `content/sources/S47.json`: Julien Bek (Sequoia Capital) — *Services: The New Software*.
+  - `content/sources/S48.json`: Jake Saper, Lotti Siniscalco, Rishub Nahar, Kabir Sial (Emergence Capital) — *The AI-Native Services Playbook*.
+  - `content/sources/S49.json`: Konstantine Buhler (Sequoia Capital) — *The Cognitive Revolution (When Machines Do the Thinking)*.
+- Dodano 7 ograniczonych perspektyw dowodowych (`content/evidence/`):
+  - `bek-copilot-autopilot-budget` (AI-01): narzędzia kognitywne konkurują o rynek oprogramowania ($500 mld), podczas gdy autopiloty sprzedają gotową pracę, celując w budżety usług i pracy ($10 bln).
+  - `emergence-hurt-metric` (AI-05): metryka HURT (Human Unit Review Time) mierzy rzeczywistą prędkość autonomii poprzez czas ludzkiej weryfikacji i certyfikacji jednostki deliverable'a.
+  - `emergence-mirage-pmf` (AI-06): wczesny zachwyt klienta maskuje ujemną ekonomikę jednostkową (Mirage PMF), gdy koszty inferencji i ludzkiego nadzoru nie są uczciwie księgowane w COGS (obniżając marże do 30–50%).
+  - `buhler-jevons-paradox-thinking` (AI-06): paradoks Jevonsa w myśleniu organizacyjnym — spadek jednostkowego kosztu kognicji prowadzi do eksponencjalnego wzrostu badanych pytań i wydatków na inferencję.
+  - `emergence-doers-next-to-builders` (AI-09): parowanie inżynierów z ekspertami domenowymi (paired engineering) w celu bezpośredniego kodowania wiedzy milczącej i pętli wyjątków w ewaluacje.
+  - `bek-intelligence-vs-judgement` (AI-13): utowarowienie surowej inteligencji modeli (synteza, drafting) przy zachowaniu trwałej wartości osądu operacyjnego, kontekstu decyzyjnego i odpowiedzialności powierniczej.
+  - `emergence-non-linear-leverage` (AI-29): autorskie silniki dostarczania przełamują liniową zależność przychodów od headcountu, tworząc systemy zapisu (systems of record) i konwergencję marż w stronę SaaS (70–80%).
+- Łącznie: 40 rodzin źródeł i 81 przypisanych perspektyw dowodowych. Wszystkie 36 stacji i 6 linii zachowało stałą topologię; bramka publikacyjna pozostaje fail-closed.
+
 ## v1.4 — 12 października 2026
 
 Wzbogacono 4 stacje o perspektywy operacyjne na podstawie eseju i doktryny Bartka Pucka (*Thinking Companies* / The Thinking Company & Runstate):

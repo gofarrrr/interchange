@@ -1,0 +1,16 @@
+{
+  "id": "emergence-mirage-pmf",
+  "source_id": "S48",
+  "type": "challenge",
+  "title": "Mirage PMF masks negative unit economics behind subsidized human review",
+  "text": "Early deployments of AI services frequently suffer from Mirage Product-Market Fit: customers are delighted by high-speed, high-quality turnarounds, but the provider is quietly subsidizing delivery with extensive uncounted human intervention and unmetered model inference. When human review and inference costs are honestly accounted for as COGS rather than overhead, gross margins collapse to 30–50% unless the core process is actively engineered toward higher autonomous completion rates.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Venture-backed operating observation from early-stage AI services firms; highlights unit economic fragility before exception-handling engines mature.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Mirage PMF: rapid early revenue growth masking the reality that delivering the service requires unsustainable human intervention and compute costs."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

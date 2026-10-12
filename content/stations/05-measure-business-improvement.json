@@ -38,14 +38,16 @@
     "levie-outcomes",
     "openai-use-not-output",
     "cybernetic-bounded-evidence",
-    "ismail-narrative-inversion"
+    "ismail-narrative-inversion",
+    "emergence-hurt-metric"
   ],
   "source_ids": [
     "S01",
     "S02",
     "S12",
     "S40",
-    "S41"
+    "S41",
+    "S48"
   ],
   "report_reference": {
     "source_id": "S01",

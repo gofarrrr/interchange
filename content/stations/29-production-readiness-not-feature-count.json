@@ -35,13 +35,15 @@
   "evidence_ids": [
     "daily-release-ownership",
     "ondrej-context-versioning",
-    "newport-end-to-end"
+    "newport-end-to-end",
+    "emergence-non-linear-leverage"
   ],
   "source_ids": [
     "S01",
     "S05",
     "S13",
-    "S27"
+    "S27",
+    "S48"
   ],
   "report_reference": {
     "source_id": "S01",

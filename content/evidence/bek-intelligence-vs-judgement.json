@@ -1,0 +1,16 @@
+{
+  "id": "bek-intelligence-vs-judgement",
+  "source_id": "S47",
+  "type": "diagnosis",
+  "title": "Raw model intelligence commoditizes rapidly while operational judgment retains value",
+  "text": "Foundational AI intelligence—raw cognitive synthesis, drafting, and pattern matching—is becoming commoditized and universally available. Defensible enterprise value resides in contextual judgment: knowing client-specific trade-offs, navigating regulatory edge cases, bearing delivery risk, and maintaining human accountability for outcomes when systems fail.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Venture thesis separating intelligence commodities from judgment moats; relies on conceptual definitions of judgment rather than audited workforce skill distributions.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Intelligence is becoming a commodity; judgment is not. Judgment requires context, values, and accountability."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

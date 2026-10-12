@@ -35,13 +35,15 @@
   "evidence_ids": [
     "levie-outcomes",
     "reshuffle-coordination",
-    "effectuation-bounded-experiment"
+    "effectuation-bounded-experiment",
+    "bek-copilot-autopilot-budget"
   ],
   "source_ids": [
     "S01",
     "S02",
     "S11",
-    "S28"
+    "S28",
+    "S47"
   ],
   "report_reference": {
     "source_id": "S01",

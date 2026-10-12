@@ -1,0 +1,16 @@
+{
+  "id": "emergence-hurt-metric",
+  "source_id": "S48",
+  "type": "solution",
+  "title": "Human Unit Review Time (HURT) tracks operational autonomy velocity",
+  "text": "Rather than relying on vague task-completion claims or raw token throughput, operational autonomy should be measured through Human Unit Review Time (HURT): the exact human minutes and attention required to review, correct, and certify an agent's deliverable. Sustainable automation economics require HURT to decline systematically over successive engagement iterations as edge cases are codified.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner metric from venture portfolio benchmarking; assumes high operational visibility into human review workflows and consistent task complexity across cycles.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Human Unit Review Time (HURT)... tracking the time humans spend reviewing AI work product per unit of output over time."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -37,7 +37,8 @@
     "dwarkesh-critical-task",
     "blomfield-review-apprenticeship",
     "every-visible-delegation",
-    "ismail-validator-loop"
+    "ismail-validator-loop",
+    "bek-intelligence-vs-judgement"
   ],
   "source_ids": [
     "S01",
@@ -45,7 +46,8 @@
     "S15",
     "S18",
     "S35",
-    "S42"
+    "S42",
+    "S47"
   ],
   "report_reference": {
     "source_id": "S01",

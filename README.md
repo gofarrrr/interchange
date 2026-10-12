@@ -1,8 +1,20 @@
-# INTERCHANGE — działająca implementacja v1.3
+# INTERCHANGE — działająca implementacja v1.5
 
 **Status: wersja do przeglądu zespołowego, nie zatwierdzona publikacja.**
 
 36 tematów o transformacji AI, sześć linii, własna mapa SVG i spokojne strony do czytania. To rzeczywisty interfejs HTML/CSS/JavaScript z pełną treścią, a nie obraz makiety. Projekt realizuje kierunek „Everything is neutral except the network”.
+
+## Zmiany v1.5 — operacyjne wzbogacenie 6 stacji (Emergence Capital / Julien Bek / Konstantine Buhler)
+
+Wydanie v1.5 dodaje 3 rodziny źródeł (**S47**, **S48**, **S49**) oraz 7 perspektyw dowodowych:
+- **AI-01**: budżety narzędzi vs pracy ($500 mld SaaS vs $10 bln usług); copilot sprzedaje narzędzie, autopilot sprzedaje gotową pracę (**S47** / Julien Bek).
+- **AI-05**: metryka HURT (Human Unit Review Time) mierząca czas ludzkiej rewizji na jednostkę deliverable'a jako twardy wskaźnik dojrzałości autonomii (**S48** / Emergence Capital).
+- **AI-06**: pułapka Mirage PMF przy niesubsydiowanym ludzkim nadzorze i kosztach inferencji (uczciwy COGS a marże 30–50%) (**S48**) oraz paradoks Jevonsa w myśleniu maszynowym — spadek kosztu kognicji indukuje eksponencjalny popyt na analizę (**S49** / Konstantine Buhler).
+- **AI-09**: paired engineering — inżynierowie oprogramowania bezpośrednio obok ekspertów domenowych w pętli dostarczania, zamieniający wyjątki w kod i ewaluacje (**S48** / Emergence Capital).
+- **AI-13**: utowarowienie surowej inteligencji modeli (drafting, synteza) przy trwałej wartości osądu operacyjnego, kontekstu decyzyjnego i odpowiedzialności powierniczej (**S47** / Julien Bek).
+- **AI-29**: autorskie platformy delivery rozbijają liniową zależność zatrudnienia i przychodów, dążąc do marż 70–80% (**S48** / Emergence Capital).
+
+Łącznie: 40 rodzin źródeł i 81 przypisanych perspektyw.
 
 ## Zmiany v1.4 — operacyjne wzbogacenie 4 stacji (Bartek Pucek / Thinking Companies)
 

@@ -1,0 +1,16 @@
+{
+  "id": "bek-copilot-autopilot-budget",
+  "source_id": "S47",
+  "type": "diagnosis",
+  "title": "Copilots compete for software budgets while autopilots sell completed work",
+  "text": "Software tools address a global software market of roughly $500 billion, whereas businesses spend over $10 trillion annually on services and labor. Buying copilot licenses treats AI as a tooling line-item that assists existing workers, whereas autopilots sell completed end-work directly. Confusing a tooling purchase with workflow delegation obscures the actual economic shift from software seat-licensing to labor substitution.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Venture capital market sizing and positioning thesis; draws a stylized contrast between tool procurement and services budgets that requires operational scrutiny in enterprise workflows.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "A copilot sells the tool. An autopilot sells the work... Software is a ~$500B market, services is a ~$10T market."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

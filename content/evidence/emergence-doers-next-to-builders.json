@@ -1,0 +1,16 @@
+{
+  "id": "emergence-doers-next-to-builders",
+  "source_id": "S48",
+  "type": "solution",
+  "title": "Paired engineering embeds software builders directly beside frontline domain doers",
+  "text": "To convert tacit delivery knowledge into durable software assets, engineering teams cannot build in isolation from specifications. AI-native services require paired engineering: embedding software engineers alongside domain practitioners who execute the actual work. Every human correction, rework cycle, and edge-case exception is captured at the operational boundary and converted directly into evaluation suites and automation logic.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner staffing and organizational pattern; requires cross-functional cultural alignment and deliberate investment in internal tooling rather than immediate billable utilization.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Pair engineering: pairing builders (software engineers) directly with doers (domain experts) in the same operational loop to codify tacit delivery knowledge."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

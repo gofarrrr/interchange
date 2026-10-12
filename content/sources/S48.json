@@ -1,0 +1,13 @@
+{
+  "id": "S48",
+  "title": "The AI-Native Services Playbook",
+  "author_or_organization": "Jake Saper, Lotti Siniscalco, Rishub Nahar, Kabir Sial (Emergence Capital)",
+  "source_type": "practitioner operating handbook and venture thesis",
+  "date_as_supplied": "2024-05-14",
+  "original_url": "https://www.emcap.com/thoughts/the-ai-native-services-playbook",
+  "limitations": "Venture capital operating handbook based on early-stage portfolio benchmarks. Provides tactical operating metrics for AI-native services including Mirage PMF, honest COGS accounting (treating inference and human review as COGS rather than OPEX), HURT (Human Unit Review Time), and paired engineering. Performance benchmarks, gross margin convergence timelines, and long-term moat defensibility reflect early-stage company observations and require independent enterprise verification.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

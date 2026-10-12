@@ -35,13 +35,17 @@
   "evidence_ids": [
     "daily-cost-evals",
     "acharya-model-fit",
-    "pearson-new-capability"
+    "pearson-new-capability",
+    "emergence-mirage-pmf",
+    "buhler-jevons-paradox-thinking"
   ],
   "source_ids": [
     "S01",
     "S05",
     "S19",
-    "S31"
+    "S31",
+    "S48",
+    "S49"
   ],
   "report_reference": {
     "source_id": "S01",
