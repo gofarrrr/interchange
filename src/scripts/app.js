@@ -278,10 +278,10 @@
         if(targetEl){
           highlightSentence(targetEl,topMatch.focusText);
           toast(`🪡 Needle: Pointing to matching sentence in context.`);
+          return { found: true, text: topMatch.focusText };
         }
-      }else{
-        toast('No matching sentence found on this station.');
       }
+      return { found: false };
     }
 
     const stationPage=document.querySelector('[data-station-page]');
@@ -293,6 +293,7 @@
       const needleInput=document.querySelector('[data-needle-input]');
       const needleClose=document.querySelector('[data-needle-close]');
       const needleStatus=document.querySelector('[data-needle-status]');
+      const needleOther=document.querySelector('[data-needle-other]');
       const needleTriggers=document.querySelectorAll('[data-needle-trigger]');
 
       const openNeedleBar=()=>{
@@ -308,6 +309,10 @@
         if(!needleBar)return;
         needleBar.hidden=true;
         clearNeedleHighlights();
+        if(needleOther instanceof HTMLElement){
+          needleOther.hidden=true;
+          needleOther.replaceChildren();
+        }
         if(needleInput instanceof HTMLInputElement)needleInput.value='';
         if(needleStatus)needleStatus.textContent='Press Enter';
       };
@@ -319,9 +324,43 @@
         const trimmed=q.trim();
         if(!trimmed)return;
         if(needleBar)needleBar.hidden=false;
+        if(needleOther instanceof HTMLElement){
+          needleOther.hidden=true;
+          needleOther.replaceChildren();
+        }
         if(needleStatus)needleStatus.textContent='Pinpointing…';
-        await pinpointInStation(trimmed);
-        if(needleStatus)needleStatus.textContent='Passage pinpointed below ↓';
+        const res=await pinpointInStation(trimmed);
+        if(res?.found){
+          if(needleStatus)needleStatus.textContent='Passage pinpointed below ↓';
+        }else{
+          // Not found on this station! Check across the 36 stations in the guide!
+          let otherMatch=null;
+          const searchItems=window.__SITE_DATA__?.search||data?.search||[];
+          if(searchItems.length){
+            const matches=rankSearch(searchItems,trimmed,5)
+              .filter(item=>item.kind==='station'&&item.id!==id);
+            if(matches.length>0)otherMatch=matches[0];
+          }
+          if(otherMatch){
+            if(needleStatus)needleStatus.textContent='Not on this station · ';
+            if(needleOther instanceof HTMLElement){
+              needleOther.hidden=false;
+              needleOther.innerHTML=`Found on <a href="${otherMatch.url}?needle=${encodeURIComponent(trimmed)}">Station ${otherMatch.number} (${otherMatch.short||otherMatch.title}) →</a>`;
+            }
+            toast(`Not on this station. Found on Station ${otherMatch.number} (${otherMatch.short||otherMatch.title}).`);
+          }else{
+            if(needleStatus)needleStatus.textContent='No matching passage. Try other words or ';
+            if(needleOther instanceof HTMLElement){
+              needleOther.hidden=false;
+              needleOther.innerHTML=`<button type="button" class="text-button" data-needle-open-dialog style="font-size:11px;text-decoration:underline;">Search guide with Jev →</button>`;
+              needleOther.querySelector('[data-needle-open-dialog]')?.addEventListener('click',()=>{
+                openSearch();
+                const dInput=dialog?.querySelector('input');
+                if(dInput instanceof HTMLInputElement){dInput.value=trimmed;renderResults(dialog,trimmed);}
+              },{signal});
+            }
+          }
+        }
       };
 
       needleInput?.addEventListener('keydown',e=>{
@@ -338,6 +377,10 @@
       needleInput?.addEventListener('input',()=>{
         if(needleInput instanceof HTMLInputElement&&!needleInput.value.trim()){
           clearNeedleHighlights();
+          if(needleOther instanceof HTMLElement){
+            needleOther.hidden=true;
+            needleOther.replaceChildren();
+          }
           if(needleStatus)needleStatus.textContent='Press Enter';
         }
       },{signal});
