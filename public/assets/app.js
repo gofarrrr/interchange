@@ -166,7 +166,7 @@ function rankSearch(items, rawQuery, limit = 12) {
     const fetchSignal=searchFetchAbort.signal;
     let scored=[];
     try{
-      const res=await fetch('/api/search',{
+      const res=await fetch('/api/search/',{
         method:'POST',
         headers:{'content-type':'application/json'},
         body:JSON.stringify({
