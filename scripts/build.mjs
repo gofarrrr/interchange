@@ -1,4 +1,4 @@
-import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,rmSync,cpSync,existsSync} from 'node:fs';
 import {resolve,join} from 'node:path';
 import {gzipSync} from 'node:zlib';
 import {root,load} from '../src/load.mjs';
@@ -8,7 +8,7 @@ import {normalizeBase,jsonForHTML,safeURL} from '../src/domain.mjs';
 const args=new Set(process.argv.slice(2));
 const preview=!args.has('--public');
 const base=normalizeBase(process.env.BASE_PATH||'/');
-const siteURL=process.env.SITE_URL||'';
+const siteURL=process.env.SITE_URL||'https://interchange-two.vercel.app';
 if(siteURL&&!safeURL(siteURL))throw Error('SITE_URL must use HTTP or HTTPS without credentials.');
 // Check all content before touching existing output, so a failed public build preserves the review build.
 let data;
@@ -27,13 +27,14 @@ writeFileSync(join(out,'assets/style.css'),css);
 writeFileSync(join(out,'assets/app.js'),client);
 writeFileSync(join(out,'assets/data.js'),'window.__SITE_DATA__='+jsonForHTML(renderer.clientData)+';');
 writeFileSync(join(out,'favicon.svg'),favicon);
+if(existsSync(join(root,'public/og-image.png')))cpSync(join(root,'public/og-image.png'),join(out,'og-image.png'));
 for(const page of renderer.pages){const dir=join(out,page.path.replace(/^\//,''));mkdirSync(dir,{recursive:true});let html=renderer.document(page);html=html.replace(/<script id="site-data" type="application\/json">[\s\S]*?<\/script>/,`<script src="${base}assets/data.js" defer></script>`);writeFileSync(join(dir,'index.html'),html);}
 cpSync(join(out,'404/index.html'),join(out,'404.html'));
 writeFileSync(join(out,'robots.txt'),preview?'User-agent: *\nDisallow: /\n':'User-agent: *\nAllow: /\n'+(siteURL?`Sitemap: ${new URL(base+'sitemap.xml',siteURL)}\n`:''));
 if(!preview&&siteURL){writeFileSync(join(out,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+renderer.pages.filter(p=>!['/404/','/saved/','/search/'].includes(p.path)).map(p=>`<url><loc>${new URL(base+p.path.replace(/^\//,''),siteURL).href}</loc></url>`).join('')+'</urlset>');}
 // Astro adapter uses precisely the same public asset projection.
 mkdirSync(join(root,'public/assets'),{recursive:true});for(const f of ['style.css','app.js','data.js'])cpSync(join(out,'assets',f),join(root,'public/assets',f));
-for(const f of ['favicon.svg','robots.txt'])cpSync(join(out,f),join(root,'public',f));
+for(const f of ['favicon.svg','robots.txt','og-image.png'])if(existsSync(join(out,f)))cpSync(join(out,f),join(root,'public',f));
 if(!args.has('--no-offline')){
   const offline=createRenderer(data,{base:'/'});
   const bodies=Object.fromEntries(offline.pages.map(p=>[p.path,offline.fragment(p)]));
