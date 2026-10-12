@@ -11,10 +11,26 @@ test('sentenceSpans accurately segments text into sentence boundaries', () => {
   assert.equal(spans[2].text, 'Verification fatigue sets in rapidly.');
   assert.equal(text.slice(spans[0].start, spans[0].end), spans[0].text);
 });
-
 test('sentenceSpans handles empty or invalid text safely', () => {
   assert.deepEqual(sentenceSpans(''), []);
   assert.deepEqual(sentenceSpans(null), []);
   assert.deepEqual(sentenceSpans(undefined), []);
   assert.deepEqual(sentenceSpans('   '), []);
+});
+
+import { loadRaw } from '../src/load.mjs';
+import { project, stationPath } from '../src/domain.mjs';
+import { createRenderer } from '../src/render.mjs';
+
+test('every station renders static Needle in-page search bar and rail trigger', () => {
+  const data = loadRaw();
+  const site = project(data);
+  const renderer = createRenderer(site);
+  for (const s of site.stations) {
+    const page = renderer.pages.find(p => p.path === stationPath(s));
+    assert.ok(page, `Station page not found for ${s.id}`);
+    assert.ok(page.body.includes('station-needle-bar'), `Station ${s.id} missing station-needle-bar`);
+    assert.ok(page.body.includes('data-needle-input'), `Station ${s.id} missing data-needle-input`);
+    assert.ok(page.body.includes('data-needle-rail-trigger'), `Station ${s.id} missing data-needle-rail-trigger`);
+  }
 });
