@@ -52,6 +52,36 @@ function rankSearch(items, rawQuery, limit = 12) {
   .map(x => x.item);
 }
 
+function sentenceSpans(text) {
+  if (!text || typeof text !== 'string') return [];
+  if (typeof Intl !== 'undefined' && Intl.Segmenter) {
+    try {
+      const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
+      return [...segmenter.segment(text)]
+        .map(({ segment, index }) => {
+          const start = index + segment.length - segment.trimStart().length;
+          const end = index + segment.trimEnd().length;
+          return { start, end, text: text.slice(start, end) };
+        })
+        .filter(s => s.end > s.start && s.text.trim().length > 3);
+    } catch {}
+  }
+  const spans = [];
+  const regex = /[^.!?]+[.!?]+(?:\s+|$)|[^.!?]+$/g;
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    const raw = match[0];
+    const trimL = raw.length - raw.trimStart().length;
+    const start = match.index + trimL;
+    const end = match.index + raw.trimEnd().length;
+    const spanText = text.slice(start, end);
+    if (spanText.trim().length > 3) {
+      spans.push({ start, end, text: spanText });
+    }
+  }
+  return spans;
+}
+
 // @ts-check
 /** Progressive enhancement. The same HTML works without this script. */
 (() => {

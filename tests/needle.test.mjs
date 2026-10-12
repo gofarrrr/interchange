@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { sentenceSpans } from '../api/search.js';
+import { sentenceSpans } from '../src/search.mjs';
 
 test('sentenceSpans accurately segments text into sentence boundaries', () => {
   const text = 'Autonomous agents require firm deterministic boundaries. When error compounding occurs, success probability decays geometrically. Verification fatigue sets in rapidly.';
