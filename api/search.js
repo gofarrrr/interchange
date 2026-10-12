@@ -51,7 +51,7 @@ function fallbackScoring(query, items) {
 async function rankWithJev(query, items) {
   const apiKey = (process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY || '').trim();
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 4500);
+  const timer = setTimeout(() => controller.abort(), 8000);
   let directError = null;
 
   try {
@@ -80,13 +80,13 @@ async function rankWithJev(query, items) {
       if (response.ok) {
         clearTimeout(timer);
         const data = await response.json();
-        const rawSample = JSON.stringify(data).slice(0, 300);
         const extractProb = (v) => {
           if (typeof v === 'number') return v;
           if (!v || typeof v !== 'object') return 0.5;
           const val = typeof v.noul === 'number' ? v.noul : (v.probability ?? v.p ?? v.score ?? 0.5);
           return Math.round(val * 100) / 100;
         };
+        let results = [];
         if (Array.isArray(data.results)) {
           results = data.results;
         } else if (data.answers && typeof data.answers === 'object') {
@@ -105,6 +105,7 @@ async function rankWithJev(query, items) {
       } else {
         const text = await response.text().catch(() => '');
         directError = `${response.status}: ${text.slice(0, 160)}`;
+        console.error('TypeSafe direct API non-ok response:', directError);
       }
     }
 
@@ -146,6 +147,8 @@ async function rankWithJev(query, items) {
     }
   } catch (err) {
     clearTimeout(timer);
+    console.error('rankWithJev error:', err);
+    if (!directError) directError = err?.message || String(err);
   }
 
   // Graceful fallback
@@ -187,8 +190,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Items array required' });
     }
 
-    const { results, provider } = await rankWithJev(query.trim(), items);
-    return res.status(200).json({ results, searched: items.length, provider });
+    const { results, provider, directError } = await rankWithJev(query.trim(), items);
+    return res.status(200).json({ results, searched: items.length, provider, ...(directError ? { directError } : {}) });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Internal error' });
   }
