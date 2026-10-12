@@ -1,0 +1,13 @@
+{
+  "id": "S57",
+  "title": "Cognitive Fatigue, Runaway Loops, and the Verification Bottleneck",
+  "author_or_organization": "Simon Willison, with Berkeley Haas and HBR Research",
+  "source_type": "practitioner analysis and organizational field studies",
+  "date_as_supplied": "2024-05",
+  "original_url": "https://simonwillison.net/",
+  "limitations": "Synthesizes field research on cognitive fatigue, context switching, and the shift of human effort from production to multi-threaded verification. Includes operational patterns for hard fiscal ceilings on autonomous agent spending; findings rely on qualitative surveys and practitioner trial records.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

@@ -4,7 +4,7 @@
   "slug": "value-before-spectacle",
   "title": "Choosing projects for spectacle rather than business value",
   "summary": "Choose useful problems and make room for bounded discovery—not just impressive demonstrations.",
-  "diagnosis": "A project can be visually impressive yet disconnected from a meaningful constraint. A small task can also be too small to matter. The decision should consider frequency, consequence, feasibility, adoption effort and the ability to turn a local gain into a better service. Separate improvements to current work from experiments that may reveal an entirely new capability.",
+  "diagnosis": "A project can be visually impressive yet disconnected from a meaningful constraint. High-profile demonstrations frequently mask operational fragility with scripted state, uncredited human interventions and curated happy paths. A task can also be too small to matter. The decision should consider frequency, consequence, feasibility, adoption effort and the ability to turn a local gain into a durable service. Separate improvements to current work from experiments that may reveal an entirely new capability.",
   "diagnostic_questions": [
     "Who will repeatedly use the result, and what work becomes easier or newly possible?",
     "Does the proposed change relieve the current constraint or produce more work for another queue?",
@@ -35,13 +35,15 @@
   "evidence_ids": [
     "pearson-new-capability",
     "effectuation-bounded-experiment",
-    "curiosity-exploration"
+    "curiosity-exploration",
+    "normal-tech-demo-theatre"
   ],
   "source_ids": [
     "S01",
     "S11",
     "S31",
-    "S32"
+    "S32",
+    "S54"
   ],
   "report_reference": {
     "source_id": "S01",

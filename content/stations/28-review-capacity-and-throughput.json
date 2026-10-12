@@ -40,7 +40,8 @@
     "brooks-workload",
     "ismail-congestion-coordination",
     "ju-monotonicity-coordination",
-    "pucek-waste-on-cheap-thinking"
+    "pucek-waste-on-cheap-thinking",
+    "willison-verification-fatigue"
   ],
   "source_ids": [
     "S01",
@@ -50,7 +51,8 @@
     "S35",
     "S41",
     "S44",
-    "S46"
+    "S46",
+    "S57"
   ],
   "report_reference": {
     "source_id": "S01",

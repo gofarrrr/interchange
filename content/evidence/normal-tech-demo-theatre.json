@@ -1,0 +1,16 @@
+{
+  "id": "normal-tech-demo-theatre",
+  "source_id": "S54",
+  "type": "forensic-audit",
+  "title": "High-profile autonomous agent demonstrations conceal human restarts, prompt scaffolding, and fragile edge cases",
+  "text": "Forensic examination of vendor autonomous agent showcases demonstrates that public demonstrations frequently depend on hidden manual interventions, pre-scripted state restarts, and cherry-picked runs costing hundreds of dollars in trial attempts. Demonstrations measure peak prototype capability under ideal conditions, not autonomous operational reliability.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Single-case forensic deconstruction of an autonomous OS demonstration; illustrates common demonstration artifices but does not constitute an industry-wide comparative benchmark.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Behind the seamless demonstration sat multiple restarts, uncredited prompt interventions, and over $900 in trial compute."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

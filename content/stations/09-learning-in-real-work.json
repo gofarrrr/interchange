@@ -4,7 +4,7 @@
   "slug": "learning-in-real-work",
   "title": "Expecting licences and a training session to change how people work",
   "summary": "Develop role-specific capability through real tasks, feedback and protected practice.",
-  "diagnosis": "A generic course can introduce a tool without helping someone recognise a useful task, check the output or recover from a failure. Users, subject-matter experts, builders, reviewers and operators need different competencies. Training should therefore be connected to the workflow people will actually perform and the responsibility they will carry, not measured only by attendance.",
+  "diagnosis": "A generic course can introduce a tool without helping someone recognise a useful task, check the output or recover from a failure. When AI usage is confined to private direct messages, the organization loses informal apprenticeship: junior colleagues cannot observe how seniors prompt, critique synthetic outputs or catch edge cases. Real capability develops when agent interactions occur openly on the shared team floor and connect directly to the workflow people actually perform.",
   "diagnostic_questions": [
     "What must each role be able to do safely and competently after training?",
     "Do employees have approved tools, useful data, examples and time to practise on relevant work?",
@@ -37,7 +37,8 @@
     "openai-use-not-output",
     "daily-citizen-lifecycle",
     "choudary-judgement",
-    "emergence-doers-next-to-builders"
+    "emergence-doers-next-to-builders",
+    "lutke-shop-floor-apprenticeship"
   ],
   "source_ids": [
     "S01",
@@ -45,7 +46,8 @@
     "S12",
     "S18",
     "S40",
-    "S48"
+    "S48",
+    "S53"
   ],
   "report_reference": {
     "source_id": "S01",

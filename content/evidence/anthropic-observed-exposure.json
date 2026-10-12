@@ -1,0 +1,16 @@
+{
+  "id": "anthropic-observed-exposure",
+  "source_id": "S56",
+  "type": "empirical-evidence",
+  "title": "Observed enterprise exposure in real worklogs clusters in a narrow fraction of theoretical benchmark capability",
+  "text": "Analysis of production telemetry demonstrates that actual user tasks involve only a small, conservative subset of what frontier benchmarks suggest models can accomplish. Theoretical task susceptibility does not translate directly into operational deployment due to unaddressed integration, liability, and verification hurdles.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Empirical telemetry analysis of real Claude worklogs; reflects self-selected user requests rather than an experimental randomized control trial of enterprise workflows.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Observed exposure in real work logs is a small fraction of theoretical task vulnerability."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "S52",
+  "title": "Up the Stack: How Tech Companies Lock You In to AI",
+  "author_or_organization": "Arvind Narayanan and Sayash Kapoor",
+  "source_type": "technology policy and market structure analysis",
+  "date_as_supplied": "2024-04-18",
+  "original_url": "https://www.aisnakeoil.com/p/up-the-stack",
+  "limitations": "Analysis of market power migration from foundational models (which face commoditization) to workflow state, context capture, and process integration. Identifies architectural lock-in mechanisms; empirical data on switching costs across enterprise deployments remains observational.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

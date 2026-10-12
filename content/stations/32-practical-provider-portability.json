@@ -4,7 +4,7 @@
   "slug": "practical-provider-portability",
   "title": "Choosing a provider without understanding the cost of changing it",
   "summary": "Understand where dependence lives and test a realistic exit path without overengineering portability.",
-  "diagnosis": "A standard API can make a technical connection easy to replace while leaving prompts, tools, evaluations, data formats and commercial rights tied to one provider. Conversely, an elaborate provider-neutral platform may cost more than the flexibility it creates. Beyond model interfaces and prompts, an additional switching cost can emerge from the accumulated event log and runtime decision traces needed to reproduce domain behavior. Identify the dependencies that matter for continuity, bargaining power and future improvement, then test the replacement effort that is actually relevant.",
+  "diagnosis": "A standard API can make a technical connection easy to replace while leaving prompts, tools, evaluations, data formats and commercial rights tied to one provider. Platform vendors actively move up the stack—capturing workflow memory, tool integrations and operational state—precisely because foundational inference is commoditizing. Conversely, an elaborate provider-neutral platform may cost more than the flexibility it creates. Beyond model interfaces and prompts, an additional switching cost emerges from the accumulated event log and runtime decision traces needed to reproduce domain behavior. Identify the dependencies that matter for continuity, bargaining power and future improvement, then test the replacement effort that is actually relevant.",
   "diagnostic_questions": [
     "Which assets and behaviours depend on the current provider rather than on the business task itself?",
     "Can the company export and use the context, configurations, evaluations and records needed to reproduce the service?",
@@ -38,7 +38,8 @@
     "foss-make-buy",
     "levie-data-portability",
     "twelve-own-context",
-    "sehgal-log-portability"
+    "sehgal-log-portability",
+    "narayanan-process-lock-in"
   ],
   "source_ids": [
     "S01",
@@ -47,7 +48,8 @@
     "S14",
     "S36",
     "S42",
-    "S45"
+    "S45",
+    "S52"
   ],
   "report_reference": {
     "source_id": "S01",

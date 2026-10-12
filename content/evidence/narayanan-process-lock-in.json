@@ -1,0 +1,16 @@
+{
+  "id": "narayanan-process-lock-in",
+  "source_id": "S52",
+  "type": "market-structure",
+  "title": "Vendors escape AI commodity pricing by embedding into operational workflows and capturing state",
+  "text": "As foundational model APIs commoditize toward marginal inference costs, platform vendors capture defensibility by moving up the stack into workflow memory, proprietary integration state, and organisational context. Switching costs migrate from model selection to deep operational entanglement.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Market analysis highlighting the shift from model commoditization to workflow lock-in; observational analysis of enterprise software vendor strategies rather than an empirical audit of migration costs.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Tech companies are moving up the stack, turning neutral models into proprietary workflow traps."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

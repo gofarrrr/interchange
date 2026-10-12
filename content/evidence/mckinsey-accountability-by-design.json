@@ -1,0 +1,16 @@
+{
+  "id": "mckinsey-accountability-by-design",
+  "source_id": "S58",
+  "type": "governance-framework",
+  "title": "Separating platform accountability from end-user business ownership prevents the acceleration of obsolete workflows",
+  "text": "Applying AI to an unexamined legacy process accelerates waste—paving the cow paths. Sustainable governance requires separating technical platform accountability (infrastructure, compliance, model security) from end-user business ownership (workflow redesign, operational error liability, and commercial outcome).",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Consulting governance framework synthesizing enterprise AI rollouts; reflects management advisory recommendations without third-party comparative audit.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Paving the cow paths with AI accelerates chaos. Platform governance must be paired with explicit end-user outcome accountability."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

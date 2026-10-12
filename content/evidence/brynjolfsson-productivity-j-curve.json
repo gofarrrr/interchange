@@ -1,0 +1,16 @@
+{
+  "id": "brynjolfsson-productivity-j-curve",
+  "source_id": "S50",
+  "type": "economic-theory",
+  "title": "The productivity J-curve reflects unmeasured intangible capital accumulation before output gains register",
+  "text": "General purpose technologies like AI require substantial restructuring, workforce retraining, evaluation design, and workflow redesign before measurable business improvements occur. During this initial transformation phase, measured productivity often drops or stagnates as resources are diverted to intangible organizational capital.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Macroeconomic analysis of general purpose technologies explaining the lag between technological capability and measured economic output; focuses on economy-wide intangible capital rather than individual software deployments.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "A general purpose technology can lead to an initial slowdown in measured productivity growth followed by a later acceleration."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

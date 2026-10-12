@@ -1,0 +1,16 @@
+{
+  "id": "gore-translation-layer",
+  "source_id": "S55",
+  "type": "organizational-theory",
+  "title": "AI commoditizes the translation layer between intent and artifact while human judgment governs problem definition",
+  "text": "AI models dramatically lower the cost of the translation layer—turning natural language intent into functional code, schemas, and drafts. However, identifying which problems are worth solving, arbitrating trade-offs, and enforcing organizational quality standards remain irreducibly human constraints.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Architectural essay separating translation from strategic definition; conceptual taxonomy rather than audited workforce time studies.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "The translation layer is collapsing to zero marginal cost; the definition of what to build is not."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

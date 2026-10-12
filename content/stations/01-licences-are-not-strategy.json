@@ -4,7 +4,7 @@
   "slug": "licences-are-not-strategy",
   "title": "Buying AI licences and calling it a strategy",
   "summary": "Define the business change before treating tool access as progress.",
-  "diagnosis": "A rollout plan is substituting for a business hypothesis when it names licences, training and usage targets but cannot identify the work that should change. The missing decision is not necessarily which technology to buy. It may be who receives the benefit, what constraint matters and who can change the process. Separate exploratory access from a committed business improvement programme.",
+  "diagnosis": "A rollout plan is substituting for a business hypothesis when it names licences, training and usage targets but cannot identify the work that should change. The missing decision is not necessarily which technology to buy. It may be who receives the benefit, what constraint matters and who can change the process. Tool access collapses the cost of translating intent into drafts and code, but applying AI to an unexamined legacy workflow merely accelerates an obsolete process. Separate exploratory access from a committed business improvement programme.",
   "diagnostic_questions": [
     "Which business outcome is this initiative meant to change, for whom, and against what baseline?",
     "Which workflow, decision or service will work differently—not merely faster within the same step?",
@@ -36,14 +36,18 @@
     "levie-outcomes",
     "reshuffle-coordination",
     "effectuation-bounded-experiment",
-    "bek-copilot-autopilot-budget"
+    "bek-copilot-autopilot-budget",
+    "gore-translation-layer",
+    "mckinsey-accountability-by-design"
   ],
   "source_ids": [
     "S01",
     "S02",
     "S11",
     "S28",
-    "S47"
+    "S47",
+    "S55",
+    "S58"
   ],
   "report_reference": {
     "source_id": "S01",

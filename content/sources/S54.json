@@ -1,0 +1,13 @@
+{
+  "id": "S54",
+  "title": "Forensic Audit of Autonomous Workflow Demos: The $916 Prototype Breakdown",
+  "author_or_organization": "Normal Tech",
+  "source_type": "forensic technical audit",
+  "date_as_supplied": "2024-06",
+  "original_url": "https://normaltech.substack.com/",
+  "limitations": "Step-by-step technical deconstruction of high-profile vendor autonomous agent demonstrations, documenting hidden human interventions, prompt injections, repeated retries, and high operational costs. Highlights demo fragility, but represents single-case forensic observation rather than a randomized comparative benchmark.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

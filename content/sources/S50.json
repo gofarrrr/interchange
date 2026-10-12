@@ -1,0 +1,13 @@
+{
+  "id": "S50",
+  "title": "The Productivity J-Curve: How Intangibles Complement General Purpose Technologies",
+  "author_or_organization": "Erik Brynjolfsson, Daniel Rock, Chad Syverson",
+  "source_type": "academic economic working paper",
+  "date_as_supplied": "2021-01",
+  "original_url": "https://www.nber.org/papers/w25148",
+  "limitations": "Macroeconomic analysis of general purpose technologies explaining why initial productivity gains lag behind technology adoption due to unmeasured intangible investments in reorganization, retraining, and process redesign. Focuses on economy-wide capital dynamics rather than micro-level LLM task workflows.",
+  "review": {
+    "status": "pending"
+  },
+  "access": "verified-public"
+}

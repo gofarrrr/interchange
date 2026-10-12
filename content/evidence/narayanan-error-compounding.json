@@ -1,0 +1,16 @@
+{
+  "id": "narayanan-error-compounding",
+  "source_id": "S51",
+  "type": "reliability-analysis",
+  "title": "Multi-step agent loops compound probabilistic errors exponentially without deterministic validation",
+  "text": "In an unconstrained agentic chain of n steps with individual reliability p, the overall success probability collapses as P = p^n. An agent with 95% step reliability achieves only ~59% end-to-end success across a 10-step workflow, making open-ended execution fragile unless bounded by strict, deterministic acceptance gates between steps.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Reliability analysis demonstrating exponential error accumulation in probabilistic systems; establishes architectural necessity for intermediate verification rather than a universal claim that all agentic systems fail.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "If each step has a 95% success rate, a 10-step process succeeds only 59% of the time."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "willison-verification-fatigue",
+  "source_id": "S57",
+  "type": "practitioner-pattern",
+  "title": "Rapid generation shifts organizational friction to multi-threaded supervision and verification exhaustion",
+  "text": "When systems generate drafts and code in seconds, the human bottleneck shifts from authoring to verification. Managing multiple concurrent agent threads induces cognitive fatigue, and unchecked execution without rigid budget and timeout ceilings creates fiscal and operational runaway risk.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner synthesis and organizational surveys on cognitive load and agent budgeting; qualitative field observations rather than clinical cognitive trial data.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Generating output is nearly free; verifying it is the new finite resource."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

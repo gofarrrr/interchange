@@ -4,7 +4,7 @@
   "slug": "measure-business-improvement",
   "title": "Measuring AI activity instead of business improvement",
   "summary": "Connect usage to accepted work and accepted work to an actual business outcome.",
-  "diagnosis": "Logins, tokens, drafts and generated code measure activity. They can help diagnose adoption and cost but do not establish quality, use or value. Even time saved is incomplete until the organisation understands what happens to the released capacity. Define a chain from participation to changed workflow to accepted output to the result the business or customer values.",
+  "diagnosis": "Logins, tokens, drafts and generated code measure activity. They can help diagnose adoption and cost but do not establish quality, use or value. In production logs, observed enterprise exposure typically clusters around a narrow, conservative fraction of what benchmark claims suggest. Furthermore, general-purpose technologies follow a productivity J-curve: measured performance often dips or stagnates initially while the organization invests in restructuring, retraining and evaluation design. Even time saved is incomplete until the organisation understands what happens to the released capacity. Define a chain from participation to changed workflow to accepted output to the result the business or customer values.",
   "diagnostic_questions": [
     "What was the pre-change baseline, and are the compared cases similar in difficulty and volume?",
     "Does “completed” mean generated, reviewed, accepted, used or resolved for the customer?",
@@ -39,7 +39,9 @@
     "openai-use-not-output",
     "cybernetic-bounded-evidence",
     "ismail-narrative-inversion",
-    "emergence-hurt-metric"
+    "emergence-hurt-metric",
+    "brynjolfsson-productivity-j-curve",
+    "anthropic-observed-exposure"
   ],
   "source_ids": [
     "S01",
@@ -47,7 +49,9 @@
     "S12",
     "S40",
     "S41",
-    "S48"
+    "S48",
+    "S50",
+    "S56"
   ],
   "report_reference": {
     "source_id": "S01",

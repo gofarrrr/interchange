@@ -1,0 +1,16 @@
+{
+  "id": "lutke-shop-floor-apprenticeship",
+  "source_id": "S53",
+  "type": "practitioner-pattern",
+  "title": "Private chatbot silos destroy junior apprenticeship; agent workflows must remain public on the shop floor",
+  "text": "Confining AI interactions to private chat windows accelerates individual tasks while making the organization dumber over time. When junior colleagues cannot observe how experienced peers frame prompts, verify synthetic outputs, and catch subtle errors, informal apprenticeship breaks down. Systemic learning requires public agent channels.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "First-party executive philosophy from Shopify; emphasizes cultural openness and observable tool use within an engineering culture, not an independently audited sociological study.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "If AI usage is hidden in private DMs, the collective intelligence of the organization degrades."
+  },
+  "review": {
+    "status": "pending"
+  }
+}
