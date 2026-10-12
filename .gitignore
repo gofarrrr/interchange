@@ -6,3 +6,4 @@ dist-subpath/
 server.pid
 server.log
 __pycache__/
+scripts/push-*.sh

@@ -1748,6 +1748,71 @@ kbd {
   font-size: 13px;
   color: var(--text-3);
 }
+
+/* Needle in-context semantic highlights */
+::highlight(needle-focus) {
+  background-color: #FEF3C7;
+  color: #78350F;
+  text-decoration: underline;
+  text-decoration-color: #F59E0B;
+  text-underline-offset: 3px;
+}
+::highlight(needle-context) {
+  background-color: #FFFDF5;
+}
+.needle-snippet {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: var(--bg-alt, #f7f7f7);
+  border-left: 3px solid var(--accent, #147AD6);
+  border-radius: 0 4px 4px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2, #444);
+}
+.needle-snippet-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-3, #888);
+  margin-bottom: 3px;
+}
+.needle-snippet-label span.needle-icon {
+  font-size: 11px;
+}
+.is-needle-target {
+  animation: needle-pulse 3s ease-out forwards;
+}
+@keyframes needle-pulse {
+  0% { background-color: rgba(245, 158, 11, 0.28); }
+  70% { background-color: rgba(245, 158, 11, 0.1); }
+  100% { background-color: transparent; }
+}
+.needle-inpage-box {
+  margin-top: 12px;
+  padding: 10px;
+  background: var(--bg-alt, #fafafa);
+  border: 1px solid var(--hairline, #eee);
+  border-radius: 6px;
+}
+.needle-inpage-box input {
+  width: 100%;
+  font-size: 12px;
+  padding: 6px 8px;
+  border: 1px solid var(--hairline, #ddd);
+  border-radius: 4px;
+  background: white;
+}
+.needle-inpage-status {
+  font-size: 11px;
+  color: var(--text-3, #777);
+  margin-top: 6px;
+  display: block;
+}
 .page-search-field { margin: 0 0 16px; }
 .toast {
   position: fixed;

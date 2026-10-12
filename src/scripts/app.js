@@ -19,6 +19,7 @@
   function updateSaved(){const ids=stored('saved');document.querySelectorAll('[data-save]').forEach(el=>{const id=el.getAttribute('data-save');const saved=id!==null&&ids.includes(id);el.setAttribute('aria-pressed',String(saved));el.textContent=saved?'✓ Saved station':'+ Save station';});document.querySelectorAll('[data-saved-count]').forEach(el=>{el.textContent=ids.length?`(${ids.length})`:'';});document.querySelectorAll('[data-saved-row]').forEach(el=>{if(el instanceof HTMLElement)el.hidden=!ids.includes(el.dataset.savedRow||'');});const empty=document.querySelector('[data-saved-empty]');if(empty instanceof HTMLElement)empty.hidden=ids.length>0;}
   let activeSearchTab='all';
   let cachedSearchResults=[];
+  let currentSearchQuery='';
   /** @type {AbortController | null} */ let searchFetchAbort=null;
 
   function renderFiltered(container,status){
@@ -36,7 +37,10 @@
     for(const {item,probability} of filtered){
       const a=document.createElement('a');
       a.className='search-result'+(item.kind==='source'?' is-source':' is-station');
-      a.href=item.url;
+      const needleHref = (item.kind==='station'&&currentSearchQuery)
+        ? item.url+'?needle='+encodeURIComponent(currentSearchQuery)
+        : item.url;
+      a.href=needleHref;
       if(item.kind==='source'&&item.external_url)a.setAttribute('data-source-out',item.id);
 
       const badgeCol=document.createElement('div');
@@ -85,6 +89,35 @@
       matchWrap.append(bar,pct);
 
       content.append(title,summary,matchWrap);
+
+      if(item.kind==='station'&&currentSearchQuery){
+        const rawSentences=String(item.text||'')
+          .split(/(?<=[.?!])\s+/)
+          .map(s=>s.trim())
+          .filter(s=>s.length>25&&!s.startsWith('Station ')&&!s.startsWith('AI-'));
+        const qWords=normaliseQuery(currentSearchQuery).split(' ').filter(Boolean);
+        let bestSentence='';
+        let bestScore=0;
+        for(const s of rawSentences){
+          const norm=normaliseQuery(s);
+          let hits=0;
+          for(const w of qWords){if(norm.includes(w))hits++;}
+          const score=qWords.length?hits/qWords.length:0;
+          if(score>bestScore){bestScore=score;bestSentence=s;}
+        }
+        if(bestSentence&&(bestScore>0||probability>=0.7)){
+          const snippet=document.createElement('div');
+          snippet.className='needle-snippet';
+          const snLabel=document.createElement('span');
+          snLabel.className='needle-snippet-label mono';
+          snLabel.innerHTML='<span class="needle-icon">🪡</span> Key sentence (in context):';
+          const snText=document.createElement('p');
+          snText.textContent=bestSentence;
+          snippet.append(snLabel,snText);
+          content.append(snippet);
+        }
+      }
+
       const ar=document.createElement('span');
       ar.className='search-arrow';
       ar.textContent='↗';
@@ -100,6 +133,7 @@
     const status=scope.querySelector('[data-search-status]');
     if(!container||!status)return;
     const trimmed=query.trim();
+    currentSearchQuery=trimmed;
     if(!trimmed){
       cachedSearchResults=[];
       container.replaceChildren();
@@ -147,7 +181,149 @@
     lifecycle?.abort();lifecycle=new AbortController();const signal=lifecycle.signal;
     clearTimeout(searchTimer);clearTimeout(toastTimer);
     updateSaved();
-    const stationPage=document.querySelector('[data-station-page]');if(stationPage){const id=stationPage.getAttribute('data-station-page');if(id)store('visited',[...new Set([...stored('visited'),id])]);}
+
+    function clearNeedleHighlights(){
+      if(globalThis.CSS?.highlights){
+        CSS.highlights.delete('needle-focus');
+        CSS.highlights.delete('needle-context');
+      }
+      document.querySelectorAll('.is-needle-target').forEach(el=>el.classList.remove('is-needle-target'));
+    }
+
+    function highlightSentence(targetEl,sentenceText){
+      clearNeedleHighlights();
+      if(!targetEl)return;
+      targetEl.classList.add('is-needle-target');
+      targetEl.scrollIntoView({behavior:'smooth',block:'center'});
+
+      if(globalThis.CSS?.highlights&&globalThis.Highlight&&window.Range){
+        try{
+          const trimmed=sentenceText.trim();
+          const walker=document.createTreeWalker(targetEl,NodeFilter.SHOW_TEXT);
+          let node;
+          while((node=walker.nextNode())){
+            const idx=node.textContent.indexOf(trimmed);
+            if(idx!==-1){
+              const r=new Range();
+              r.setStart(node,idx);
+              r.setEnd(node,idx+trimmed.length);
+              const ctxRange=new Range();
+              ctxRange.selectNodeContents(targetEl);
+              CSS.highlights.set('needle-focus',new Highlight(r));
+              CSS.highlights.set('needle-context',new Highlight(ctxRange));
+              return;
+            }
+          }
+          const r=new Range();
+          r.selectNodeContents(targetEl);
+          CSS.highlights.set('needle-focus',new Highlight(r));
+        }catch{}
+      }
+    }
+
+    async function pinpointInStation(query){
+      const doc=document.querySelector('.reading-document');
+      if(!doc||!query.trim())return;
+      const candidates=Array.from(doc.querySelectorAll('p, li, .working-artifact p'))
+        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer')&&el.textContent.trim().length>20);
+      if(!candidates.length)return;
+
+      const passages=candidates.map((el,i)=>({id:'p'+i,text:el.textContent.trim()}));
+      let topMatch=null;
+
+      try{
+        const res=await fetch('/api/search/',{
+          method:'POST',
+          headers:{'content-type':'application/json'},
+          body:JSON.stringify({action:'pinpoint',query,passages})
+        });
+        if(res.ok){
+          const body=await res.json();
+          topMatch=body.top;
+        }
+      }catch{}
+
+      if(!topMatch){
+        const qWords=normaliseQuery(query).split(' ').filter(Boolean);
+        let bestScore=0;
+        candidates.forEach((el,i)=>{
+          const sentences=(el.textContent||'').split(/(?<=[.?!])\s+/);
+          sentences.forEach(s=>{
+            const norm=normaliseQuery(s);
+            let hits=0;
+            qWords.forEach(w=>{if(norm.includes(w))hits++;});
+            const score=qWords.length?hits/qWords.length:0;
+            if(score>bestScore){
+              bestScore=score;
+              topMatch={id:'p'+i,focusText:s.trim(),probability:Math.min(0.9,0.3+bestScore*0.6)};
+            }
+          });
+        });
+      }
+
+      if(topMatch&&topMatch.focusText){
+        const idx=Number(topMatch.id.replace('p',''));
+        const targetEl=candidates[idx];
+        if(targetEl){
+          highlightSentence(targetEl,topMatch.focusText);
+          toast(`🪡 Needle: Pointing to matching sentence in context.`);
+        }
+      }else{
+        toast('No matching sentence found on this station.');
+      }
+    }
+
+    const stationPage=document.querySelector('[data-station-page]');
+    if(stationPage){
+      const id=stationPage.getAttribute('data-station-page');
+      if(id)store('visited',[...new Set([...stored('visited'),id])]);
+
+      const urlParams=new URLSearchParams(location.search);
+      const needleQuery=urlParams.get('needle')||urlParams.get('q');
+      if(needleQuery){
+        setTimeout(()=>pinpointInStation(needleQuery),350);
+      }
+
+      const railActions=document.querySelector('.rail-actions');
+      if(railActions){
+        const needleBtn=document.createElement('button');
+        needleBtn.className='text-button';
+        needleBtn.setAttribute('data-needle-trigger','');
+        needleBtn.textContent='🪡 Find in station';
+
+        const needleBox=document.createElement('div');
+        needleBox.className='needle-inpage-box';
+        needleBox.hidden=true;
+        needleBox.innerHTML='<input data-needle-input placeholder="Ask about this station…" autocomplete="off" /><span class="needle-inpage-status mono" data-needle-status>Press Enter to pinpoint</span><button type="button" class="text-button" data-needle-clear style="margin-top:6px;font-size:11px;">✕ Clear</button>';
+
+        needleBtn.addEventListener('click',()=>{
+          needleBox.hidden=!needleBox.hidden;
+          if(!needleBox.hidden)needleBox.querySelector('input')?.focus();
+        },{signal});
+
+        const needleInput=needleBox.querySelector('input');
+        needleInput?.addEventListener('keydown',e=>{
+          if(e.key==='Enter'){
+            e.preventDefault();
+            const q=needleInput.value.trim();
+            if(q){
+              const status=needleBox.querySelector('[data-needle-status]');
+              if(status)status.textContent='Pinpointing with Jev…';
+              pinpointInStation(q).then(()=>{
+                if(status)status.textContent='Sentence highlighted in context';
+              });
+            }
+          }
+        },{signal});
+
+        needleBox.querySelector('[data-needle-clear]')?.addEventListener('click',()=>{
+          clearNeedleHighlights();
+          needleBox.hidden=true;
+        },{signal});
+
+        railActions.append(needleBtn,needleBox);
+      }
+    }
     document.querySelectorAll('[data-save]').forEach(el=>el.addEventListener('click',()=>{const id=el.getAttribute('data-save');if(!id)return;let ids=stored('saved');ids=ids.includes(id)?ids.filter(x=>x!==id):[...ids,id];if(store('saved',ids)){updateSaved();toast(ids.includes(id)?'Station saved locally on this device.':'Station removed from this device.');}else{toast('Browser storage is unavailable. Save the station link instead.');}},{signal}));
     document.querySelectorAll('[data-copy-link]').forEach(el=>el.addEventListener('click',()=>{if(window.__OFFLINE__){void copy(location.href,'Local preview link copied. Share the HTML file with it.');}else{void copy(location.href,'Station link copied.');}},{signal}));
     document.querySelectorAll('[data-copy-artifact]').forEach(el=>el.addEventListener('click',()=>{const text=el.closest('.working-artifact')?.querySelector('p:not(.meta)')?.textContent||'';void copy(text,'Working artifact copied.');},{signal}));

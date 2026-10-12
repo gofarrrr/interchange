@@ -48,6 +48,122 @@ function fallbackScoring(query, items) {
   return scored.sort((a, b) => b.probability - a.probability);
 }
 
+const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
+export function sentenceSpans(text) {
+  if (!text || typeof text !== 'string') return [];
+  return [...segmenter.segment(text)]
+    .map(({ segment, index }) => {
+      const start = index + segment.length - segment.trimStart().length;
+      const end = index + segment.trimEnd().length;
+      return { start, end, text: text.slice(start, end) };
+    })
+    .filter(s => s.end > s.start && s.text.trim().length > 3);
+}
+
+async function pinpointWithJev(query, passages) {
+  const apiKey = (process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY || '').trim();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
+  let directError = null;
+
+  try {
+    if (apiKey) {
+      const questions = {};
+      for (const p of passages) {
+        questions[p.id] = {
+          type: 'noul',
+          instructions: `Relevant to: "${query}". Section: ${p.text.slice(0, 300)}`
+        };
+        const sentences = sentenceSpans(p.text);
+        if (sentences.length > 1) {
+          const criteria = {};
+          sentences.slice(0, 12).forEach((s, idx) => { criteria[`s${idx}`] = s.text; });
+          questions[`focus_${p.id}`] = {
+            type: 'choice',
+            instructions: `For passage ${p.id}, select the single sentence that most directly answers: "${query}".`,
+            criteria
+          };
+        }
+      }
+
+      const response = await fetch('https://api.typesafe.ai/v1/systemone', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: 'jev-latest',
+          state: query,
+          questions
+        }),
+        signal: controller.signal
+      });
+
+      if (response.ok) {
+        clearTimeout(timer);
+        const data = await response.json();
+        const answers = data?.answers || {};
+        const scored = passages.map(p => {
+          const ans = answers[p.id];
+          const prob = typeof ans?.noul === 'number' ? Math.round(ans.noul * 100) / 100 : (ans?.probability ?? 0.5);
+          const sentences = sentenceSpans(p.text);
+          let focusSentence = sentences[0]?.text || p.text;
+          const focusAns = answers[`focus_${p.id}`];
+          if (focusAns && typeof focusAns.choice === 'string') {
+            const idx = Number(focusAns.choice.replace('s', ''));
+            if (!Number.isNaN(idx) && sentences[idx]) {
+              focusSentence = sentences[idx].text;
+            }
+          }
+          return { id: p.id, probability: prob, focusText: focusSentence, fullText: p.text };
+        }).sort((a, b) => b.probability - a.probability);
+
+        return {
+          matches: scored,
+          top: scored[0] || null,
+          provider: 'typesafe-jev'
+        };
+      } else {
+        const text = await response.text().catch(() => '');
+        directError = `${response.status}: ${text.slice(0, 160)}`;
+      }
+    }
+  } catch (err) {
+    clearTimeout(timer);
+    directError = err?.message || String(err);
+  }
+
+  // Fallback: local semantic / token pinpointing
+  const qWords = normaliseText(query).split(' ').filter(Boolean);
+  const scored = passages.map(p => {
+    const sentences = sentenceSpans(p.text);
+    let bestScore = 0;
+    let bestSentence = sentences[0]?.text || p.text;
+    for (const s of sentences) {
+      const normS = normaliseText(s.text);
+      let matches = 0;
+      for (const w of qWords) {
+        if (normS.includes(w)) matches++;
+      }
+      const score = qWords.length ? matches / qWords.length : 0;
+      if (score > bestScore) {
+        bestScore = score;
+        bestSentence = s.text;
+      }
+    }
+    const prob = Math.min(0.95, Math.max(0.1, Math.round((bestScore * 0.8 + 0.15) * 100) / 100));
+    return { id: p.id, probability: prob, focusText: bestSentence, fullText: p.text };
+  }).sort((a, b) => b.probability - a.probability);
+
+  return {
+    matches: scored,
+    top: scored[0] || null,
+    provider: 'local-needle',
+    ...(directError ? { directError } : {})
+  };
+}
+
 async function rankWithJev(query, items) {
   const apiKey = (process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY || '').trim();
   const controller = new AbortController();
@@ -181,9 +297,18 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { query, items } = req.body || {};
+    const { query, items, passages, action } = req.body || {};
     if (!query || typeof query !== 'string' || !query.trim()) {
       return res.status(200).json({ results: [], searched: 0 });
+    }
+
+    if (action === 'pinpoint' || (Array.isArray(passages) && passages.length > 0)) {
+      const needlePassages = Array.isArray(passages) ? passages : [];
+      if (!needlePassages.length) {
+        return res.status(400).json({ error: 'Passages array required for pinpoint action' });
+      }
+      const needleResult = await pinpointWithJev(query.trim(), needlePassages);
+      return res.status(200).json(needleResult);
     }
 
     if (!Array.isArray(items) || items.length === 0) {
