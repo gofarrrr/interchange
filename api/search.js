@@ -49,7 +49,7 @@ function fallbackScoring(query, items) {
 }
 
 async function rankWithJev(query, items) {
-  const apiKey = process.env.TYPESAFE_API_KEY;
+  const apiKey = process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 4500);
 
