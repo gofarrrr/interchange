@@ -17,8 +17,132 @@
   /** @param {string} text @param {string} success */
   async function copy(text,success){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);}else{const field=document.createElement('textarea');field.value=text;field.style.position='fixed';field.style.opacity='0';document.body.append(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw Error('Clipboard unavailable');}toast(success);}catch{toast('Clipboard unavailable. Select and copy the text manually.');}}
   function updateSaved(){const ids=stored('saved');document.querySelectorAll('[data-save]').forEach(el=>{const id=el.getAttribute('data-save');const saved=id!==null&&ids.includes(id);el.setAttribute('aria-pressed',String(saved));el.textContent=saved?'✓ Saved station':'+ Save station';});document.querySelectorAll('[data-saved-count]').forEach(el=>{el.textContent=ids.length?`(${ids.length})`:'';});document.querySelectorAll('[data-saved-row]').forEach(el=>{if(el instanceof HTMLElement)el.hidden=!ids.includes(el.dataset.savedRow||'');});const empty=document.querySelector('[data-saved-empty]');if(empty instanceof HTMLElement)empty.hidden=ids.length>0;}
+  let activeSearchTab='all';
+  let cachedSearchResults=[];
+  /** @type {AbortController | null} */ let searchFetchAbort=null;
+
+  function renderFiltered(container,status){
+    container.replaceChildren();
+    const filtered=cachedSearchResults.filter(x=>{
+      if(activeSearchTab==='stations')return x.item.kind==='station';
+      if(activeSearchTab==='sources')return x.item.kind==='source';
+      return true;
+    });
+    if(!cachedSearchResults.length){
+      status.textContent='NO MATCHES. TRY DIFFERENT WORDS OR AN AUTHOR NAME.';
+      return;
+    }
+    status.textContent=`RANKED BY JEV ACROSS ${data.search.length} ITEMS · ${filtered.length} MATCHES`;
+    for(const {item,probability} of filtered){
+      const a=document.createElement('a');
+      a.className='search-result'+(item.kind==='source'?' is-source':' is-station');
+      a.href=item.url;
+      if(item.kind==='source'&&item.external_url)a.setAttribute('data-source-out',item.id);
+
+      const badgeCol=document.createElement('div');
+      badgeCol.className='result-badge-col';
+      if(item.kind==='station'){
+        const badgeSpan=document.createElement('span');
+        badgeSpan.className='line-badge small';
+        badgeSpan.style.setProperty('--line-color',item.line_color||'#147AD6');
+        badgeSpan.textContent=item.line;
+        const numSpan=document.createElement('span');
+        numSpan.className='mono';
+        numSpan.textContent=String(item.number).padStart(2,'0');
+        badgeCol.append(badgeSpan,numSpan);
+      }else{
+        const tag=document.createElement('span');
+        tag.className='source-tag mono';
+        tag.textContent=item.id;
+        badgeCol.append(tag);
+      }
+
+      const content=document.createElement('div');
+      content.className='result-content';
+      if(item.kind==='source'&&item.author){
+        const authorEl=document.createElement('span');
+        authorEl.className='source-author-tag mono';
+        authorEl.textContent=item.author;
+        content.append(authorEl);
+      }
+      const title=document.createElement('h3');
+      title.textContent=item.short||item.title;
+      const summary=document.createElement('p');
+      summary.textContent=item.summary;
+
+      const matchWrap=document.createElement('div');
+      matchWrap.className='jev-match';
+      const pctValue=Math.max(4,Math.min(100,Math.round(probability*100)));
+      matchWrap.title=`Jev semantic match: ${pctValue}%`;
+      const bar=document.createElement('span');
+      bar.className='jev-bar';
+      const fill=document.createElement('i');
+      fill.style.width=`${pctValue}%`;
+      bar.append(fill);
+      const pct=document.createElement('span');
+      pct.className='jev-pct mono';
+      pct.textContent=`${pctValue}% match`;
+      matchWrap.append(bar,pct);
+
+      content.append(title,summary,matchWrap);
+      const ar=document.createElement('span');
+      ar.className='search-arrow';
+      ar.textContent='↗';
+      ar.setAttribute('aria-hidden','true');
+      a.append(badgeCol,content,ar);
+      container.append(a);
+    }
+  }
+
   /** @param {HTMLElement} scope @param {string} query */
-  function renderResults(scope,query){const container=scope.querySelector('[data-search-results]');const status=scope.querySelector('[data-search-status]');if(!container||!status)return;container.replaceChildren();if(!query.trim()){status.textContent='SEARCH 36 STATIONS AND THEIR SOURCE PERSPECTIVES.';return;}const results=rankSearch(data.search,query);status.textContent=results.length?`${results.length} MATCHING STATION${results.length===1?'':'S'}${results.length===12?' · BEST MATCHES FIRST':''}`:'NO MATCHES. TRY A BROADER TERM OR A STATION NUMBER.';for(const item of results){const a=document.createElement('a');a.className='search-result';a.href=item.url;const id=document.createElement('span');id.className='mono';id.textContent=String(item.number).padStart(2,'0');const content=document.createElement('div');const title=document.createElement('h3');title.textContent=item.short;const summary=document.createElement('p');summary.textContent=item.summary;content.append(title,summary);const ar=document.createElement('span');ar.textContent='↗';ar.setAttribute('aria-hidden','true');a.append(id,content,ar);container.append(a);}}
+  async function renderResults(scope,query){
+    const container=scope.querySelector('[data-search-results]');
+    const status=scope.querySelector('[data-search-status]');
+    if(!container||!status)return;
+    const trimmed=query.trim();
+    if(!trimmed){
+      cachedSearchResults=[];
+      container.replaceChildren();
+      status.textContent=`RANKED BY JEV ACROSS ${data.search.length} ITEMS.`;
+      return;
+    }
+    status.textContent='RANKING WITH JEV ACROSS STATIONS & SOURCES…';
+    searchFetchAbort?.abort();
+    searchFetchAbort=new AbortController();
+    const fetchSignal=searchFetchAbort.signal;
+    let scored=[];
+    try{
+      const res=await fetch('/api/search',{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({
+          query:trimmed,
+          items:data.search.map(i=>({id:i.id,text:i.text||(i.title+' '+(i.summary||''))}))
+        }),
+        signal:fetchSignal
+      });
+      if(res.ok){
+        const body=await res.json();
+        if(Array.isArray(body.results)&&body.results.length>0){
+          const itemMap=new Map(data.search.map(s=>[s.id,s]));
+          scored=body.results
+            .filter(r=>itemMap.has(r.id)&&(r.probability>=0.12||body.results.slice(0,6).includes(r)))
+            .map(r=>({item:itemMap.get(r.id),probability:r.probability}));
+        }
+      }
+    }catch(err){
+      if(/** @type {Error} */(err)?.name==='AbortError')return;
+    }
+    if(!scored.length){
+      const local=rankSearch(data.search,trimmed,24);
+      scored=local.map((item,idx)=>({
+        item,
+        probability:item.probability??Math.max(0.35,Math.round((1-idx*0.04)*100)/100)
+      }));
+    }
+    cachedSearchResults=scored;
+    renderFiltered(container,status);
+  }
   function boot(){
     lifecycle?.abort();lifecycle=new AbortController();const signal=lifecycle.signal;
     clearTimeout(searchTimer);clearTimeout(toastTimer);
@@ -37,7 +161,8 @@
     dialog?.addEventListener('close',()=>{if(lastFocus instanceof HTMLElement)lastFocus.focus();},{signal});
     dialog?.addEventListener('click',event=>{if(!(dialog instanceof HTMLDialogElement))return;if(event.target===dialog){const box=dialog.getBoundingClientRect();const e=/** @type {MouseEvent} */(event);if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)dialog.close();}},{signal});
     document.addEventListener('keydown',event=>{const target=event.target;const editing=target instanceof HTMLElement&&(target.matches('input,textarea,select')||target.isContentEditable);if((event.key==='/'&&!editing)||((event.ctrlKey||event.metaKey)&&event.key==='k')){event.preventDefault();openSearch();}},{signal});
-    document.querySelectorAll('[data-search-input]').forEach(el=>{if(!(el instanceof HTMLInputElement))return;const scope=el.closest('dialog')||el.closest('main');if(!(scope instanceof HTMLElement))return;el.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderResults(scope,el.value),90);},{signal});});
+    document.querySelectorAll('[data-search-tab]').forEach(tab=>{tab.addEventListener('click',()=>{const val=tab.getAttribute('data-search-tab')||'all';activeSearchTab=val;document.querySelectorAll('[data-search-tab]').forEach(t=>{const active=t.getAttribute('data-search-tab')===val;t.classList.toggle('is-active',active);t.setAttribute('aria-selected',String(active));});const scope=tab.closest('dialog')||tab.closest('main');if(scope instanceof HTMLElement){const container=scope.querySelector('[data-search-results]');const status=scope.querySelector('[data-search-status]');if(container&&status)renderFiltered(container,status);}},{signal});});
+    document.querySelectorAll('[data-search-input]').forEach(el=>{if(!(el instanceof HTMLInputElement))return;const scope=el.closest('dialog')||el.closest('main');if(!(scope instanceof HTMLElement))return;el.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderResults(scope,el.value),180);},{signal});});
     // Text index: no layout or source details enter the search query pipeline.
     let filter='all';const indexInput=document.querySelector('[data-index-query]');
     const filterIndex=()=>{const query=indexInput instanceof HTMLInputElement?normaliseQuery(indexInput.value):'';let count=0;document.querySelectorAll('.index-line .station-row').forEach(el=>{if(!(el instanceof HTMLElement))return;const matches=(filter==='all'||el.dataset.indexLine===filter)&&normaliseQuery(el.dataset.searchText||'').includes(query);el.hidden=!matches;if(matches)count++;});document.querySelectorAll('[data-index-section]').forEach(el=>{if(el instanceof HTMLElement)el.hidden=!Array.from(el.querySelectorAll('.station-row')).some(row=>row instanceof HTMLElement&&!row.hidden);});const countEl=document.querySelector('[data-index-count]');if(countEl)countEl.textContent=`${count} station${count===1?'':'s'}`;const empty=document.querySelector('[data-index-empty]');if(empty instanceof HTMLElement)empty.hidden=count>0;};

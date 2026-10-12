@@ -1,5 +1,14 @@
 # Changelog implementacji
 
+## v1.6 — 12 października 2026
+
+Zastąpienie tradycyjnego dopasowywania słów kluczowych semantycznym silnikiem rankingowym **Jev** od TypeSafe AI (inspirowanym interfejsem czytelniczym Atharvy Shaha `read.atharvashah.com`):
+- Wprowadzono jedno uniwersalne wyszukiwanie semantyczne obejmujące jednocześnie **36 stacji** oraz **40 źródeł** (76 obiektów w jednym spójnym indeksie).
+- Dodano endpoint serverless `api/search.js` łączący się z modelem Jev i zwracający typowane prawdopodobieństwa dopasowania semantycznego per obiekt (`probability: 0.0–1.0`), z deterministycznym fallbackiem scoringowym.
+- Wprowadzono wskaźniki dopasowania procentowego (`% match`) z wizualnym poziomym paskiem siły korelacji przy każdym wyniku stacji i źródła.
+- Dodano zakładki filtracji wyników w modalu i na stronie wyszukiwania: `All (76)`, `Stations (36)`, `Sources (40)`.
+- Rozszerzono `src/search.mjs` o dopasowywanie nazwisk autorów oraz identyfikatorów źródeł, zapewniając pełną zgodność z testami regresyjnymi.
+
 ## v1.5 — 12 października 2026
 
 Wzbogacono 6 stacji o perspektywy operacyjne i ekonomiczne na podstawie fundamentalnych publikacji Emergence Capital oraz Sequoia Capital:

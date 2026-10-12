@@ -1,8 +1,16 @@
-# INTERCHANGE — działająca implementacja v1.5
+# INTERCHANGE — działająca implementacja v1.6
 
 **Status: wersja do przeglądu zespołowego, nie zatwierdzona publikacja.**
 
 36 tematów o transformacji AI, sześć linii, własna mapa SVG i spokojne strony do czytania. To rzeczywisty interfejs HTML/CSS/JavaScript z pełną treścią, a nie obraz makiety. Projekt realizuje kierunek „Everything is neutral except the network”.
+
+## Zmiany v1.6 — semantyczny silnik wyszukiwania Jev (TypeSafe)
+
+Wydanie v1.6 zastępuje dawne wyszukiwanie leksykalne semantycznym rankingiem **Jev** od TypeSafe AI (według wzorca z projektu `read.atharvashah.com` Atharvy Shaha):
+- **Jeden uniwersalny ranking:** wyszukiwanie analizuje kontekstowe znaczenie zapytania i szereguje jednocześnie całą bazę **36 stacji** oraz **40 źródeł** (76 pozycji).
+- **Procent dopasowania (% match):** każda znaleziona stacja i źródło wyświetla typowane prawdopodobieństwo (`0–100% match`) wraz z graficznym wskaźnikiem siły korelacji.
+- **Filtrowanie zakładek:** szybkie przełączanie widoku między wszystkimi pozycjami (`All`), samymi problemami (`Stations`) a autorami/literaturą (`Sources`).
+- **Endpoint serverless (`api/search.js`):** obsługa zapytań z modelu Jev z wbudowanym deterministycznym fallbackiem zapewniającym ciągłość działania.
 
 ## Zmiany v1.5 — operacyjne wzbogacenie 6 stacji (Emergence Capital / Julien Bek / Konstantine Buhler)
 
