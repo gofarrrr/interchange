@@ -1818,26 +1818,64 @@ kbd {
   50% { background-color: rgba(245, 158, 11, 0.18); }
   100% { background-color: rgba(245, 158, 11, 0.08); }
 }
-.needle-inpage-box {
-  margin-top: 12px;
-  padding: 10px;
+.station-needle-bar {
+  margin: 28px 0 8px;
+  padding: 14px 16px;
   background: var(--bg-alt, #fafafa);
-  border: 1px solid var(--hairline, #eee);
-  border-radius: 6px;
+  border: 1px solid var(--hairline, #e5e5e5);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.needle-inpage-box input {
-  width: 100%;
-  font-size: 12px;
-  padding: 6px 8px;
+.station-needle-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
   border: 1px solid var(--hairline, #ddd);
-  border-radius: 4px;
-  background: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-.needle-inpage-status {
-  font-size: 11px;
+.station-needle-inner:focus-within {
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+.station-needle-inner .needle-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+.station-needle-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink, #111);
+  background: transparent;
+  padding: 2px 0;
+}
+.station-needle-input::placeholder {
+  color: var(--text-3, #888);
+}
+.station-needle-clear {
+  font-size: 12px;
   color: var(--text-3, #777);
-  margin-top: 6px;
-  display: block;
+  padding: 2px 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 4px;
+}
+.station-needle-clear:hover {
+  color: var(--ink, #111);
+  background: rgba(0, 0, 0, 0.05);
+}
+.station-needle-status {
+  font-size: 12px;
+  color: var(--text-3, #666);
+  line-height: 1.4;
 }
 .page-search-field { margin: 0 0 16px; }
 .toast {

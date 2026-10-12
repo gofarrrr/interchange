@@ -320,7 +320,7 @@ function sentenceSpans(text) {
       const doc=document.querySelector('.reading-document');
       if(!doc||!query.trim())return;
       const candidates=Array.from(doc.querySelectorAll('p, li, .working-artifact p'))
-        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer')&&el.textContent.trim().length>20);
+        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer, .station-needle-bar')&&el.textContent.trim().length>20);
       if(!candidates.length)return;
 
       const passages=candidates.map((el,i)=>({id:'p'+i,text:el.textContent.trim()}));
@@ -373,50 +373,63 @@ function sentenceSpans(text) {
       const id=stationPage.getAttribute('data-station-page');
       if(id)store('visited',[...new Set([...stored('visited'),id])]);
 
+      const needleInput=document.querySelector('[data-needle-input]');
+      const needleClear=document.querySelector('[data-needle-clear]');
+      const needleStatus=document.querySelector('[data-needle-status]');
+      const railTrigger=document.querySelector('[data-needle-rail-trigger]');
+
+      railTrigger?.addEventListener('click',()=>{
+        if(needleInput instanceof HTMLInputElement){
+          needleInput.scrollIntoView({behavior:'smooth',block:'center'});
+          needleInput.focus();
+        }
+      },{signal});
+
+      const handleNeedleSearch=async(q)=>{
+        const trimmed=q.trim();
+        if(!trimmed)return;
+        if(needleStatus)needleStatus.textContent='Pinpointing with Jev across station text…';
+        if(needleClear instanceof HTMLElement)needleClear.hidden=false;
+        await pinpointInStation(trimmed);
+        if(needleStatus)needleStatus.textContent='Matching passage pinpointed in context below ↓';
+      };
+
+      needleInput?.addEventListener('keydown',e=>{
+        if(e.key==='Enter'){
+          e.preventDefault();
+          if(needleInput instanceof HTMLInputElement&&needleInput.value){
+            handleNeedleSearch(needleInput.value);
+          }
+        }
+      },{signal});
+
+      needleClear?.addEventListener('click',()=>{
+        clearNeedleHighlights();
+        if(needleInput instanceof HTMLInputElement)needleInput.value='';
+        if(needleClear instanceof HTMLElement)needleClear.hidden=true;
+        if(needleStatus)needleStatus.textContent='Needle semantic pinpoint · Press Enter or [f] to pinpoint matching sentences in this text';
+      },{signal});
+
+      needleInput?.addEventListener('input',()=>{
+        if(needleInput instanceof HTMLInputElement){
+          if(!needleInput.value.trim()){
+            clearNeedleHighlights();
+            if(needleClear instanceof HTMLElement)needleClear.hidden=true;
+            if(needleStatus)needleStatus.textContent='Needle semantic pinpoint · Press Enter or [f] to pinpoint matching sentences in this text';
+          }else{
+            if(needleClear instanceof HTMLElement)needleClear.hidden=false;
+          }
+        }
+      },{signal});
+
       const urlParams=new URLSearchParams(location.search);
       const needleQuery=urlParams.get('needle')||urlParams.get('q');
       if(needleQuery){
-        setTimeout(()=>pinpointInStation(needleQuery),350);
-      }
-
-      const railActions=document.querySelector('.rail-actions');
-      if(railActions){
-        const needleBtn=document.createElement('button');
-        needleBtn.className='text-button';
-        needleBtn.setAttribute('data-needle-trigger','');
-        needleBtn.textContent='🪡 Find in station';
-
-        const needleBox=document.createElement('div');
-        needleBox.className='needle-inpage-box';
-        needleBox.hidden=true;
-        needleBox.innerHTML='<input data-needle-input placeholder="Ask about this station…" autocomplete="off" /><span class="needle-inpage-status mono" data-needle-status>Press Enter to pinpoint</span><button type="button" class="text-button" data-needle-clear style="margin-top:6px;font-size:11px;">✕ Clear</button>';
-
-        needleBtn.addEventListener('click',()=>{
-          needleBox.hidden=!needleBox.hidden;
-          if(!needleBox.hidden)needleBox.querySelector('input')?.focus();
-        },{signal});
-
-        const needleInput=needleBox.querySelector('input');
-        needleInput?.addEventListener('keydown',e=>{
-          if(e.key==='Enter'){
-            e.preventDefault();
-            const q=needleInput.value.trim();
-            if(q){
-              const status=needleBox.querySelector('[data-needle-status]');
-              if(status)status.textContent='Pinpointing with Jev…';
-              pinpointInStation(q).then(()=>{
-                if(status)status.textContent='Sentence highlighted in context';
-              });
-            }
-          }
-        },{signal});
-
-        needleBox.querySelector('[data-needle-clear]')?.addEventListener('click',()=>{
-          clearNeedleHighlights();
-          needleBox.hidden=true;
-        },{signal});
-
-        railActions.append(needleBtn,needleBox);
+        if(needleInput instanceof HTMLInputElement){
+          needleInput.value=needleQuery;
+          if(needleClear instanceof HTMLElement)needleClear.hidden=false;
+        }
+        setTimeout(()=>handleNeedleSearch(needleQuery),350);
       }
     }
     document.querySelectorAll('[data-save]').forEach(el=>el.addEventListener('click',()=>{const id=el.getAttribute('data-save');if(!id)return;let ids=stored('saved');ids=ids.includes(id)?ids.filter(x=>x!==id):[...ids,id];if(store('saved',ids)){updateSaved();toast(ids.includes(id)?'Station saved locally on this device.':'Station removed from this device.');}else{toast('Browser storage is unavailable. Save the station link instead.');}},{signal}));
@@ -431,7 +444,21 @@ function sentenceSpans(text) {
     document.querySelector('[data-close-search]')?.addEventListener('click',()=>{if(dialog instanceof HTMLDialogElement)dialog.close();},{signal});
     dialog?.addEventListener('close',()=>{if(lastFocus instanceof HTMLElement)lastFocus.focus();},{signal});
     dialog?.addEventListener('click',event=>{if(!(dialog instanceof HTMLDialogElement))return;if(event.target===dialog){const box=dialog.getBoundingClientRect();const e=/** @type {MouseEvent} */(event);if(e.clientX<box.left||e.clientX>box.right||e.clientY<box.top||e.clientY>box.bottom)dialog.close();}},{signal});
-    document.addEventListener('keydown',event=>{const target=event.target;const editing=target instanceof HTMLElement&&(target.matches('input,textarea,select')||target.isContentEditable);if((event.key==='/'&&!editing)||((event.ctrlKey||event.metaKey)&&event.key==='k')){event.preventDefault();openSearch();}},{signal});
+    document.addEventListener('keydown',event=>{
+      const target=event.target;
+      const editing=target instanceof HTMLElement&&(target.matches('input,textarea,select')||target.isContentEditable);
+      if((event.key==='/'&&!editing)||((event.ctrlKey||event.metaKey)&&event.key==='k')){
+        event.preventDefault();openSearch();
+      }else if((event.key==='f'||event.key==='F')&&!editing&&!event.ctrlKey&&!event.metaKey&&!event.altKey){
+        const needleInput=document.querySelector('[data-needle-input]');
+        if(needleInput instanceof HTMLInputElement){
+          event.preventDefault();
+          needleInput.scrollIntoView({behavior:'smooth',block:'center'});
+          needleInput.focus();
+          needleInput.select();
+        }
+      }
+    },{signal});
     document.querySelectorAll('[data-search-tab]').forEach(tab=>{tab.addEventListener('click',()=>{const val=tab.getAttribute('data-search-tab')||'all';activeSearchTab=val;document.querySelectorAll('[data-search-tab]').forEach(t=>{const active=t.getAttribute('data-search-tab')===val;t.classList.toggle('is-active',active);t.setAttribute('aria-selected',String(active));});const scope=tab.closest('dialog')||tab.closest('main');if(scope instanceof HTMLElement){const container=scope.querySelector('[data-search-results]');const status=scope.querySelector('[data-search-status]');if(container&&status)renderFiltered(container,status);}},{signal});});
     document.querySelectorAll('[data-search-input]').forEach(el=>{if(!(el instanceof HTMLInputElement))return;const scope=el.closest('dialog')||el.closest('main');if(!(scope instanceof HTMLElement))return;el.addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderResults(scope,el.value),180);},{signal});});
     // Text index: no layout or source details enter the search query pipeline.
