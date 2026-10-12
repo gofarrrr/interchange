@@ -30,5 +30,53 @@
     "reason": "Review throughput requires an operational owner.",
     "review_status": "proposed",
     "id": "28-35"
+  },
+  {
+    "from": "AI-06",
+    "to": "AI-31",
+    "kind": "read-with",
+    "reason": "Economic viability depends on knowing who owns maintenance and costs after handover.",
+    "review_status": "proposed",
+    "id": "06-31"
+  },
+  {
+    "from": "AI-29",
+    "to": "AI-36",
+    "kind": "read-with",
+    "reason": "Demonstrations hide scale limits; production requires ongoing revalidation under real load.",
+    "review_status": "proposed",
+    "id": "29-36"
+  },
+  {
+    "from": "AI-24",
+    "to": "AI-34",
+    "kind": "read-with",
+    "reason": "Proportionate risk controls determine what fails gracefully and what needs manual override.",
+    "review_status": "proposed",
+    "id": "24-34"
+  },
+  {
+    "from": "AI-15",
+    "to": "AI-25",
+    "kind": "read-with",
+    "reason": "You cannot evaluate accurate output without shared, unambiguous business definitions.",
+    "review_status": "proposed",
+    "id": "15-25"
+  },
+  {
+    "from": "AI-16",
+    "to": "AI-26",
+    "kind": "read-with",
+    "reason": "Data blind spots and missing history define the edge cases you must test.",
+    "review_status": "proposed",
+    "id": "16-26"
+  },
+  {
+    "from": "AI-04",
+    "to": "AI-09",
+    "kind": "read-with",
+    "reason": "Teams adopt and learn faster when starting with simpler, inspectable tools.",
+    "review_status": "proposed",
+    "id": "04-09"
   }
 ]
