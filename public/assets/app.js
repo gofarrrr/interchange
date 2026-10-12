@@ -282,12 +282,6 @@ function sentenceSpans(text) {
       clearNeedleHighlights();
       if(!targetEl)return;
       targetEl.classList.add('is-needle-target');
-
-      const badge=document.createElement('span');
-      badge.className='needle-target-badge mono';
-      badge.textContent='🪡 Needle in context · matching passage';
-      targetEl.prepend(badge);
-
       targetEl.scrollIntoView({behavior:'smooth',block:'center'});
 
       if(globalThis.CSS?.highlights&&globalThis.Highlight&&window.Range){
@@ -296,16 +290,12 @@ function sentenceSpans(text) {
           const walker=document.createTreeWalker(targetEl,NodeFilter.SHOW_TEXT);
           let node;
           while((node=walker.nextNode())){
-            if(node.parentElement?.closest('.needle-target-badge'))continue;
             const idx=node.textContent.indexOf(trimmed);
             if(idx!==-1){
               const r=new Range();
               r.setStart(node,idx);
               r.setEnd(node,idx+trimmed.length);
-              const ctxRange=new Range();
-              ctxRange.selectNodeContents(targetEl);
               CSS.highlights.set('needle-focus',new Highlight(r));
-              CSS.highlights.set('needle-context',new Highlight(ctxRange));
               return;
             }
           }
@@ -361,7 +351,6 @@ function sentenceSpans(text) {
         const targetEl=candidates[idx];
         if(targetEl){
           highlightSentence(targetEl,topMatch.focusText);
-          toast(`🪡 Needle: Pointing to matching sentence in context.`);
           return { found: true, text: topMatch.focusText };
         }
       }

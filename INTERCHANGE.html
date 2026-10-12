@@ -1751,14 +1751,14 @@ kbd {
 
 /* Needle in-context semantic highlights */
 ::highlight(needle-focus) {
-  background-color: #FEF3C7;
-  color: #78350F;
+  background-color: rgba(20, 122, 214, 0.10);
+  color: inherit;
   text-decoration: underline;
-  text-decoration-color: #F59E0B;
+  text-decoration-color: var(--accent, #147AD6);
   text-underline-offset: 3px;
 }
 ::highlight(needle-context) {
-  background-color: #FFFDF5;
+  background-color: transparent;
 }
 .needle-snippet {
   margin-top: 10px;
@@ -1788,35 +1788,18 @@ kbd {
   font-weight: 500;
   margin-top: 5px;
 }
-.needle-target-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #92400E;
-  background: #FEF3C7;
-  border: 1px solid #FCD34D;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  width: fit-content;
-}
 .is-needle-target {
   position: relative;
-  border-left: 3px solid #F59E0B !important;
+  border-left: 2px solid var(--accent, #147AD6) !important;
   padding-left: 14px !important;
-  background-color: rgba(245, 158, 11, 0.08);
-  border-radius: 0 4px 4px 0;
-  transition: background-color 0.3s ease;
-  animation: needle-pulse 2s ease-out;
+  border-radius: 0 2px 2px 0;
+  animation: needle-pulse 2.5s ease-out forwards;
 }
 @keyframes needle-pulse {
-  0% { background-color: rgba(245, 158, 11, 0.32); }
-  50% { background-color: rgba(245, 158, 11, 0.18); }
-  100% { background-color: rgba(245, 158, 11, 0.08); }
+  0% { background-color: rgba(20, 122, 214, 0.14); }
+  70% { background-color: rgba(20, 122, 214, 0.05); }
+  100% { background-color: transparent; }
+}
 .page-search-field { margin: 0 0 16px; }
 .toast {
   position: fixed;
@@ -2251,12 +2234,6 @@ function sentenceSpans(text) {
       clearNeedleHighlights();
       if(!targetEl)return;
       targetEl.classList.add('is-needle-target');
-
-      const badge=document.createElement('span');
-      badge.className='needle-target-badge mono';
-      badge.textContent='🪡 Needle in context · matching passage';
-      targetEl.prepend(badge);
-
       targetEl.scrollIntoView({behavior:'smooth',block:'center'});
 
       if(globalThis.CSS?.highlights&&globalThis.Highlight&&window.Range){
@@ -2265,16 +2242,12 @@ function sentenceSpans(text) {
           const walker=document.createTreeWalker(targetEl,NodeFilter.SHOW_TEXT);
           let node;
           while((node=walker.nextNode())){
-            if(node.parentElement?.closest('.needle-target-badge'))continue;
             const idx=node.textContent.indexOf(trimmed);
             if(idx!==-1){
               const r=new Range();
               r.setStart(node,idx);
               r.setEnd(node,idx+trimmed.length);
-              const ctxRange=new Range();
-              ctxRange.selectNodeContents(targetEl);
               CSS.highlights.set('needle-focus',new Highlight(r));
-              CSS.highlights.set('needle-context',new Highlight(ctxRange));
               return;
             }
           }
@@ -2330,7 +2303,6 @@ function sentenceSpans(text) {
         const targetEl=candidates[idx];
         if(targetEl){
           highlightSentence(targetEl,topMatch.focusText);
-          toast(`🪡 Needle: Pointing to matching sentence in context.`);
           return { found: true, text: topMatch.focusText };
         }
       }
