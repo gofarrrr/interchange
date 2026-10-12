@@ -1679,13 +1679,15 @@ kbd {
   align-items: center;
   gap: 8px;
   margin-top: 8px;
-  padding: 2px 0;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
 }
 .jev-bar {
   display: inline-block;
-  width: 58px;
-  height: 5px;
-  background: var(--hairline);
+  width: 52px;
+  height: 6px;
+  background: var(--hairline-dark);
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -1693,15 +1695,30 @@ kbd {
 .jev-bar i {
   display: block;
   height: 100%;
-  background: var(--accent, #078C9B);
+  background: #078C9B;
   border-radius: 3px;
   transition: width 0.3s ease;
 }
 .jev-pct {
   font-size: 12px;
-  color: var(--text-2);
+  font-weight: 600;
+  color: var(--ink) !important;
   letter-spacing: 0.2px;
-  font-weight: 500;
+  padding-top: 0 !important;
+}
+.index-tools-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.index-semantic-link {
+  color: #078C9B;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .search-result .result-badge-col {
   display: flex;

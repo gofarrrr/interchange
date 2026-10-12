@@ -78,23 +78,41 @@ async function rankWithJev(query, items) {
       }
     }
 
-    // Default Jev search gateway
-    const res = await fetch('https://read.atharvashah.com/api/search', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        query,
-        items: items.map(i => ({ id: i.id, text: i.text }))
-      }),
-      signal: controller.signal
-    });
+    async function queryGateway(batch) {
+      if (!batch || batch.length === 0) return [];
+      const res = await fetch('https://read.atharvashah.com/api/search', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          query,
+          items: batch.map(i => ({ id: i.id, text: i.text }))
+        }),
+        signal: controller.signal
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.results)) return data.results;
+      }
+      return [];
+    }
+
+    const stations = items.filter(i => String(i.id).startsWith('AI-'));
+    const sources = items.filter(i => !String(i.id).startsWith('AI-'));
+
+    let jevResults = [];
+    if (stations.length > 0 && sources.length > 0) {
+      const [stationRes, sourceRes] = await Promise.all([
+        queryGateway(stations),
+        queryGateway(sources)
+      ]);
+      jevResults = [...stationRes, ...sourceRes].sort((a, b) => b.probability - a.probability);
+    } else {
+      jevResults = await queryGateway(items);
+    }
     clearTimeout(timer);
 
-    if (res.ok) {
-      const data = await res.json();
-      if (Array.isArray(data.results)) {
-        return { results: data.results, provider: 'jev' };
-      }
+    if (jevResults.length > 0) {
+      return { results: jevResults, provider: 'jev' };
     }
   } catch (err) {
     clearTimeout(timer);
