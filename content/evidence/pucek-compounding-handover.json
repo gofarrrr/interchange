@@ -1,0 +1,16 @@
+{
+  "id": "pucek-compounding-handover",
+  "source_id": "S46",
+  "type": "solution",
+  "title": "Completed transformation work must yield reusable methods that survive the engagement",
+  "text": "In modern transformation delivery, selling tooling licenses ('copilots') is replaced by selling completed working processes ('autopilots'). Delivery compounds across engagements only when expert human corrections are turned into reusable methods and test rubrics that survive outside the original assignment, leaving the client with an operating process their own team can run and improve.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner delivery playbook synthesizing Emergence Capital; relies on effective abstraction to avoid cross-client data contamination.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Completed work should improve the ability to perform future work. An expert's correction is particularly valuable when the firm can establish why it was needed and turn the lesson into a method that works again. The next team then has less to rediscover."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "pucek-cross-silo-contradiction",
+  "source_id": "S46",
+  "type": "challenge",
+  "title": "Accelerating tasks inside silos leaves operational contradictions intact",
+  "text": "Giving each department an AI assistant speeds up local tasks while leaving inter-departmental contradictions intact—such as sales quoting delivery dates that purchasing cannot meet due to supplier delays. Genuine workflow redesign requires comparing real-world execution with the planning assumptions used to make commitments across departmental boundaries.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner illustrative scenario, not a measured empirical case study.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "A fast response to a late delivery matters less if sales is still promising a date that purchasing cannot meet. Giving each department an assistant can speed up several tasks while leaving that contradiction intact."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

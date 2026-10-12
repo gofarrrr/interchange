@@ -1,0 +1,16 @@
+{
+  "id": "pucek-waste-on-cheap-thinking",
+  "source_id": "S46",
+  "type": "challenge",
+  "title": "Cheap cognitive capacity makes it easy to produce analysis nobody needs",
+  "text": "When cognitive work becomes cheap, the set of worthwhile investigations expands, but so does the volume of unneeded analysis. The critical management filter is whether autonomous investigation changes a consequential decision or improves a measurable outcome, rather than evaluating agents by the sheer volume of generated briefs or reports.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner operating principle; does not provide a formal mathematical threshold or telemetry dashboard.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Cheaper cognitive work expands what becomes worth attempting. It also makes it easier to produce analysis that nobody needs. Choosing where to spend that capacity becomes part of management... The useful measure is whether the effort changes a decision or improves a result."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

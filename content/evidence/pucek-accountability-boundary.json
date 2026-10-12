@@ -1,0 +1,16 @@
+{
+  "id": "pucek-accountability-boundary",
+  "source_id": "S46",
+  "type": "solution",
+  "title": "Unbundling the job bundle leaves business commitment and accountability intact",
+  "text": "A job bundles knowledge, time, execution, judgment, authority and responsibility. AI allows cognitive execution and research to be supplied separately, but the business remains responsible for deciding who can commit the firm and who answers for the consequences. In professional services and enterprise processes, clients and stakeholders do not merely buy cognitive output; they buy a counterparty who answers for the result.",
+  "attribution_layer": "source-as-represented",
+  "qualification": "Practitioner thesis synthesizing Julien Bek and Bérenger Teboul-Danguin; reflects service-market positioning rather than an audited governance standard.",
+  "public_locator": {
+    "kind": "quote",
+    "value": "Some of those capabilities can now be supplied separately... but it leaves us responsible for deciding who can commit the business and who answers for the result. What the client buys is not only the work, but someone who answers for it."
+  },
+  "review": {
+    "status": "pending"
+  }
+}

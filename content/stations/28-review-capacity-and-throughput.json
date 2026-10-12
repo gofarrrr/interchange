@@ -39,7 +39,8 @@
     "choudary-judgement",
     "brooks-workload",
     "ismail-congestion-coordination",
-    "ju-monotonicity-coordination"
+    "ju-monotonicity-coordination",
+    "pucek-waste-on-cheap-thinking"
   ],
   "source_ids": [
     "S01",
@@ -48,7 +49,8 @@
     "S34",
     "S35",
     "S41",
-    "S44"
+    "S44",
+    "S46"
   ],
   "report_reference": {
     "source_id": "S01",

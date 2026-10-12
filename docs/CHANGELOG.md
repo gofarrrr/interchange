@@ -1,5 +1,16 @@
 # Changelog implementacji
 
+## v1.4 — 12 października 2026
+
+Wzbogacono 4 stacje o perspektywy operacyjne na podstawie eseju i doktryny Bartka Pucka (*Thinking Companies* / The Thinking Company & Runstate):
+- Dodano rekord źródła `content/sources/S46.json` (Bartek Pucek — *Thinking Companies*).
+- Dodano 4 ograniczone perspektywy dowodowe (`content/evidence/`):
+  - `pucek-cross-silo-contradiction` (AI-02): przyspieszanie zadań wewnątrz silosów utrwala sprzeczności międzywydziałowe (np. deklaracje handlowe vs opóźnienia dostawców); transformacja wymaga redefinicji założeń procesowych na styku działów.
+  - `pucek-accountability-boundary` (AI-07): rozpakowanie wiązki stanowiskowej (*job bundle*) oddziela tanią egzekucję kognitywną od odpowiedzialności biznesowej; klienci i interesariusze kupują nie samą pracę, lecz podmiot odpowiadający za jej skutki (*fiduciary anchor* / Bérenger Teboul-Danguin).
+  - `pucek-waste-on-cheap-thinking` (AI-28): spadek kosztu myślenia maszynowego ułatwia produkcję niepotrzebnych analiz; filtr zarządczy wymaga weryfikacji, czy wysiłek kognitywny realnie zmienia decyzję lub wynik operacyjny.
+  - `pucek-compounding-handover` (AI-31): ewolucja usług od sprzedaży narzędzi kognitywnych (copilotów) do pracujących procesów (autopilotów / Julien Bek) oraz kumulowanie wiedzy wykonawczej (*compounding delivery* / Emergence Capital), gdzie korekty ekspertów stają się trwałymi regułami operacyjnymi klienta.
+- Łącznie: 37 rodzin źródeł i 74 przypisane perspektywy dowodowe. Wszystkie 36 stacji zachowało pierwotną strukturę; bramka publikacyjna pozostaje fail-closed.
+
 ## v1.3 — 27 września 2026
 
 Wzbogacono 9 stacji o nowe perspektywy badawcze i operacyjne na podstawie materiałów Salima Ismaila, pracy Haranga Ju oraz eseju i wystąpienia Ishaana Sehgala (Omnara):

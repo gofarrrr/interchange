@@ -34,12 +34,14 @@
   ],
   "evidence_ids": [
     "harness-own-assets",
-    "foss-make-buy"
+    "foss-make-buy",
+    "pucek-compounding-handover"
   ],
   "source_ids": [
     "S01",
     "S06",
-    "S14"
+    "S14",
+    "S46"
   ],
   "report_reference": {
     "source_id": "S01",

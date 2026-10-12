@@ -4,6 +4,16 @@
 
 36 tematów o transformacji AI, sześć linii, własna mapa SVG i spokojne strony do czytania. To rzeczywisty interfejs HTML/CSS/JavaScript z pełną treścią, a nie obraz makiety. Projekt realizuje kierunek „Everything is neutral except the network”.
 
+## Zmiany v1.4 — operacyjne wzbogacenie 4 stacji (Bartek Pucek / Thinking Companies)
+
+Wydanie v1.4 dodaje rodzinę źródeł **S46** (Bartek Pucek — *Thinking Companies*) oraz 4 perspektywy dowodowe:
+- **AI-02**: iluzja lokalnego copilota i wzmacnianie sprzeczności między silosami (sprzedaż deklarująca terminy, których zakupy nie mogą spełnić).
+- **AI-07**: rozpakowanie wiązki stanowiskowej (*job bundle*) a granica odpowiedzialności i uprawnień (*fiduciary anchor* / Bérenger Teboul-Danguin: klient kupuje kogoś, kto odpowiada za wynik).
+- **AI-28**: filtr marnotrawstwa przy tanim myśleniu maszynowym (tani koszt kognitywny ułatwia produkcję niepotrzebnych analiz; kryterium: czy wysiłek zmienia decyzję lub wynik).
+- **AI-31**: przejście od sprzedaży narzędzi do pracujących procesów (Julien Bek) oraz compounding delivery i utrwalanie metod operacyjnych po wdrożeniu (Emergence Capital).
+
+Łącznie: 37 rodzin źródeł i 74 przypisane perspektywy.
+
 ## Zmiany v1.3 — operacyjne wzbogacenie 9 stacji (Ismail / Ju / Sehgal)
 
 Wydanie v1.3 jest bezpośrednią realizacją zasady żywego przewodnika (*living guide, not a finished checklist*): 36 stacji stanowi stabilną strukturę problemów, a nowe materiały pogłębiają je przez dodanie pożytecznego nowego lensu, kwalifikacji, wyzwania, kontrargumentu lub praktycznej alternatywy — z celem głębszego zrozumienia, a nie dłuższego spisu literatury.
@@ -50,7 +60,7 @@ npm run build
 - Zapisywanie tematów w tej przeglądarce, kopiowanie linku i szablonu roboczego; bez kont i analityki.
 - Budowanie statycznych stron, walidacja danych, testy, kontrola linków wewnętrznych, obsługa subścieżki i blokada niezatwierdzonej publikacji.
 
-Wersja zawiera **58 stron**, **36 rodzin źródłowych z dostarczonymi publicznymi URL** i **70 przypisanych perspektyw**. Te liczby nie oznaczają niezależnej weryfikacji źródeł. Treść i interfejs pozostają po angielsku, zgodnie z materiałem wejściowym. Instrukcja dla zespołu jest po polsku.
+Wersja zawiera **58 stron**, **37 rodzin źródłowych z dostarczonymi publicznymi URL** i **74 przypisane perspektywy**. Te liczby nie oznaczają niezależnej weryfikacji źródeł. Treść i interfejs pozostają po angielsku, zgodnie z materiałem wejściowym. Instrukcja dla zespołu jest po polsku.
 
 ## Architektura — ważne rozróżnienie
 

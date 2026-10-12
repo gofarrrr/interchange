@@ -34,12 +34,14 @@
   ],
   "evidence_ids": [
     "process-hidden-decisions",
-    "pierce-map-work"
+    "pierce-map-work",
+    "pucek-cross-silo-contradiction"
   ],
   "source_ids": [
     "S01",
     "S22",
-    "S24"
+    "S24",
+    "S46"
   ],
   "report_reference": {
     "source_id": "S01",
