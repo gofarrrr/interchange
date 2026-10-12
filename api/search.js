@@ -56,7 +56,14 @@ async function rankWithJev(query, items) {
 
   try {
     if (apiKey) {
-      // Direct TypeSafe API endpoint
+      // Direct TypeSafe System One API endpoint
+      const questions = {};
+      for (const item of items) {
+        questions[item.id] = {
+          type: 'noul',
+          instructions: `Relevant to: "${query}". Topic: ${item.text || item.title || item.id}`
+        };
+      }
       const response = await fetch('https://api.typesafe.ai/v1/systemone', {
         method: 'POST',
         headers: {
@@ -66,19 +73,41 @@ async function rankWithJev(query, items) {
         body: JSON.stringify({
           model: 'jev-latest',
           state: query,
-          items: items.map(i => ({ id: i.id, text: i.text }))
+          questions
         }),
         signal: controller.signal
       });
       if (response.ok) {
         clearTimeout(timer);
         const data = await response.json();
+        let results = [];
         if (Array.isArray(data.results)) {
-          return { results: data.results, provider: 'typesafe-jev' };
+          results = data.results;
+        } else if (data.answers && typeof data.answers === 'object') {
+          results = Object.entries(data.answers).map(([id, val]) => ({
+            id,
+            probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
+          }));
+        } else if (data.questions && typeof data.questions === 'object') {
+          results = Object.entries(data.questions).map(([id, val]) => ({
+            id,
+            probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
+          }));
+        } else if (typeof data === 'object') {
+          results = Object.entries(data)
+            .filter(([k]) => k.startsWith('AI-') || k.startsWith('S'))
+            .map(([id, val]) => ({
+              id,
+              probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
+            }));
+        }
+        if (results.length > 0) {
+          results.sort((a, b) => b.probability - a.probability);
+          return { results, provider: 'typesafe-jev' };
         }
       } else {
         const text = await response.text().catch(() => '');
-        directError = `${response.status}: ${text.slice(0, 120)}`;
+        directError = `${response.status}: ${text.slice(0, 160)}`;
       }
     }
 
