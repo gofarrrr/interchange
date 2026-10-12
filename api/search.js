@@ -80,30 +80,27 @@ async function rankWithJev(query, items) {
       if (response.ok) {
         clearTimeout(timer);
         const data = await response.json();
+        const rawSample = JSON.stringify(data).slice(0, 300);
         let results = [];
+        const extractProb = (v) => {
+          if (typeof v === 'number') return v;
+          if (!v || typeof v !== 'object') return 0.5;
+          return v.probability ?? v.p ?? v.prob ?? v.score ?? v.confidence ?? (v.value === true ? 0.9 : v.value === false ? 0.1 : 0.5);
+        };
         if (Array.isArray(data.results)) {
           results = data.results;
         } else if (data.answers && typeof data.answers === 'object') {
-          results = Object.entries(data.answers).map(([id, val]) => ({
-            id,
-            probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
-          }));
+          results = Object.entries(data.answers).map(([id, val]) => ({ id, probability: extractProb(val) }));
         } else if (data.questions && typeof data.questions === 'object') {
-          results = Object.entries(data.questions).map(([id, val]) => ({
-            id,
-            probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
-          }));
+          results = Object.entries(data.questions).map(([id, val]) => ({ id, probability: extractProb(val) }));
         } else if (typeof data === 'object') {
           results = Object.entries(data)
             .filter(([k]) => k.startsWith('AI-') || k.startsWith('S'))
-            .map(([id, val]) => ({
-              id,
-              probability: typeof val === 'number' ? val : (val?.probability ?? val?.score ?? 0.5)
-            }));
+            .map(([id, val]) => ({ id, probability: extractProb(val) }));
         }
         if (results.length > 0) {
           results.sort((a, b) => b.probability - a.probability);
-          return { results, provider: 'typesafe-jev' };
+          return { results, provider: 'typesafe-jev', rawSample };
         }
       } else {
         const text = await response.text().catch(() => '');
@@ -190,8 +187,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Items array required' });
     }
 
-    const { results, provider, directError } = await rankWithJev(query.trim(), items);
-    return res.status(200).json({ results, searched: items.length, provider, directError });
+    const { results, provider, directError, rawSample } = await rankWithJev(query.trim(), items);
+    return res.status(200).json({ results, searched: items.length, provider, directError, rawSample });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Internal error' });
   }
