@@ -81,11 +81,11 @@ async function rankWithJev(query, items) {
         clearTimeout(timer);
         const data = await response.json();
         const rawSample = JSON.stringify(data).slice(0, 300);
-        let results = [];
         const extractProb = (v) => {
           if (typeof v === 'number') return v;
           if (!v || typeof v !== 'object') return 0.5;
-          return v.probability ?? v.p ?? v.prob ?? v.score ?? v.confidence ?? (v.value === true ? 0.9 : v.value === false ? 0.1 : 0.5);
+          const val = typeof v.noul === 'number' ? v.noul : (v.probability ?? v.p ?? v.score ?? 0.5);
+          return Math.round(val * 100) / 100;
         };
         if (Array.isArray(data.results)) {
           results = data.results;
@@ -100,7 +100,7 @@ async function rankWithJev(query, items) {
         }
         if (results.length > 0) {
           results.sort((a, b) => b.probability - a.probability);
-          return { results, provider: 'typesafe-jev', rawSample };
+          return { results, provider: 'typesafe-jev' };
         }
       } else {
         const text = await response.text().catch(() => '');
@@ -187,8 +187,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Items array required' });
     }
 
-    const { results, provider, directError, rawSample } = await rankWithJev(query.trim(), items);
-    return res.status(200).json({ results, searched: items.length, provider, directError, rawSample });
+    const { results, provider } = await rankWithJev(query.trim(), items);
+    return res.status(200).json({ results, searched: items.length, provider });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Internal error' });
   }
