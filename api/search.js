@@ -49,9 +49,10 @@ function fallbackScoring(query, items) {
 }
 
 async function rankWithJev(query, items) {
-  const apiKey = process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY;
+  const apiKey = (process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY || '').trim();
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 4500);
+  let directError = null;
 
   try {
     if (apiKey) {
@@ -69,12 +70,15 @@ async function rankWithJev(query, items) {
         }),
         signal: controller.signal
       });
-      clearTimeout(timer);
       if (response.ok) {
+        clearTimeout(timer);
         const data = await response.json();
         if (Array.isArray(data.results)) {
           return { results: data.results, provider: 'typesafe-jev' };
         }
+      } else {
+        const text = await response.text().catch(() => '');
+        directError = `${response.status}: ${text.slice(0, 120)}`;
       }
     }
 
@@ -112,14 +116,14 @@ async function rankWithJev(query, items) {
     clearTimeout(timer);
 
     if (jevResults.length > 0) {
-      return { results: jevResults, provider: 'jev' };
+      return { results: jevResults, provider: 'jev', directError };
     }
   } catch (err) {
     clearTimeout(timer);
   }
 
   // Graceful fallback
-  return { results: fallbackScoring(query, items), provider: 'local-semantic' };
+  return { results: fallbackScoring(query, items), provider: 'local-semantic', directError };
 }
 
 export default async function handler(req, res) {
@@ -132,8 +136,15 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
+  const key = (process.env.TYPESAFE_API_KEY || process.env.JEV_API_KEY || '').trim();
+
   if (req.method === 'GET') {
-    return res.status(200).json({ warm: true, provider: 'jev' });
+    return res.status(200).json({
+      warm: true,
+      hasKey: Boolean(key),
+      keyLength: key.length,
+      keyPrefix: key ? key.slice(0, 4) + '...' : null
+    });
   }
 
   if (req.method !== 'POST') {
@@ -150,8 +161,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Items array required' });
     }
 
-    const { results, provider } = await rankWithJev(query.trim(), items);
-    return res.status(200).json({ results, searched: items.length, provider });
+    const { results, provider, directError } = await rankWithJev(query.trim(), items);
+    return res.status(200).json({ results, searched: items.length, provider, directError });
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Internal error' });
   }
