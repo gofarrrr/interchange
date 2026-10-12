@@ -320,7 +320,7 @@ function sentenceSpans(text) {
       const doc=document.querySelector('.reading-document');
       if(!doc||!query.trim())return;
       const candidates=Array.from(doc.querySelectorAll('p, li, .working-artifact p'))
-        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer, .station-needle-bar')&&el.textContent.trim().length>20);
+        .filter(el=>!el.closest('.meta, nav, .article-rail, .rail-actions, footer, .needle-float-bar')&&el.textContent.trim().length>20);
       if(!candidates.length)return;
 
       const passages=candidates.map((el,i)=>({id:'p'+i,text:el.textContent.trim()}));
@@ -373,25 +373,39 @@ function sentenceSpans(text) {
       const id=stationPage.getAttribute('data-station-page');
       if(id)store('visited',[...new Set([...stored('visited'),id])]);
 
+      const needleBar=document.querySelector('[data-needle-bar]');
       const needleInput=document.querySelector('[data-needle-input]');
-      const needleClear=document.querySelector('[data-needle-clear]');
+      const needleClose=document.querySelector('[data-needle-close]');
       const needleStatus=document.querySelector('[data-needle-status]');
-      const railTrigger=document.querySelector('[data-needle-rail-trigger]');
+      const needleTriggers=document.querySelectorAll('[data-needle-trigger]');
 
-      railTrigger?.addEventListener('click',()=>{
+      const openNeedleBar=()=>{
+        if(!needleBar)return;
+        needleBar.hidden=false;
         if(needleInput instanceof HTMLInputElement){
-          needleInput.scrollIntoView({behavior:'smooth',block:'center'});
           needleInput.focus();
+          needleInput.select();
         }
-      },{signal});
+      };
+
+      const closeNeedleBar=()=>{
+        if(!needleBar)return;
+        needleBar.hidden=true;
+        clearNeedleHighlights();
+        if(needleInput instanceof HTMLInputElement)needleInput.value='';
+        if(needleStatus)needleStatus.textContent='Press Enter';
+      };
+
+      needleTriggers.forEach(btn=>btn.addEventListener('click',openNeedleBar,{signal}));
+      needleClose?.addEventListener('click',closeNeedleBar,{signal});
 
       const handleNeedleSearch=async(q)=>{
         const trimmed=q.trim();
         if(!trimmed)return;
-        if(needleStatus)needleStatus.textContent='Pinpointing with Jev across station text…';
-        if(needleClear instanceof HTMLElement)needleClear.hidden=false;
+        if(needleBar)needleBar.hidden=false;
+        if(needleStatus)needleStatus.textContent='Pinpointing…';
         await pinpointInStation(trimmed);
-        if(needleStatus)needleStatus.textContent='Matching passage pinpointed in context below ↓';
+        if(needleStatus)needleStatus.textContent='Passage pinpointed below ↓';
       };
 
       needleInput?.addEventListener('keydown',e=>{
@@ -400,25 +414,15 @@ function sentenceSpans(text) {
           if(needleInput instanceof HTMLInputElement&&needleInput.value){
             handleNeedleSearch(needleInput.value);
           }
+        }else if(e.key==='Escape'){
+          closeNeedleBar();
         }
       },{signal});
 
-      needleClear?.addEventListener('click',()=>{
-        clearNeedleHighlights();
-        if(needleInput instanceof HTMLInputElement)needleInput.value='';
-        if(needleClear instanceof HTMLElement)needleClear.hidden=true;
-        if(needleStatus)needleStatus.textContent='Needle semantic pinpoint · Press Enter or [f] to pinpoint matching sentences in this text';
-      },{signal});
-
       needleInput?.addEventListener('input',()=>{
-        if(needleInput instanceof HTMLInputElement){
-          if(!needleInput.value.trim()){
-            clearNeedleHighlights();
-            if(needleClear instanceof HTMLElement)needleClear.hidden=true;
-            if(needleStatus)needleStatus.textContent='Needle semantic pinpoint · Press Enter or [f] to pinpoint matching sentences in this text';
-          }else{
-            if(needleClear instanceof HTMLElement)needleClear.hidden=false;
-          }
+        if(needleInput instanceof HTMLInputElement&&!needleInput.value.trim()){
+          clearNeedleHighlights();
+          if(needleStatus)needleStatus.textContent='Press Enter';
         }
       },{signal});
 
@@ -427,8 +431,8 @@ function sentenceSpans(text) {
       if(needleQuery){
         if(needleInput instanceof HTMLInputElement){
           needleInput.value=needleQuery;
-          if(needleClear instanceof HTMLElement)needleClear.hidden=false;
         }
+        if(needleBar)needleBar.hidden=false;
         setTimeout(()=>handleNeedleSearch(needleQuery),350);
       }
     }
@@ -450,12 +454,19 @@ function sentenceSpans(text) {
       if((event.key==='/'&&!editing)||((event.ctrlKey||event.metaKey)&&event.key==='k')){
         event.preventDefault();openSearch();
       }else if((event.key==='f'||event.key==='F')&&!editing&&!event.ctrlKey&&!event.metaKey&&!event.altKey){
+        const needleBar=document.querySelector('[data-needle-bar]');
         const needleInput=document.querySelector('[data-needle-input]');
-        if(needleInput instanceof HTMLInputElement){
+        if(needleBar&&needleInput instanceof HTMLInputElement){
           event.preventDefault();
-          needleInput.scrollIntoView({behavior:'smooth',block:'center'});
+          needleBar.hidden=false;
           needleInput.focus();
           needleInput.select();
+        }
+      }else if(event.key==='Escape'){
+        const needleBar=document.querySelector('[data-needle-bar]');
+        if(needleBar&&!needleBar.hidden){
+          needleBar.hidden=true;
+          clearNeedleHighlights();
         }
       }
     },{signal});

@@ -29,8 +29,9 @@ test('every station renders static Needle in-page search bar and rail trigger', 
   for (const s of site.stations) {
     const page = renderer.pages.find(p => p.path === stationPath(s));
     assert.ok(page, `Station page not found for ${s.id}`);
-    assert.ok(page.body.includes('station-needle-bar'), `Station ${s.id} missing station-needle-bar`);
+    assert.ok(page.body.includes('data-needle-bar'), `Station ${s.id} missing data-needle-bar`);
     assert.ok(page.body.includes('data-needle-input'), `Station ${s.id} missing data-needle-input`);
-    assert.ok(page.body.includes('data-needle-rail-trigger'), `Station ${s.id} missing data-needle-rail-trigger`);
+    assert.ok(page.body.includes('data-needle-trigger'), `Station ${s.id} missing data-needle-trigger`);
+    assert.ok(!page.body.includes('station-needle-bar'), `Station ${s.id} should not have disruptive station-needle-bar in reading body`);
   }
 });
