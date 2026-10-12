@@ -1,10 +1,10 @@
 {
   "id": "S51",
-  "title": "Evaluating the Fragility and Error Compounding of Multi-Step Agentic Systems",
-  "author_or_organization": "Arvind Narayanan, Sayash Kapoor, Christoph Rabanser",
+  "title": "Towards a Science of AI Agent Reliability",
+  "author_or_organization": "Stephan Rabanser, Sayash Kapoor, Peter Kirgis, Kangheng Liu, Saiteja Utpala, Arvind Narayanan",
   "source_type": "computer science and reliability analysis",
-  "date_as_supplied": "2024-03",
-  "original_url": "https://www.aisnakeoil.com/",
+  "date_as_supplied": "2026-02",
+  "original_url": "https://arxiv.org/abs/2602.16666",
   "limitations": "Analytical and mathematical treatment of probabilistic agent loops demonstrating error compounding (P = p^n) across multi-step execution graphs. Establishes the mathematical necessity of deterministic checkpoints, but relies on generalized error assumptions rather than a single proprietary benchmark.",
   "review": {
     "status": "pending"

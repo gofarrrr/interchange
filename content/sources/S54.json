@@ -1,10 +1,10 @@
 {
   "id": "S54",
-  "title": "Forensic Audit of Autonomous Workflow Demos: The $916 Prototype Breakdown",
-  "author_or_organization": "Normal Tech",
+  "title": "Did Google's AI agents really build an operating system for $916? The importance of independent evaluation",
+  "author_or_organization": "Stephan Rabanser, Sayash Kapoor, Rishi Bommasani, Andrew Schwartz, Arvind Narayanan (AI as Normal Technology)",
   "source_type": "forensic technical audit",
-  "date_as_supplied": "2024-06",
-  "original_url": "https://normaltech.substack.com/",
+  "date_as_supplied": "2026-05",
+  "original_url": "https://www.normaltech.ai/p/did-googles-ai-agents-really-build",
   "limitations": "Step-by-step technical deconstruction of high-profile vendor autonomous agent demonstrations, documenting hidden human interventions, prompt injections, repeated retries, and high operational costs. Highlights demo fragility, but represents single-case forensic observation rather than a randomized comparative benchmark.",
   "review": {
     "status": "pending"

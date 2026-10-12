@@ -363,6 +363,18 @@
     const currentURL=window.__OFFLINE__?new URL('https://preview.invalid'+(location.hash.slice(1)||'/')):new URL(location.href);
     const fromLine=currentURL.searchParams.get('line');if(fromLine&&/^[A-F]$/.test(fromLine))setLine(fromLine);
     const fromStation=currentURL.searchParams.get('station');if(fromStation&&previewById.has(fromStation)){svg?.querySelector(`[data-station="${fromStation}"]`)?.classList.add('is-current');}
+    const fromQuery=currentURL.searchParams.get('q');
+    if(fromQuery){
+      document.querySelectorAll('[data-search-input]').forEach(input=>{
+        if(input instanceof HTMLInputElement){
+          input.value=fromQuery;
+          const scope=input.closest('dialog')||input.closest('main');
+          if(scope instanceof HTMLElement){
+            renderResults(scope,fromQuery);
+          }
+        }
+      });
+    }
     // The article's margin anchors reflect actual scroll position without moving content.
     if('IntersectionObserver' in window&&document.querySelector('.article-rail nav')){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){document.querySelectorAll('.article-rail nav a').forEach(a=>{if(a.getAttribute('href')==='#'+entry.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}}},{rootMargin:'-90px 0px -65% 0px',threshold:0});document.querySelectorAll('.reading-document>section[id]').forEach(section=>observer.observe(section));signal.addEventListener('abort',()=>observer.disconnect(),{once:true});}
   }

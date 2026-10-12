@@ -1,10 +1,10 @@
 {
   "id": "S56",
-  "title": "Labor Market Impacts of AI: Observed Exposure in Real-World Log Traces",
+  "title": "Labor Market Impacts of AI: A New Measure and Early Evidence",
   "author_or_organization": "Anthropic Economic Research",
   "source_type": "empirical usage telemetry analysis",
-  "date_as_supplied": "2024-08",
-  "original_url": "https://www.anthropic.com/research",
+  "date_as_supplied": "2026-03",
+  "original_url": "https://www.anthropic.com/research/labor-market-impacts",
   "limitations": "Large-scale empirical study measuring observed exposure from actual user prompt logs rather than theoretical task feasibility. Highlights that real-world adoption clusters around a narrow subset of model capabilities; constrained to Claude telemetry and self-selected user populations.",
   "review": {
     "status": "pending"

@@ -1,7 +1,7 @@
 // @ts-check
 /**
  * Serverless search endpoint powered by TypeSafe Jev model.
- * Ranks all items (36 stations and 40 sources) semantically with probability match scores.
+ * Ranks all items (36 stations and 49 sources) semantically with probability match scores.
  */
 
 function normaliseText(str) {
